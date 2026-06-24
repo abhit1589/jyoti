@@ -1,8 +1,8 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
-import { INDIAN_CITIES } from "@/lib/vedic/cities";
+import { getCitiesForLocale, getCityById } from "@/lib/vedic/cities";
 import { DateTimePicker } from "@/components/DateTimePicker";
 import { parseJsonResponse } from "@/lib/api/client";
 import type { BirthInput, Locale, VedicChart } from "@/lib/types";
@@ -17,11 +17,12 @@ export function BirthForm({ onChart }: BirthFormProps) {
   const locale = useLocale() as Locale;
   const [name, setName] = useState("");
   const [birthDateTime, setBirthDateTime] = useState({ date: "1990-01-15", time: "10:30" });
+  const cities = useMemo(() => getCitiesForLocale(locale), [locale]);
   const [cityId, setCityId] = useState("hyderabad");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const city = INDIAN_CITIES.find((c) => c.id === cityId) ?? INDIAN_CITIES[0];
+  const city = getCityById(cityId) ?? getCityById("hyderabad") ?? cities[0];
 
   const handleDateTimeChange = useCallback(
     (value: { date: string; time: string }) => setBirthDateTime(value),
@@ -85,7 +86,7 @@ export function BirthForm({ onChart }: BirthFormProps) {
             onChange={(e) => setCityId(e.target.value)}
             className="input-field"
           >
-            {INDIAN_CITIES.map((c) => (
+            {cities.map((c) => (
               <option key={c.id} value={c.id}>
                 {c.name[locale]}
               </option>

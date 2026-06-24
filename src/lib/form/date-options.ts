@@ -31,8 +31,13 @@ export function getMonthLabels(locale: Locale): string[] {
   return MONTHS[locale];
 }
 
-export function getYearOptions(start = 1940): number[] {
-  const end = new Date().getFullYear();
+/** Birth years from `start` through current calendar year + `yearsAhead` (computed at runtime). */
+export function getYearOptions(
+  start = 1940,
+  yearsAhead = 1,
+  now: Date = new Date(),
+): number[] {
+  const end = now.getFullYear() + yearsAhead;
   return Array.from({ length: end - start + 1 }, (_, i) => end - i);
 }
 

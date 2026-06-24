@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
-import { Inter, Noto_Sans_Devanagari, Noto_Sans_Kannada, Noto_Sans_Tamil, Noto_Sans_Telugu } from "next/font/google";
+import { Inter, Noto_Sans_Devanagari, Noto_Sans_Kannada, Noto_Sans_Tamil, Noto_Sans_Telugu, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+});
+
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  weight: ["400", "600", "700"],
 });
 
 const notoDevanagari = Noto_Sans_Devanagari({
@@ -32,8 +39,8 @@ const notoTelugu = Noto_Sans_Telugu({
 });
 
 export const metadata: Metadata = {
-  title: "Jyoti — Vedic Astrology",
-  description: "Vedic birth charts and Jyotish readings for India",
+  title: "Taaraa — Vedic Astrology, Precisely",
+  description: "Lahiri sidereal birth charts and personalised Jyotish readings in six Indian languages",
 };
 
 export default function RootLayout({
@@ -44,7 +51,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body
-        className={`${inter.variable} ${notoDevanagari.variable} ${notoKannada.variable} ${notoTamil.variable} ${notoTelugu.variable} min-h-full font-sans antialiased`}
+        className={`${inter.variable} ${playfair.variable} ${notoDevanagari.variable} ${notoKannada.variable} ${notoTamil.variable} ${notoTelugu.variable} min-h-full font-sans antialiased`}
       >
         {children}
       </body>

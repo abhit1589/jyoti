@@ -1,8 +1,8 @@
 import { DateTime } from "luxon";
 import { getSwe } from "@/lib/ephemeris/swe";
+import { getChartReadingLabels } from "@/lib/vedic/chart-reading-labels";
 import { buildPersonalityCareerContext, houseRashi, rashiLord } from "@/lib/vedic/analysis";
 import { getCurrentDashaPeriods } from "@/lib/vedic/dasha";
-import { READING_LANGUAGE } from "@/lib/i18n/locales";
 import type { BirthInput, Locale, PlanetId, PlanetPosition, VedicChart } from "@/lib/types";
 import { DASHA_SEQUENCE, DASHA_YEARS, PLANET_LABELS, RASHIS } from "@/lib/vedic/constants";
 
@@ -227,7 +227,7 @@ const READING_PLANET_ORDER: PlanetId[] = [
 export function formatChartForReadingPrompt(chart: VedicChart, locale: Locale): string {
   const rashis = RASHIS[locale];
   const labels = PLANET_LABELS[locale];
-  const language = READING_LANGUAGE[locale];
+  const L = getChartReadingLabels(locale);
   const ascSign = rashis[chart.lagna.rashi - 1];
   const ascDegree = formatDegree(chart.lagna.rashiDegree);
 
@@ -236,24 +236,17 @@ export function formatChartForReadingPrompt(chart: VedicChart, locale: Locale): 
     if (!planet) return "";
     const sign = rashis[planet.rashi - 1];
     const degree = formatDegree(planet.rashiDegree);
-    const retro = planet.retrograde ? " (R)" : "";
-    return `${labels[id]}: ${sign} ${degree}, House ${planet.house}${retro}`;
+    const retro = planet.retrograde ? L.retrograde : "";
+    return `${labels[id]}: ${sign} ${degree}, ${L.house(planet.house)}${retro}`;
   }).filter(Boolean);
 
-  return [
-    "The person's Vedic birth chart data is:",
-    "",
-    `Ascendant (Lagna): ${ascSign} ${ascDegree}`,
-    ...planetLines,
-    "",
-    `Language: ${language}`,
-  ].join("\n");
+  return [L.intro, "", `${L.ascendant}: ${ascSign} ${ascDegree}`, ...planetLines].join("\n");
 }
 
 export function formatChartForCareerReadingPrompt(chart: VedicChart, locale: Locale): string {
   const rashis = RASHIS[locale];
   const labels = PLANET_LABELS[locale];
-  const language = READING_LANGUAGE[locale];
+  const L = getChartReadingLabels(locale);
   const ascSign = rashis[chart.lagna.rashi - 1];
   const ascDegree = formatDegree(chart.lagna.rashiDegree);
 
@@ -262,8 +255,8 @@ export function formatChartForCareerReadingPrompt(chart: VedicChart, locale: Loc
     if (!planet) return "";
     const sign = rashis[planet.rashi - 1];
     const degree = formatDegree(planet.rashiDegree);
-    const retro = planet.retrograde ? " (R)" : "";
-    return `${labels[id]}: ${sign} ${degree}, House ${planet.house}${retro}`;
+    const retro = planet.retrograde ? L.retrograde : "";
+    return `${labels[id]}: ${sign} ${degree}, ${L.house(planet.house)}${retro}`;
   }).filter(Boolean);
 
   const tenthRashi = houseRashi(chart.lagna.rashi, 10);
@@ -273,20 +266,18 @@ export function formatChartForCareerReadingPrompt(chart: VedicChart, locale: Loc
   const tenthLordHouse = tenthLordPlanet?.house ?? "?";
 
   return [
-    "The person's Vedic birth chart data is:",
+    L.intro,
     "",
-    `Ascendant (Lagna): ${ascSign} ${ascDegree}`,
+    `${L.ascendant}: ${ascSign} ${ascDegree}`,
     ...planetLines,
-    `10th House Lord: ${labels[tenthLord]} in ${tenthLordSign}, House ${tenthLordHouse}`,
-    "",
-    `Language: ${language}`,
+    `${L.tenthLord}: ${labels[tenthLord]} ${L.inSign} ${tenthLordSign}, ${typeof tenthLordHouse === "number" ? L.house(tenthLordHouse) : tenthLordHouse}`,
   ].join("\n");
 }
 
 export function formatChartForDashaReadingPrompt(chart: VedicChart, locale: Locale): string {
   const rashis = RASHIS[locale];
   const labels = PLANET_LABELS[locale];
-  const language = READING_LANGUAGE[locale];
+  const L = getChartReadingLabels(locale);
   const ascSign = rashis[chart.lagna.rashi - 1];
   const ascDegree = formatDegree(chart.lagna.rashiDegree);
 
@@ -295,35 +286,33 @@ export function formatChartForDashaReadingPrompt(chart: VedicChart, locale: Loca
     if (!planet) return "";
     const sign = rashis[planet.rashi - 1];
     const degree = formatDegree(planet.rashiDegree);
-    const retro = planet.retrograde ? " (R)" : "";
-    return `${labels[id]}: ${sign} ${degree}, House ${planet.house}${retro}`;
+    const retro = planet.retrograde ? L.retrograde : "";
+    return `${labels[id]}: ${sign} ${degree}, ${L.house(planet.house)}${retro}`;
   }).filter(Boolean);
 
   const dasha = getCurrentDashaPeriods(chart);
   const dashaLines = dasha
     ? [
         "",
-        `Current Mahadasha: ${labels[dasha.mahadasha.lord]}`,
-        `Mahadasha start: ${dasha.mahadasha.startDate}`,
-        `Mahadasha end: ${dasha.mahadasha.endDate}`,
-        `Current Antardasha: ${labels[dasha.antardasha.lord]}`,
-        `Antardasha start: ${dasha.antardasha.startDate}`,
-        `Antardasha end: ${dasha.antardasha.endDate}`,
+        `${L.mahadasha}: ${labels[dasha.mahadasha.lord]}`,
+        `${L.mahadashaStart}: ${dasha.mahadasha.startDate}`,
+        `${L.mahadashaEnd}: ${dasha.mahadasha.endDate}`,
+        `${L.antardasha}: ${labels[dasha.antardasha.lord]}`,
+        `${L.antardashaStart}: ${dasha.antardasha.startDate}`,
+        `${L.antardashaEnd}: ${dasha.antardasha.endDate}`,
       ]
     : [
         "",
-        "Current Mahadasha: unknown",
-        "Current Antardasha: unknown",
+        `${L.mahadasha}: ${L.dashaUnknown}`,
+        `${L.antardasha}: ${L.dashaUnknown}`,
       ];
 
   return [
-    "The person's Vedic birth chart data is:",
+    L.intro,
     "",
-    `Ascendant (Lagna): ${ascSign} ${ascDegree}`,
+    `${L.ascendant}: ${ascSign} ${ascDegree}`,
     ...planetLines,
     ...dashaLines,
-    "",
-    `Language: ${language}`,
   ].join("\n");
 }
 

@@ -28,7 +28,8 @@ export function DateTimePicker({ onChange }: DateTimePickerProps) {
   const [minute, setMinute] = useState(30);
   const [period, setPeriod] = useState<"AM" | "PM">("AM");
 
-  const years = useMemo(() => getYearOptions(), []);
+  // Re-read calendar year on mount so the list always reflects "today" (not build time).
+  const years = useMemo(() => getYearOptions(1940, 1, new Date()), []);
   const months = useMemo(() => getMonthLabels(locale), [locale]);
   const days = useMemo(() => getDayOptions(year, month), [year, month]);
 
@@ -37,6 +38,13 @@ export function DateTimePicker({ onChange }: DateTimePickerProps) {
       setDay(days.length);
     }
   }, [day, days.length]);
+
+  useEffect(() => {
+    const maxYear = years[0];
+    if (year > maxYear) {
+      setYear(maxYear);
+    }
+  }, [year, years]);
 
   useEffect(() => {
     onChange({

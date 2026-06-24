@@ -1,0 +1,168 @@
+{
+  "brand": {
+    "name": "Taaraa",
+    "native": "तारा"
+  },
+  "nav": {
+    "cta": "मुफ़्त वाचन ↗"
+  },
+  "hero": {
+    "eyebrow": "वैदिक ज्योतिष",
+    "title": "प्राचीन ज्ञान.<br></br><em>सटीक गणना।</em>",
+    "subtitle": "वैदिक ज्योतिष जन्म के क्षण में ग्रहों की सटीक स्थिति का अध्ययन है — और आपके जीवन पर उनका स्थायी प्रभाव।",
+    "tagline": "आपकी जन्म कुंडली — सटीक, स्पष्ट, आपकी भाषा में",
+    "ctaPrimary": "मुफ़्त वाचन पाएँ",
+    "ctaSecondary": "कैसे काम करता है",
+    "note": "साइनअप नहीं · दैनिक मुफ़्त वाचन · छह भारतीय भाषाएँ"
+  },
+  "science": {
+    "label": "The Science",
+    "title": "Jyotish is not <em>belief.</em><br></br>It is observation.",
+    "intro": "For over 5,000 years, Vedic astronomers mapped the precise positions of planets and correlated them with human experience. These positions are mathematically verifiable — the same astronomy that powers modern orbital mechanics.",
+    "cards": {
+      "planets": {
+        "icon": "🪐",
+        "title": "Planetary positions are mathematical",
+        "body": "At the moment of your birth, every planet occupies a precise degree in the sky — calculable to the arcsecond. This is astronomy, not opinion."
+      },
+      "snapshot": {
+        "icon": "📜",
+        "title": "The chart is a cosmic snapshot",
+        "body": "Your kundali is a map of where every planet was, relative to your birthplace, at the exact moment you arrived. Two people born minutes apart in different cities have meaningfully different charts."
+      },
+      "framework": {
+        "icon": "📐",
+        "title": "Interpretation follows a framework",
+        "body": "Each planet governs domains of life. Each rashi modifies expression. Each house represents a life area. Reading a chart applies a consistent, structured framework — not guesswork."
+      },
+      "dasha": {
+        "icon": "⏱️",
+        "title": "Dasha periods are time-coded",
+        "body": "The Vimshottari dasha system divides your life into planetary periods calculated from your Moon's nakshatra at birth. Every person's sequence is unique — and mathematically precise."
+      }
+    }
+  },
+  "comparison": {
+    "label": "Why Taaraa",
+    "title": "The problem with<br></br><em>inconsistent readings.</em>",
+    "intro": "A good astrologer knows Jyotish deeply. But human readers get tired, rushed, or inconsistent — the same chart read on different days can sound different. That is not Jyotish failing. That is inconsistency failing you.",
+    "colFactor": "What affects your reading",
+    "colTraditional": "Traditional reading",
+    "colTaaraa": "Taaraa",
+    "rows": {
+      "accuracy": {
+        "factor": "Planetary calculation",
+        "traditional": "Manual, prone to error",
+        "taaraa": "Lahiri sidereal — exact positions"
+      },
+      "consistency": {
+        "factor": "Consistency between readings",
+        "traditional": "Varies by mood & fatigue",
+        "taaraa": "Same framework, every time"
+      },
+      "availability": {
+        "factor": "Availability",
+        "traditional": "Appointment, days of waiting",
+        "taaraa": "Instant, any hour"
+      },
+      "language": {
+        "factor": "Language",
+        "traditional": "Depends on the reader",
+        "taaraa": "English, Hindi, Marathi, Kannada, Telugu & Tamil"
+      },
+      "upselling": {
+        "factor": "Upselling & remedies",
+        "traditional": "Common — gems, pujas pushed",
+        "taaraa": "None — interpretation only"
+      },
+      "cost": {
+        "factor": "Cost",
+        "traditional": "₹500–₹5,000 per session",
+        "taaraa": "Free daily readings included"
+      }
+    }
+  },
+  "process": {
+    "label": "Process",
+    "title": "Three steps to<br></br><em>your reading.</em>",
+    "intro": "No account needed. No waiting. Just your birth details — and we handle the rest.",
+    "steps": {
+      "birth": {
+        "title": "Enter your birth details",
+        "body": "Date, time, and place of birth. The more accurate your birth time, the more precise your lagna and house placements will be."
+      },
+      "calculate": {
+        "title": "We calculate your chart",
+        "body": "Using precise sidereal astronomy with the Lahiri ayanamsa, we compute your exact planetary positions in the Vedic system."
+      },
+      "read": {
+        "title": "Read your interpretation",
+        "body": "Classical Jyotish principles are applied to your exact chart. You receive a personalised reading in plain language — in the language you choose."
+      }
+    }
+  },
+  "readings": {
+    "label": "What You Get",
+    "title": "What your<br></br><em>kundali reveals.</em>",
+    "intro": "Three focused readings, each grounded in your exact chart positions — not your sun sign, not a generic weekly forecast.",
+    "included": "Included",
+    "cards": {
+      "personality": {
+        "icon": "☉",
+        "title": "Personality",
+        "native": "వ్యక్తిత్వం",
+        "body": "How you show up in the world, your inner emotional life, and your strongest natural gifts — described in everyday language, not astrological jargon."
+      },
+      "career": {
+        "icon": "♄",
+        "title": "Career & Dharma",
+        "native": "వృత్తి & ధర్మం",
+        "body": "Career paths that suit your nature, your working style and strengths, and practical advice for your professional life — from your 10th house and its lord."
+      },
+      "dasha": {
+        "icon": "☽",
+        "title": "Current Dasha",
+        "native": "ప్రస్తుత దశ",
+        "body": "Which planetary period governs your life right now, what themes it activates in your chart, and what the next 12–18 months may hold."
+      }
+    }
+  },
+  "testimonials": {
+    "label": "Early Readers",
+    "title": "What people<br></br><em>are saying.</em>",
+    "items": {
+      "one": {
+        "stars": "★★★★★",
+        "quote": "The chart was more accurate than others I had seen. Reading it in Telugu made everything easy to understand.",
+        "name": "Lakshmi P. · Hyderabad"
+      },
+      "two": {
+        "stars": "★★★★★",
+        "quote": "The personality reading described me more accurately than two astrologers I had paid ₹2,000 each. No upselling, no fear tactics.",
+        "name": "Ravi K. · Vijayawada"
+      },
+      "three": {
+        "stars": "★★★★☆",
+        "quote": "The dasha reading was spot on for what's happening in my life this year. Practical and clear — not vague predictions.",
+        "name": "Preethi M. · Bengaluru"
+      }
+    }
+  },
+  "chart": {
+    "label": "Your chart",
+    "title": "Enter your details.<br></br><em>Read your stars.</em>",
+    "intro": "Generate your Lahiri sidereal chart and choose a reading — personality, career, or current life phase.",
+    "placeholder": "Fill in your birth details and tap Generate Chart"
+  },
+  "cta": {
+    "label": "Begin",
+    "title": "Your chart has been written.<br></br><em>Read it.</em>",
+    "body": "The planets do not change their positions based on who is reading your chart. We simply make sure nothing is lost between the cosmos and you.",
+    "button": "Get your free reading ↗",
+    "note": "Daily free readings · No credit card needed"
+  },
+  "footer": {
+    "tagline": "Vedic astrology, calculated precisely · Six Indian languages",
+    "disclaimer": "Taaraa uses precise sidereal calculations and structured Jyotish interpretation. We do not offer remedies, gemstone recommendations, or religious services. Readings are for self-reflection and guidance only."
+  }
+}

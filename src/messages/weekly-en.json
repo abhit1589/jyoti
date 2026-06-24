@@ -1,0 +1,17 @@
+{
+  "title": "This week's rashifal",
+  "subtitle": "See what the week holds for your Moon sign — in work, relationships, health, and the chances ahead.",
+  "badge": "Always free",
+  "weekOf": "This week · {range}",
+  "disclaimer": "Guidance for your Chandra (Moon) sign from birth. For insight from your full chart — lagna, planets, and dashas — explore your personalised reading on the home page.",
+  "loading": "Reading this week's stars for you…",
+  "errorTitle": "Just a moment",
+  "error": "We couldn't show this week's rashifal right now. Please check back in a little while.",
+  "retry": "Try again",
+  "backHome": "Back to home",
+  "personalReading": "Get your personal chart reading",
+  "nav": {
+    "weekly": "Rashifal",
+    "reading": "Free reading"
+  }
+}
