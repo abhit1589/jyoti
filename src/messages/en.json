@@ -1,0 +1,84 @@
+{
+  "meta": {
+    "title": "Jyoti — Vedic Astrology",
+    "description": "Vedic birth chart and Jyotish readings in English, Hindi, Marathi, Kannada, Telugu, and Tamil"
+  },
+  "nav": {
+    "language": "Language"
+  },
+  "hero": {
+    "title": "Vedic Astrology for India",
+    "subtitle": "Accurate Lahiri sidereal charts with personalised Jyotish readings in English, Hindi, Marathi, Kannada, Telugu, and Tamil.",
+    "badge": "Lahiri Ayanamsa · Sidereal"
+  },
+  "form": {
+    "title": "Birth Details",
+    "hint": "Pick your date and time from the dropdowns — no calendar needed.",
+    "name": "Name (optional)",
+    "namePlaceholder": "Your name",
+    "date": "Date of birth",
+    "time": "Time of birth",
+    "day": "Day",
+    "month": "Month",
+    "year": "Year",
+    "hour": "Hour",
+    "minute": "Min",
+    "period": "AM/PM",
+    "am": "AM",
+    "pm": "PM",
+    "city": "Birth place",
+    "submit": "Generate Chart",
+    "loading": "Calculating…"
+  },
+  "chart": {
+    "title": "Rashi Chart (D1)",
+    "lagna": "Lagna (Ascendant)",
+    "ayanamsa": "Lahiri Ayanamsa",
+    "planets": "Planetary Positions",
+    "dasha": "Vimshottari Dasha",
+    "currentDasha": "Current Mahadasha",
+    "house": "House",
+    "rashi": "Rashi",
+    "nakshatra": "Nakshatra",
+    "pada": "Pada",
+    "retrograde": "Retrograde"
+  },
+  "reading": {
+    "title": "Jyotish Reading",
+    "subtitle": "Personalised reading based on your calculated chart data only.",
+    "birthStar": "Birth star (Janma Nakshatra)",
+    "birthRashi": "Birth rashi (Moon)",
+    "lagnaRashi": "Lagna rashi",
+    "moonSign": "Chandra rashi",
+    "ascendant": "Ascendant",
+    "pada": "Pada",
+    "brief": "Brief reading",
+    "detailed": "Detailed reading",
+    "focus": {
+      "personality": "Personality",
+      "career": "Career & Dharma",
+      "dasha": "Current Dasha"
+    },
+    "generate": "Get Reading",
+    "loading": "Consulting the stars…",
+    "waitHint": "Preparing your reading — first words appear in 5–15 seconds. Please wait.",
+    "streaming": "Receiving reading…",
+    "limit": "{used} of {limit} free readings used today",
+    "limitReached": "Daily reading limit reached. Try again tomorrow.",
+    "noApiKey": "Readings are not available right now. Please try again later.",
+    "checking": "Checking reading service…",
+    "statusError": "Could not reach the reading service. Please try again later.",
+    "genericError": "Reading failed. Please try again.",
+    "emptyReading": "No reading was returned. Please try again.",
+    "disclaimer": "For guidance and entertainment only. Not medical, legal, or financial advice.",
+    "truncated": "Reading may be incomplete. Try the detailed reading option for more."
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again.",
+    "invalidBirth": "Please check your birth date, time, and place."
+  },
+  "footer": {
+    "license": "Sidereal calculations use Lahiri ayanamsa.",
+    "payments": "Payments via Razorpay — coming after testing."
+  }
+}
