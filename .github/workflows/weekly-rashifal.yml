@@ -1,0 +1,36 @@
+# Warms the weekly rashifal cache for all six locales.
+# Runs every Monday 03:00 UTC (same schedule as vercel.json crons).
+#
+# Setup (GitHub repo → Settings):
+#   Secrets  → CRON_SECRET  (same value as Vercel, if you use one)
+#   Variables → PRODUCTION_URL (optional, default below)
+
+name: Weekly rashifal
+
+on:
+  schedule:
+    - cron: "0 3 * * 1"
+  workflow_dispatch:
+
+jobs:
+  warm-cache:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Warm weekly rashifal on production
+        env:
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+          SITE_URL: ${{ vars.PRODUCTION_URL }}
+        run: |
+          URL="${SITE_URL:-https://astro-xi-gilt.vercel.app}"
+          echo "Calling $URL/api/cron/weekly-rashi"
+          if [ -n "$CRON_SECRET" ]; then
+            curl -fsS --max-time 300 \
+              -H "Authorization: Bearer $CRON_SECRET" \
+              "$URL/api/cron/weekly-rashi"
+          else
+            curl -fsS --max-time 300 \
+              "$URL/api/cron/weekly-rashi"
+          fi
+          echo ""
+          echo "Weekly rashifal cache warm complete."
