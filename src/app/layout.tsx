@@ -39,8 +39,10 @@ const notoTelugu = Noto_Sans_Telugu({
 });
 
 export const metadata: Metadata = {
-  title: "Taaraa — Vedic Astrology, Precisely",
-  description: "Lahiri sidereal birth charts and personalised Jyotish readings in six Indian languages",
+  metadataBase: new URL("https://jyotishyam.in"),
+  title: "Taara Jyotishyam — Vedic Astrology, Precisely",
+  description:
+    "The sky wrote your story at the moment of your birth. We help you read it. Lahiri sidereal birth charts and Jyotish readings in six Indian languages.",
 };
 
 export default function RootLayout({

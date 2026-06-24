@@ -26,6 +26,8 @@ export function ChartDisplay({ chart }: ChartDisplayProps) {
   const nakshatras = NAKSHATRAS[locale];
   const labels = PLANET_LABELS[locale];
 
+  const moon = chart.planets.find((p) => p.id === "moon")!;
+
   const currentDasha = chart.vimshottari.periods.find((p) => p.isCurrent);
 
   return (
@@ -39,10 +41,14 @@ export function ChartDisplay({ chart }: ChartDisplayProps) {
             {rashis[chart.lagna.rashi - 1]} ({formatDeg(chart.lagna.rashiDegree)})
           </p>
           <p>
-            <span className="font-medium text-accent">{t("nakshatra")}:</span>{" "}
+            <span className="font-medium text-accent">{t("birthStar")}:</span>{" "}
+            {nakshatras[moon.nakshatra - 1]} — {t("pada")} {moon.pada}
+          </p>
+          <p>
+            <span className="font-medium text-accent">{t("lagnaNakshatra")}:</span>{" "}
             {nakshatras[chart.lagna.nakshatra - 1]} — {t("pada")} {chart.lagna.pada}
           </p>
-          <p className="sm:col-span-2">
+          <p>
             <span className="font-medium text-accent">{t("ayanamsa")}:</span>{" "}
             {chart.ayanamsa.toFixed(4)}°
           </p>

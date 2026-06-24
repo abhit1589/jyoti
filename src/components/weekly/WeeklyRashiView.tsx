@@ -15,6 +15,8 @@ interface WeeklyRashiViewProps {
 export async function WeeklyRashiView({ locale, data }: WeeklyRashiViewProps) {
   const t = await getTranslations("weekly");
   const tChart = await getTranslations("chart");
+  const tBrand = await getTranslations("landing");
+  const brandNative = tBrand("brand.native");
   const rashis = RASHIS[locale];
 
   return (
@@ -61,7 +63,17 @@ export async function WeeklyRashiView({ locale, data }: WeeklyRashiViewProps) {
       </main>
 
       <footer className="taara-footer">
-        <span className="taara-footer-logo">Taaraa</span>
+        <span className="taara-footer-logo">
+          {brandNative ? (
+            <span className="taara-logo-stack taara-logo-stack-center">
+              <span className="taara-logo-primary">{brandNative}</span>
+              <span className="taara-logo-sub">{tBrand("brand.name")}</span>
+            </span>
+          ) : (
+            tBrand("brand.name")
+          )}
+        </span>
+        <p className="taara-footer-domain">{tBrand("brand.domain")}</p>
       </footer>
     </div>
   );

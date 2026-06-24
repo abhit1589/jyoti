@@ -1,7 +1,8 @@
 {
   "brand": {
-    "name": "Taaraa",
-    "native": "తారా"
+    "name": "Taara Jyotishyam",
+    "native": "",
+    "domain": "jyotishyam.in"
   },
   "nav": {
     "cta": "Free reading ↗"
@@ -9,6 +10,7 @@
   "hero": {
     "eyebrow": "Vedic Jyotish",
     "title": "Ancient wisdom.<br></br><em>Precisely calculated.</em>",
+    "quote": "The sky wrote your story at the moment of your birth. We help you read it.",
     "subtitle": "Vedic astrology is the precise study of planetary positions at the moment of your birth — and their lasting influence on your life's path. Every calculation grounded in the exact science of the cosmos.",
     "tagline": "Your birth chart — accurate, clear, in your language",
     "ctaPrimary": "Get your free reading",
@@ -43,12 +45,12 @@
     }
   },
   "comparison": {
-    "label": "Why Taaraa",
+    "label": "Why Taara Jyotishyam",
     "title": "The problem with<br></br><em>inconsistent readings.</em>",
     "intro": "A good astrologer knows Jyotish deeply. But human readers get tired, rushed, or inconsistent — the same chart read on different days can sound different. That is not Jyotish failing. That is inconsistency failing you.",
     "colFactor": "What affects your reading",
     "colTraditional": "Traditional reading",
-    "colTaaraa": "Taaraa",
+    "colTaaraa": "Taara Jyotishyam",
     "rows": {
       "accuracy": {
         "factor": "Planetary calculation",
@@ -163,6 +165,6 @@
   },
   "footer": {
     "tagline": "Vedic astrology, calculated precisely · Six Indian languages",
-    "disclaimer": "Taaraa uses precise sidereal calculations and structured Jyotish interpretation. We do not offer remedies, gemstone recommendations, or religious services. Readings are for self-reflection and guidance only."
+    "disclaimer": "Taara Jyotishyam uses precise sidereal calculations and structured Jyotish interpretation. We do not offer remedies, gemstone recommendations, or religious services. Readings are for self-reflection and guidance only."
   }
 }

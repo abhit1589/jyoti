@@ -9,17 +9,24 @@ export function AppNav() {
   const tWeekly = useTranslations("weekly");
   const pathname = usePathname();
   const onWeekly = pathname === "/weekly";
+  const brandNative = tLanding("brand.native");
 
   return (
     <nav className="taara-nav">
       <Link href="/" className="taara-logo">
-        {tLanding("brand.name")}
-        <span className="taara-logo-native">{tLanding("brand.native")}</span>
+        {brandNative ? (
+          <span className="taara-logo-stack">
+            <span className="taara-logo-primary">{brandNative}</span>
+            <span className="taara-logo-sub">{tLanding("brand.name")}</span>
+          </span>
+        ) : (
+          tLanding("brand.name")
+        )}
       </Link>
-      <div className="flex flex-wrap items-center justify-end gap-2 sm:gap-3">
+      <div className="taara-nav-actions">
         <Link
           href="/weekly"
-          className={`taara-nav-link${onWeekly ? " taara-nav-link-active" : ""}`}
+          className={`taara-nav-link taara-nav-weekly${onWeekly ? " taara-nav-link-active" : ""}`}
         >
           {tWeekly("nav.weekly")}
         </Link>

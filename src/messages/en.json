@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Taaraa — Vedic Astrology, Precisely",
-    "description": "Lahiri sidereal birth charts and personalised Jyotish readings in English, Hindi, Marathi, Kannada, Telugu, and Tamil"
+    "title": "Taara Jyotishyam — Vedic Astrology, Precisely",
+    "description": "The sky wrote your story at the moment of your birth. We help you read it. Lahiri sidereal birth charts and Jyotish readings in six Indian languages."
   },
   "nav": {
     "language": "Language"
@@ -40,6 +40,8 @@
     "house": "House",
     "rashi": "Rashi",
     "nakshatra": "Nakshatra",
+    "birthStar": "Birth star (Janma Nakshatra)",
+    "lagnaNakshatra": "Lagna nakshatra",
     "pada": "Pada",
     "retrograde": "Retrograde"
   },

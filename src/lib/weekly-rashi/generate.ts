@@ -27,7 +27,7 @@ function buildPrompt(locale: Locale, transitContext: string, weekLabel: string):
   const rashis = RASHIS[locale];
   const rashiList = rashis.map((name, i) => `${i + 1}. ${name}`).join("\n");
 
-  return `You are writing Taaraa's free weekly Chandra-rashi (Moon-sign) outlook for ${weekLabel}.
+  return `You are writing Taara Jyotishyam's free weekly Chandra-rashi (Moon-sign) outlook for ${weekLabel}.
 Language: ${READING_LANGUAGE[locale]}. ${LANGUAGE_RULE[locale]}
 
 Current slow-transit context (use only for tone — do not mention planets, signs, or houses in the output):

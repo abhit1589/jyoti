@@ -8,6 +8,7 @@ import { Link } from "@/i18n/navigation";
 export function LandingPage() {
   const t = useTranslations("landing");
   const tWeekly = useTranslations("weekly");
+  const brandNative = t("brand.native");
 
   const scienceCards = ["planets", "snapshot", "framework", "dasha"] as const;
   const steps = ["birth", "calculate", "read"] as const;
@@ -37,6 +38,7 @@ export function LandingPage() {
         <h1 className="taara-hero-title">
           {t.rich("hero.title", { em: (c) => <em>{c}</em>, br: () => <br /> })}
         </h1>
+        <blockquote className="taara-hero-quote">{t("hero.quote")}</blockquote>
         <p className="taara-hero-sub">{t("hero.subtitle")}</p>
         <p className="taara-hero-native">{t("hero.tagline")}</p>
         <div className="taara-hero-actions">
@@ -202,9 +204,16 @@ export function LandingPage() {
 
       <footer className="taara-footer">
         <span className="taara-footer-logo">
-          {t("brand.name")}{" "}
-          <span className="taara-logo-native">{t("brand.native")}</span>
+          {brandNative ? (
+            <span className="taara-logo-stack taara-logo-stack-center">
+              <span className="taara-logo-primary">{brandNative}</span>
+              <span className="taara-logo-sub">{t("brand.name")}</span>
+            </span>
+          ) : (
+            t("brand.name")
+          )}
         </span>
+        <p className="taara-footer-domain">{t("brand.domain")}</p>
         <p>{t("footer.tagline")}</p>
         <p className="taara-footer-disclaimer">{t("footer.disclaimer")}</p>
       </footer>

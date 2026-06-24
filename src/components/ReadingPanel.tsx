@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { getBirthIdentity } from "@/lib/vedic/birth-identity";
 import { parseJsonResponse } from "@/lib/api/client";
@@ -104,20 +104,35 @@ export function ReadingPanel({ chart }: ReadingPanelProps) {
     hasApiKey: false,
     loaded: false,
   });
-
-  const refreshUsage = useCallback(async () => {
-    try {
-      setUsage(await fetchUsage());
-      setError(null);
-    } catch {
-      setUsage((u) => ({ ...u, loaded: true, hasApiKey: false }));
-      setError(t("statusError"));
-    }
-  }, [t]);
+  const mountedRef = useRef(true);
 
   useEffect(() => {
-    refreshUsage();
-  }, [refreshUsage]);
+    mountedRef.current = true;
+    return () => {
+      mountedRef.current = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    let active = true;
+
+    (async () => {
+      try {
+        const data = await fetchUsage();
+        if (!active) return;
+        setUsage(data);
+        setError(null);
+      } catch {
+        if (!active) return;
+        setUsage((u) => ({ ...u, loaded: true, hasApiKey: false }));
+        setError(t("statusError"));
+      }
+    })();
+
+    return () => {
+      active = false;
+    };
+  }, [t]);
 
   const limitReached = usage.loaded && usage.used >= usage.limit;
   const showReadingBox = loading || reading.length > 0;
@@ -160,9 +175,12 @@ export function ReadingPanel({ chart }: ReadingPanelProps) {
       if (contentType.includes("text/event-stream")) {
         let accumulated = "";
         const result = await consumeSse(res, (chunk) => {
+          if (!mountedRef.current) return;
           accumulated += chunk;
           setReading(accumulated);
         });
+
+        if (!mountedRef.current) return;
 
         if (!accumulated.trim()) {
           throw new Error(t("emptyReading"));
@@ -194,9 +212,11 @@ export function ReadingPanel({ chart }: ReadingPanelProps) {
         }));
       }
     } catch (err) {
-      setError(err instanceof Error ? err.message : t("genericError"));
+      if (mountedRef.current) {
+        setError(err instanceof Error ? err.message : t("genericError"));
+      }
     } finally {
-      setLoading(false);
+      if (mountedRef.current) setLoading(false);
     }
   }
 

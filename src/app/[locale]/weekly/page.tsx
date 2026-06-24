@@ -16,9 +16,10 @@ export async function generateMetadata({
   const { locale } = await params;
   if (!isLocale(locale)) return {};
   const t = await getTranslations({ locale, namespace: "weekly" });
+  const tBrand = await getTranslations({ locale, namespace: "landing" });
   return {
-    title: `Taaraa — ${t("title")}`,
-    description: t("subtitle"),
+    title: `${tBrand("brand.name")} — ${t("title")}`,
+    description: tBrand("hero.quote"),
   };
 }
 

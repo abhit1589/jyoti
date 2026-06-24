@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { getCitiesForLocale, getCityById } from "@/lib/vedic/cities";
 import { DateTimePicker } from "@/components/DateTimePicker";
@@ -21,6 +21,14 @@ export function BirthForm({ onChart }: BirthFormProps) {
   const [cityId, setCityId] = useState("hyderabad");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const mountedRef = useRef(true);
+
+  useEffect(() => {
+    mountedRef.current = true;
+    return () => {
+      mountedRef.current = false;
+    };
+  }, []);
 
   const city = getCityById(cityId) ?? getCityById("hyderabad") ?? cities[0];
 
@@ -53,11 +61,13 @@ export function BirthForm({ onChart }: BirthFormProps) {
       const data = await parseJsonResponse<{ chart?: VedicChart; error?: string }>(res);
       if (!res.ok) throw new Error(data.error ?? te("generic"));
       if (!data.chart) throw new Error(te("generic"));
-      onChart(data.chart);
+      if (mountedRef.current) onChart(data.chart);
     } catch (err) {
-      setError(err instanceof Error ? err.message : te("generic"));
+      if (mountedRef.current) {
+        setError(err instanceof Error ? err.message : te("generic"));
+      }
     } finally {
-      setLoading(false);
+      if (mountedRef.current) setLoading(false);
     }
   }
 

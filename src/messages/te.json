@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Taaraa — Vedic Astrology, Precisely",
-    "description": "English, हिन्दी, मराठी, ಕನ್ನಡ, తెలుగు, தமிழ్‌లో వైదిక జన్మ చార్ట్ మరియు జ్యోతిష వివరణలు"
+    "title": "Taara Jyotishyam — Vedic Astrology, Precisely",
+    "description": "మీ జన్మ క్షణంలో ఆకాశం మీ కథ రాసింది. దాన్ని చదవడంలో మేము మీకు సహాయం చేస్తాము."
   },
   "nav": {
     "language": "భాష"
@@ -40,6 +40,8 @@
     "house": "భావం",
     "rashi": "రాశి",
     "nakshatra": "నక్షత్రం",
+    "birthStar": "జన్మ నక్షత్రం (జన్మ తార)",
+    "lagnaNakshatra": "లగ్న నక్షత్రం",
     "pada": "పాదం",
     "retrograde": "వక్రి"
   },

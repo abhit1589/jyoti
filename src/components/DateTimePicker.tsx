@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import {
   getDayOptions,
@@ -21,37 +21,33 @@ export function DateTimePicker({ onChange }: DateTimePickerProps) {
   const t = useTranslations("form");
   const locale = useLocale() as Locale;
 
+  const years = useMemo(() => getYearOptions(1940, 1, new Date()), []);
+  const maxYear = years[0]!;
+
   const [day, setDay] = useState(15);
   const [month, setMonth] = useState(1);
-  const [year, setYear] = useState(1990);
+  const [year, setYear] = useState(() => Math.min(1990, maxYear));
   const [hour, setHour] = useState(10);
   const [minute, setMinute] = useState(30);
   const [period, setPeriod] = useState<"AM" | "PM">("AM");
 
-  // Re-read calendar year on mount so the list always reflects "today" (not build time).
-  const years = useMemo(() => getYearOptions(1940, 1, new Date()), []);
   const months = useMemo(() => getMonthLabels(locale), [locale]);
   const days = useMemo(() => getDayOptions(year, month), [year, month]);
 
-  useEffect(() => {
-    if (day > days.length) {
-      setDay(days.length);
-    }
-  }, [day, days.length]);
+  const onChangeRef = useRef(onChange);
+  onChangeRef.current = onChange;
+
+  const clampDay = (y: number, m: number, d: number) => {
+    const max = getDayOptions(y, m).length;
+    return Math.min(d, max);
+  };
 
   useEffect(() => {
-    const maxYear = years[0];
-    if (year > maxYear) {
-      setYear(maxYear);
-    }
-  }, [year, years]);
-
-  useEffect(() => {
-    onChange({
+    onChangeRef.current({
       date: toIsoDate(year, month, day),
       time: to24HourTime(hour, minute, period),
     });
-  }, [day, month, year, hour, minute, period, onChange]);
+  }, [day, month, year, hour, minute, period]);
 
   return (
     <div className="space-y-4">
@@ -77,7 +73,11 @@ export function DateTimePicker({ onChange }: DateTimePickerProps) {
             <span className="text-xs text-muted">{t("month")}</span>
             <select
               value={month}
-              onChange={(e) => setMonth(Number(e.target.value))}
+              onChange={(e) => {
+                const nextMonth = Number(e.target.value);
+                setMonth(nextMonth);
+                setDay((d) => clampDay(year, nextMonth, d));
+              }}
               className="input-field"
             >
               {months.map((label, idx) => (
@@ -92,7 +92,11 @@ export function DateTimePicker({ onChange }: DateTimePickerProps) {
             <span className="text-xs text-muted">{t("year")}</span>
             <select
               value={year}
-              onChange={(e) => setYear(Number(e.target.value))}
+              onChange={(e) => {
+                const nextYear = Math.min(Number(e.target.value), maxYear);
+                setYear(nextYear);
+                setDay((d) => clampDay(nextYear, month, d));
+              }}
               className="input-field"
             >
               {years.map((y) => (

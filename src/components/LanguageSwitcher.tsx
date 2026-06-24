@@ -18,7 +18,7 @@ export function LanguageSwitcher() {
       <select
         value={locale}
         onChange={(e) => router.replace(pathname, { locale: e.target.value as Locale })}
-        className="input-field min-w-[8.5rem] cursor-pointer py-1.5 text-sm"
+        className="input-field min-w-[7rem] cursor-pointer py-1.5 text-sm sm:min-w-[8.5rem]"
         aria-label={t("language")}
       >
         {LOCALES.map((code) => (

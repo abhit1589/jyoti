@@ -1,7 +1,8 @@
 {
   "brand": {
-    "name": "Taaraa",
-    "native": "ತಾರಾ"
+    "name": "Taara Jyotishyam",
+    "native": "ತಾರಾ ಜ್ಯೋತಿಷ್ಯ",
+    "domain": "jyotishyam.in"
   },
   "nav": {
     "cta": "ಉಚಿತ ಓದು ↗"
@@ -9,160 +10,161 @@
   "hero": {
     "eyebrow": "ವೈದಿಕ ಜ್ಯೋತಿಷ್ಯ",
     "title": "ಪ್ರಾಚೀನ ಜ್ಞಾನ.<br></br><em>ನಿಖರವಾಗಿ ಲೆಕ್ಕ.</em>",
-    "subtitle": "Vedic astrology is the precise study of planetary positions at the moment of your birth — and their lasting influence on your life's path. Every calculation grounded in the exact science of the cosmos.",
+    "quote": "ನಿಮ್ಮ ಜನ್ಮ ಕ್ಷಣದಲ್ಲಿ ಆಕಾಶವು ನಿಮ್ಮ ಕಥೆಯನ್ನು ಬರೆದಿದೆ. ಅದನ್ನು ಓದಲು ನಾವು ಸಹಾಯ ಮಾಡುತ್ತೇವೆ.",
+    "subtitle": "ವೈದಿಕ ಜ್ಯೋತಿಷ್ಯವು ಜನ್ಮ ಕ್ಷಣದಲ್ಲಿ ಗ್ರಹಗಳ ನಿಖರ ಸ್ಥಾನದ ಅಧ್ಯಯನ — ಮತ್ತು ನಿಮ್ಮ ಜೀವನ ಮಾರ್ಗದ ಮೇಲೆ ಅವುಗಳ ದೀರ್ಘಕಾಲಿಕ ಪ್ರಭಾವ. ಪ್ರತಿ ಲೆಕ್ಕಾಚಾರ ವಿಶ್ವದ ನಿಖರ ವಿಜ್ಞಾನದ ಮೇಲೆ ಆಧಾರಿತ.",
     "tagline": "ನಿಮ್ಮ ಜನ್ಮ ಕುಂಡಲಿ — ನಿಖರ, ಸ್ಪಷ್ಟ, ನಿಮ್ಮ ಭಾಷೆಯಲ್ಲಿ",
     "ctaPrimary": "ಉಚಿತ ಓದು ಪಡೆಯಿರಿ",
-    "ctaSecondary": "How it works",
+    "ctaSecondary": "ಹೇಗೆ ಕೆಲಸ ಮಾಡುತ್ತದೆ",
     "note": "ಸೈನ್‌ಅಪ್ ಇಲ್ಲ · ದೈನಂದಿನ ಉಚಿತ ಓದುಗಳು · ಆರು ಭಾರತೀಯ ಭಾಷೆಗಳು"
   },
   "science": {
-    "label": "The Science",
-    "title": "Jyotish is not <em>belief.</em><br></br>It is observation.",
-    "intro": "For over 5,000 years, Vedic astronomers mapped the precise positions of planets and correlated them with human experience. These positions are mathematically verifiable — the same astronomy that powers modern orbital mechanics.",
+    "label": "ವಿಜ್ಞಾನ",
+    "title": "ಜ್ಯೋತಿಷ್ಯ <em>ನಂಬಿಕೆ</em> ಅಲ್ಲ.<br></br>ಇದು ನಿರೀಕ್ಷಣೆ.",
+    "intro": "5,000 ವರ್ಷಗಳಿಗಿಂತ ಹೆಚ್ಚು ಕಾಲ ವೈದಿಕ ಖಗೋಳಶಾಸ್ತ್ರಜ್ಞರು ಗ್ರಹ ಸ್ಥಾನಗಳನ್ನು ನಕ್ಷೆ ಮಾಡಿ ಮಾನವ ಅನುಭವದೊಂದಿಗೆ ಸಂಪರ್ಕಿಸಿದರು. ಈ ಸ್ಥಾನಗಳು ಗಣಿತೀಯವಾಗಿ ಸಾಬೀತುಪಡಿಸಬಹುದು.",
     "cards": {
       "planets": {
         "icon": "🪐",
-        "title": "Planetary positions are mathematical",
-        "body": "At the moment of your birth, every planet occupies a precise degree in the sky — calculable to the arcsecond. This is astronomy, not opinion."
+        "title": "ಗ್ರಹ ಸ್ಥಾನಗಳು ಗಣಿತೀಯ",
+        "body": "ಜನ್ಮ ಕ್ಷಣದಲ್ಲಿ ಪ್ರತಿ ಗ್ರಹ ಆಕಾಶದಲ್ಲಿ ನಿಖರ ಡಿಗ್ರಿಯಲ್ಲಿ ಇರುತ್ತದೆ — ಆರ್ಕ್‌ಸೆಕೆಂಡ್ ವರೆಗೆ ಲೆಕ್ಕಿಸಬಹುದು. ಇದು ಖಗೋಳಶಾಸ್ತ್ರ, ಅಭಿಪ್ರಾಯ ಅಲ್ಲ."
       },
       "snapshot": {
         "icon": "📜",
-        "title": "The chart is a cosmic snapshot",
-        "body": "Your kundali is a map of where every planet was, relative to your birthplace, at the exact moment you arrived. Two people born minutes apart in different cities have meaningfully different charts."
+        "title": "ಕುಂಡಲಿ ಒಂದು ವಿಶ್ವ ಚಿತ್ರ",
+        "body": "ನಿಮ್ಮ ಕುಂಡಲಿ ಜನ್ಮದ ಆ ನಿಖರ ಕ್ಷಣದಲ್ಲಿ, ಜನ್ಮಸ್ಥಳಕ್ಕೆ ಸಂಬಂಧಿಸಿ ಪ್ರತಿ ಗ್ರಹ ಎಲ್ಲಿತ್ತು ಎಂದು ತೋರಿಸುತ್ತದೆ."
       },
       "framework": {
         "icon": "📐",
-        "title": "Interpretation follows a framework",
-        "body": "Each planet governs domains of life. Each rashi modifies expression. Each house represents a life area. Reading a chart applies a consistent, structured framework — not guesswork."
+        "title": "ವ್ಯಾಖ್ಯಾನ ಒಂದು ಚೌಕಟ್ಟನ್ನು ಅನುಸರಿಸುತ್ತದೆ",
+        "body": "ಪ್ರತಿ ಗ್ರಹ ಜೀವನದ ಕ್ಷೇತ್ರಗಳನ್ನು ಆಳುತ್ತದೆ. ಪ್ರತಿ ರಾಶಿ ಅಭಿವ್ಯಕ್ತಿಯನ್ನು ಬದಲಾಯಿಸುತ್ತದೆ. ಪ್ರತಿ ಭಾವ ಜೀವನದ ಒಂದು ವಿಭಾಗವನ್ನು ಸೂಚಿಸುತ್ತದೆ."
       },
       "dasha": {
         "icon": "⏱️",
-        "title": "Dasha periods are time-coded",
-        "body": "The Vimshottari dasha system divides your life into planetary periods calculated from your Moon's nakshatra at birth. Every person's sequence is unique — and mathematically precise."
+        "title": "ದಶಾ ಕಾಲಗಳು ಗಣಿತದಿಂದ ನಿರ್ಧರಿಸಲ್ಪಡುತ್ತವೆ",
+        "body": "ವಿಂಶೋತ್ತರಿ ದಶಾ ವ್ಯವಸ್ಥೆ ಜನ್ಮ ಸಮಯದ ಚಂದ್ರ ನಕ್ಷತ್ರದಿಂದ ಗ್ರಹ ಕಾಲಗಳನ್ನು ಲೆಕ್ಕಿಸುತ್ತದೆ. ಪ್ರತಿ ವ್ಯಕ್ತಿಯ ಕ್ರಮ ವಿಶಿಷ್ಟ — ಮತ್ತು ಗಣಿತೀಯವಾಗಿ ನಿಖರ."
       }
     }
   },
   "comparison": {
-    "label": "Why Taaraa",
-    "title": "The problem with<br></br><em>inconsistent readings.</em>",
-    "intro": "A good astrologer knows Jyotish deeply. But human readers get tired, rushed, or inconsistent — the same chart read on different days can sound different. That is not Jyotish failing. That is inconsistency failing you.",
-    "colFactor": "What affects your reading",
-    "colTraditional": "Traditional reading",
-    "colTaaraa": "Taaraa",
+    "label": "ಏಕೆ ತಾರಾ ಜ್ಯೋತಿಷ್ಯ",
+    "title": "ಅಸ್ಥಿರ<br></br><em>ಓದುಗಳ ಸಮಸ್ಯೆ.</em>",
+    "intro": "ಒಳ್ಳೆಯ ಜ್ಯೋತಿಷಿ ಜ್ಯೋತಿಷ್ಯವನ್ನು ಆಳವಾಗಿ ತಿಳಿದಿದ್ದಾನೆ. ಆದರೆ ಮಾನವ ಓದುಗರು ಆಯಾಸ, ಆತುರ, ಅಸ್ಥಿರತೆ — ಒಂದೇ ಕುಂಡಲಿಯನ್ನು ಬೇರೆ ದಿನ ಓದಿದರೆ ಬೇರೆ ಕೇಳಿಸುತ್ತದೆ.",
+    "colFactor": "ನಿಮ್ಮ ಓದನ್ನು ಏನು ಪ್ರಭಾವಿಸುತ್ತದೆ",
+    "colTraditional": "ಸಾಂಪ್ರದಾಯಿಕ ಓದು",
+    "colTaaraa": "ತಾರಾ ಜ್ಯೋತಿಷ್ಯ",
     "rows": {
       "accuracy": {
-        "factor": "Planetary calculation",
-        "traditional": "Manual, prone to error",
-        "taaraa": "Lahiri sidereal — exact positions"
+        "factor": "ಗ್ರಹ ಲೆಕ್ಕಾಚಾರ",
+        "traditional": "ಮ್ಯಾನುಯಲ್, ದೋಷ ಸಾಧ್ಯತೆ",
+        "taaraa": "ಲಾಹಿರಿ ಸೈಡೀರಿಯಲ್ — ನಿಖರ ಸ್ಥಾನಗಳು"
       },
       "consistency": {
-        "factor": "Consistency between readings",
-        "traditional": "Varies by mood & fatigue",
-        "taaraa": "Same framework, every time"
+        "factor": "ಓದುಗಳ ನಡುವೆ ಸ್ಥಿರತೆ",
+        "traditional": "ಮನಸ್ಥಿತಿ ಮತ್ತು ಆಯಾಸದ ಮೇಲೆ ಅವಲಂಬಿತ",
+        "taaraa": "ಪ್ರತಿ ಬಾರಿ ಒಂದೇ ಚೌಕಟ್ಟು"
       },
       "availability": {
-        "factor": "Availability",
-        "traditional": "Appointment, days of waiting",
-        "taaraa": "Instant, any hour"
+        "factor": "ಲಭ್ಯತೆ",
+        "traditional": "ಅಪಾಯಿಂಟ್‌ಮೆಂಟ್, ದಿನಗಳ ಕಾಯುವಿಕೆ",
+        "taaraa": "ತಕ್ಷಣ, ಯಾವಾಗಲೂ"
       },
       "language": {
-        "factor": "Language",
-        "traditional": "Depends on the reader",
-        "taaraa": "English, Hindi, Marathi, Kannada, Telugu & Tamil"
+        "factor": "ಭಾಷೆ",
+        "traditional": "ಓದುಗನ ಮೇಲೆ ಅವಲಂಬಿತ",
+        "taaraa": "ಇಂಗ್ಲಿಷ್, ಹಿಂದಿ, ಮರಾಠಿ, ಕನ್ನಡ, ತೆಲುಗು ಮತ್ತು ತಮಿಳು"
       },
       "upselling": {
-        "factor": "Upselling & remedies",
-        "traditional": "Common — gems, pujas pushed",
-        "taaraa": "None — interpretation only"
+        "factor": "ಅತಿರಿಕ್ತ ಮಾರಾಟ ಮತ್ತು ಪರಿಹಾರಗಳು",
+        "traditional": "ಸಾಮಾನ್ಯ — ರತ್ನ, ಪೂಜೆ ಸೂಚಿಸಲಾಗುತ್ತದೆ",
+        "taaraa": "ಇಲ್ಲ — ವ್ಯಾಖ್ಯಾನ ಮಾತ್ರ"
       },
       "cost": {
-        "factor": "Cost",
-        "traditional": "₹500–₹5,000 per session",
-        "taaraa": "Free daily readings included"
+        "factor": "ವೆಚ್ಚ",
+        "traditional": "₹500–₹5,000 ಪ್ರತಿ ಸೆಷನ್",
+        "taaraa": "ದೈನಂದಿನ ಉಚಿತ ಓದುಗಳು ಸೇರಿವೆ"
       }
     }
   },
   "process": {
-    "label": "Process",
-    "title": "Three steps to<br></br><em>your reading.</em>",
-    "intro": "No account needed. No waiting. Just your birth details — and we handle the rest.",
+    "label": "ಪ್ರಕ್ರಿಯೆ",
+    "title": "ನಿಮ್ಮ ಓದಿಗೆ<br></br><em>ಮೂರು ಹಂತಗಳು.</em>",
+    "intro": "ಖಾತೆ ಬೇಕಿಲ್ಲ. ಕಾಯುವಿಕೆ ಇಲ್ಲ. ಜನ್ಮ ವಿವರಗಳು ಮಾತ್ರ — ಉಳಿದದ್ದು ನಾವು ನೋಡಿಕೊಳ್ಳುತ್ತೇವೆ.",
     "steps": {
       "birth": {
-        "title": "Enter your birth details",
-        "body": "Date, time, and place of birth. The more accurate your birth time, the more precise your lagna and house placements will be."
+        "title": "ಜನ್ಮ ವಿವರಗಳನ್ನು ನಮೂದಿಸಿ",
+        "body": "ಜನ್ಮ ದಿನಾಂಕ, ಸಮಯ ಮತ್ತು ಸ್ಥಳ. ಜನ್ಮ ಸಮಯ ಎಷ್ಟು ನಿಖರವೋ, ಲಗ್ನ ಮತ್ತು ಭಾವ ಸ್ಥಾನಗಳು ಅಷ್ಟು ನಿಖರ."
       },
       "calculate": {
-        "title": "We calculate your chart",
-        "body": "Using precise sidereal astronomy with the Lahiri ayanamsa, we compute your exact planetary positions in the Vedic system."
+        "title": "ನಾವು ನಿಮ್ಮ ಕುಂಡಲಿ ಲೆಕ್ಕಿಸುತ್ತೇವೆ",
+        "body": "ಲಾಹಿರಿ ಅಯನಾಂಶದೊಂದಿಗೆ ನಿಖರ ಸೈಡೀರಿಯಲ್ ಖಗೋಳಶಾಸ್ತ್ರ ಬಳಸಿ ವೈದಿಕ ವ್ಯವಸ್ಥೆಯಲ್ಲಿ ಗ್ರಹ ಸ್ಥಾನಗಳನ್ನು ಕಂಡುಹಿಡಿಯುತ್ತೇವೆ."
       },
       "read": {
-        "title": "Read your interpretation",
-        "body": "Classical Jyotish principles are applied to your exact chart. You receive a personalised reading in plain language — in the language you choose."
+        "title": "ನಿಮ್ಮ ವ್ಯಾಖ್ಯಾನ ಓದಿ",
+        "body": "ನಿಮ್ಮ ನಿಖರ ಕುಂಡಲಿಗೆ ಶಾಸ್ತ್ರೀಯ ಜ್ಯೋತಿಷ್ಯ ತತ್ವಗಳು ಅನ್ವಯಿಸಲ್ಪಡುತ್ತವೆ. ಆಯ್ಕೆ ಮಾಡಿದ ಭಾಷೆಯಲ್ಲಿ ಸರಳ, ವೈಯಕ್ತಿಕ ಓದು ಸಿಗುತ್ತದೆ."
       }
     }
   },
   "readings": {
-    "label": "What You Get",
-    "title": "What your<br></br><em>kundali reveals.</em>",
-    "intro": "Three focused readings, each grounded in your exact chart positions — not your sun sign, not a generic weekly forecast.",
-    "included": "Included",
+    "label": "ನಿಮಗೆ ಏನು ಸಿಗುತ್ತದೆ",
+    "title": "ನಿಮ್ಮ ಕುಂಡಲಿ<br></br><em>ಏನು ಹೇಳುತ್ತದೆ.</em>",
+    "intro": "ಮೂರು ಕೇಂದ್ರಿತ ಓದುಗಳು — ನಿಮ್ಮ ನಿಖರ ಕುಂಡಲಿ ಸ್ಥಾನಗಳ ಮೇಲೆ ಆಧಾರಿತ, ಸಾಮಾನ್ಯ ರಾಶಿ ಭವಿಷ್ಯ ಅಲ್ಲ.",
+    "included": "ಸೇರಿಸಲಾಗಿದೆ",
     "cards": {
       "personality": {
         "icon": "☉",
-        "title": "Personality",
-        "native": "వ్యక్తిత్వం",
-        "body": "How you show up in the world, your inner emotional life, and your strongest natural gifts — described in everyday language, not astrological jargon."
+        "title": "ವ್ಯಕ್ತಿತ್ವ",
+        "native": "ವ್ಯಕ್ತಿತ್ವ",
+        "body": "ಜಗತ್ತಿಗೆ ನೀವು ಹೇಗೆ ಕಾಣಿಸುತ್ತೀರಿ, ಒಳಗಿನ ಭಾವನಾತ್ಮಕ ಜೀವನ, ನಿಮ್ಮ ಪ್ರಾಕೃತಿಕ ಪ್ರತಿಭೆಗಳು — ಸರಳ ಭಾಷೆಯಲ್ಲಿ."
       },
       "career": {
         "icon": "♄",
-        "title": "Career & Dharma",
-        "native": "వృత్తి & ధర్మం",
-        "body": "Career paths that suit your nature, your working style and strengths, and practical advice for your professional life — from your 10th house and its lord."
+        "title": "ವೃತ್ತಿ ಮತ್ತು ಧರ್ಮ",
+        "native": "ವೃತ್ತಿ ಮತ್ತು ಧರ್ಮ",
+        "body": "ನಿಮ್ಮ ಸ್ವಭಾವಕ್ಕೆ ಸೂಕ್ತ ವೃತ್ತಿ ಮಾರ್ಗಗಳು, ಕೆಲಸದ ಶೈಲಿ, ಬಲಗಳು ಮತ್ತು ವೃತ್ತಿಜೀವನಕ್ಕೆ ಪ್ರಾಯೋಗಿಕ ಸಲಹೆ."
       },
       "dasha": {
         "icon": "☽",
-        "title": "Current Dasha",
-        "native": "ప్రస్తుత దశ",
-        "body": "Which planetary period governs your life right now, what themes it activates in your chart, and what the next 12–18 months may hold."
+        "title": "ಪ್ರಸ್ತುತ ದಶೆ",
+        "native": "ಪ್ರಸ್ತುತ ದಶೆ",
+        "body": "ಈಗ ನಿಮ್ಮ ಜೀವನವನ್ನು ಯಾವ ಗ್ರಹ ಕಾಲ ಆಳುತ್ತಿದೆ, ಯಾವ ವಿಷಯಗಳು ಸಕ್ರಿಯವಾಗಿವೆ, ಮತ್ತು ಮುಂದಿನ 12–18 ತಿಂಗಳು ಏನಾಗಬಹುದು."
       }
     }
   },
   "testimonials": {
-    "label": "Early Readers",
-    "title": "What people<br></br><em>are saying.</em>",
+    "label": "ಆರಂಭಿಕ ಓದುಗರು",
+    "title": "ಜನರು<br></br><em>ಏನು ಹೇಳುತ್ತಾರೆ.</em>",
     "items": {
       "one": {
         "stars": "★★★★★",
-        "quote": "The chart was more accurate than others I had seen. Reading it in Telugu made everything easy to understand.",
-        "name": "Lakshmi P. · Hyderabad"
+        "quote": "ಕುಂಡಲಿ ಬೇರೆ ಕಡೆ ತೋರಿಸಿದ್ದಕ್ಕಿಂತ ಹೆಚ್ಚು ನಿಖರವಾಗಿತ್ತು. ಕನ್ನಡದಲ್ಲಿ ಓದುವುದು ತುಂಬಾ ಸುಲಭವಾಗಿತ್ತು.",
+        "name": "ಲಕ್ಷ್ಮಿ ಪಿ. · ಹೈದರಾಬಾದ್"
       },
       "two": {
         "stars": "★★★★★",
-        "quote": "The personality reading described me more accurately than two astrologers I had paid ₹2,000 each. No upselling, no fear tactics.",
-        "name": "Ravi K. · Vijayawada"
+        "quote": "ವ್ಯಕ್ತಿತ್ವ ಓದು ₹2,000 ಕೊಟ್ಟ ಇಬ್ಬರು ಜ್ಯೋತಿಷಿಗಳಿಗಿಂತ ನನ್ನನ್ನು ನಿಖರವಾಗಿ ವರ್ಣಿಸಿತು. ಮಾರಾಟ ಇಲ್ಲ, ಭಯ ಇಲ್ಲ.",
+        "name": "ರವಿ ಕೆ. · ವಿಜಯವಾಡ"
       },
       "three": {
         "stars": "★★★★☆",
-        "quote": "The dasha reading was spot on for what's happening in my life this year. Practical and clear — not vague predictions.",
-        "name": "Preethi M. · Bengaluru"
+        "quote": "ದಶಾ ಓದು ಈ ವರ್ಷ ನನ್ನ ಜೀವನದಲ್ಲಿ ನಡೆಯುತ್ತಿರುವದಕ್ಕೆ ಹೊಂದಿಕೆಯಾಯಿತು. ಸ್ಪಷ್ಟ ಮತ್ತು ಪ್ರಾಯೋಗಿಕ.",
+        "name": "ಪ್ರೀತಿ ಎಂ. · ಬೆಂಗಳೂರು"
       }
     }
   },
   "chart": {
-    "label": "Your chart",
-    "title": "Enter your details.<br></br><em>Read your stars.</em>",
-    "intro": "Generate your Lahiri sidereal chart and choose a reading — personality, career, or current life phase.",
-    "placeholder": "Fill in your birth details and tap Generate Chart"
+    "label": "ನಿಮ್ಮ ಕುಂಡಲಿ",
+    "title": "ವಿವರಗಳನ್ನು ನಮೂದಿಸಿ.<br></br><em>ನಿಮ್ಮ ನಕ್ಷತ್ರಗಳನ್ನು ಓದಿ.</em>",
+    "intro": "ಲಾಹಿರಿ ಸೈಡೀರಿಯಲ್ ಕುಂಡಲಿ ರಚಿಸಿ — ವ್ಯಕ್ತಿತ್ವ, ವೃತ್ತಿ ಅಥವಾ ಪ್ರಸ್ತುತ ದಶೆ ಓದು ಆಯ್ಕೆಮಾಡಿ.",
+    "placeholder": "ಜನ್ಮ ವಿವರಗಳನ್ನು ಭರ್ತಿ ಮಾಡಿ ಕುಂಡಲಿ ರಚಿಸಿ ಒತ್ತಿ"
   },
   "cta": {
-    "label": "Begin",
-    "title": "Your chart has been written.<br></br><em>Read it.</em>",
-    "body": "The planets do not change their positions based on who is reading your chart. We simply make sure nothing is lost between the cosmos and you.",
-    "button": "Get your free reading ↗",
-    "note": "Daily free readings · No credit card needed"
+    "label": "ಪ್ರಾರಂಭಿಸಿ",
+    "title": "ನಿಮ್ಮ ಕುಂಡಲಿ ಬರೆದಿದೆ.<br></br><em>ಓದಿ.</em>",
+    "body": "ಯಾರು ಓದುತ್ತಾರೆ ಎಂಬುದರ ಮೇಲೆ ಗ್ರಹಗಳ ಸ್ಥಾನ ಬದಲಾಗುವುದಿಲ್ಲ. ವಿಶ್ವ ಮತ್ತು ನಿಮ್ಮ ನಡುವೆ ಏನೂ ಕಳೆದುಹೋಗದಂತೆ ನಾವು ನೋಡಿಕೊಳ್ಳುತ್ತೇವೆ.",
+    "button": "ಉಚಿತ ಓದು ಪಡೆಯಿರಿ ↗",
+    "note": "ದೈನಂದಿನ ಉಚಿತ ಓದುಗಳು · ಕ್ರೆಡಿಟ್ ಕಾರ್ಡ್ ಬೇಕಿಲ್ಲ"
   },
   "footer": {
-    "tagline": "Vedic astrology, calculated precisely · Six Indian languages",
-    "disclaimer": "Taaraa uses precise sidereal calculations and structured Jyotish interpretation. We do not offer remedies, gemstone recommendations, or religious services. Readings are for self-reflection and guidance only."
+    "tagline": "ವೈದಿಕ ಜ್ಯೋತಿಷ್ಯ, ನಿಖರ ಲೆಕ್ಕಾಚಾರ · ಆರು ಭಾರತೀಯ ಭಾಷೆಗಳು",
+    "disclaimer": "Taara Jyotishyam ನಿಖರ ಸೈಡೀರಿಯಲ್ ಲೆಕ್ಕಾಚಾರ ಮತ್ತು ಸಂರಚಿತ ಜ್ಯೋತಿಷ್ಯ ವ್ಯಾಖ್ಯಾನ ಬಳಸುತ್ತದೆ. ಪರಿಹಾರ, ರತ್ನ ಅಥವಾ ಧಾರ್ಮಿಕ ಸೇವೆಗಳಿಲ್ಲ. ಓದುಗಳು ಮಾರ್ಗದರ್ಶನಕ್ಕೆ ಮಾತ್ರ."
   }
 }
