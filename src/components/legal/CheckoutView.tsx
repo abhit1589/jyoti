@@ -9,7 +9,7 @@ import type { PaymentSku } from "@/lib/payments/config";
 
 interface PaymentConfig {
   enabled: boolean;
-  amounts: { single: number; bundle: number };
+  amounts: { single: number; bundle: number; matchReport: number };
   currency: string;
   brandName: string;
 }
@@ -31,8 +31,14 @@ function formatInr(paise: number): string {
 }
 
 function isValidSku(sku: string | null): sku is PaymentSku {
-  return sku === "single" || sku === "bundle";
+  return sku === "single" || sku === "bundle" || sku === "match-report";
 }
+
+const DEFAULT_AMOUNTS: Record<PaymentSku, number> = {
+  single: 10000,
+  bundle: 25000,
+  "match-report": 25000,
+};
 
 interface CheckoutViewProps {
   skuParam: string | null;
@@ -76,7 +82,9 @@ export function CheckoutView({ skuParam }: CheckoutViewProps) {
     );
   }
 
-  const amountPaise = config?.amounts[sku] ?? (sku === "bundle" ? 25000 : 10000);
+  const amountPaise =
+    config?.amounts[sku === "match-report" ? "matchReport" : sku] ?? DEFAULT_AMOUNTS[sku];
+  const isMatch = sku === "match-report";
 
   async function handlePay() {
     if (!accepted) return;
@@ -85,7 +93,7 @@ export function CheckoutView({ skuParam }: CheckoutViewProps) {
 
     try {
       if (config?.enabled) {
-        window.location.href = `/#chart?checkout=${sku}`;
+        window.location.href = isMatch ? `/match?checkout=${sku}` : `/#chart?checkout=${sku}`;
         return;
       }
 
@@ -107,7 +115,7 @@ export function CheckoutView({ skuParam }: CheckoutViewProps) {
         return;
       }
 
-      window.location.href = `/#chart?checkout=${sku}`;
+      window.location.href = isMatch ? `/match?checkout=${sku}` : `/#chart?checkout=${sku}`;
     } catch {
       setError("Payment could not be started. Please try again.");
     } finally {
@@ -138,7 +146,9 @@ export function CheckoutView({ skuParam }: CheckoutViewProps) {
                 </dd>
               </div>
             </dl>
-            <p className="taara-legal-muted text-sm mt-4">{t("instructions")}</p>
+            <p className="taara-legal-muted text-sm mt-4">
+              {isMatch ? t("instructionsMatch") : t("instructions")}
+            </p>
           </section>
 
           <section className="taara-legal-card">
@@ -198,8 +208,8 @@ export function CheckoutView({ skuParam }: CheckoutViewProps) {
           >
             {paying ? "…" : t("payNow")}
           </button>
-          <Link href="/#chart" className="taara-btn-ghost">
-            {t("continueToChart")}
+          <Link href={isMatch ? "/match" : "/#chart"} className="taara-btn-ghost">
+            {isMatch ? t("continueToMatch") : t("continueToChart")}
           </Link>
           <Link href="/pricing" className="taara-btn-ghost">
             {t("backToPricing")}

@@ -1,5 +1,8 @@
 {
   "footer": {
+    "groupCompany": "Company",
+    "groupServices": "Services",
+    "groupLegal": "Legal",
     "about": "About us",
     "services": "Services",
     "pricing": "Pricing",
@@ -15,8 +18,8 @@
     "title": "About us",
     "intro": "Taara Jyotishyam (jyotishyam.in) provides Vedic astrology services online — precise Lahiri sidereal birth charts, Moon-sign horoscopes, kundali matching, and AI-assisted personalised readings in English, Hindi, Marathi, Kannada, Telugu, and Tamil.",
     "verificationTitle": "Merchant verification details",
-    "legalNameLabel": "Legal name (as per Aadhaar)",
-    "addressLabel": "Registered address (as per Aadhaar)",
+    "legalNameLabel": "Legal name",
+    "addressLabel": "Registered address",
     "emailLabel": "Support email",
     "phoneLabel": "Phone",
     "websiteLabel": "Website",
@@ -26,7 +29,7 @@
   },
   "services": {
     "metaTitle": "Services | Taara Jyotishyam",
-    "metaDescription": "Free birth charts, daily weekly and monthly horoscopes, kundali matching, and paid AI chart readings.",
+    "metaDescription": "Free birth charts, daily weekly and monthly horoscopes, kundali matching, and paid personalised chart readings.",
     "title": "Services we provide",
     "intro": "All calculations use the Lahiri ayanamsa. Paid readings are digital products delivered instantly on the website after payment.",
     "items": {
@@ -39,15 +42,19 @@
         "description": "Moon-sign (Chandra rashi) forecasts for all twelve rashis, updated on a schedule in six languages."
       },
       "kundali-match": {
-        "name": "Kundali matching (Ashtakoot)",
-        "description": "36-point compatibility report for bride and groom charts, with an optional AI relationship summary."
+        "name": "Kundali matching — basic (Ashtakoot)",
+        "description": "Free 36-point compatibility score for bride and groom charts."
+      },
+      "kundali-match-detailed": {
+        "name": "Kundali matching — detailed analysis",
+        "description": "In-depth written compatibility report covering strengths, challenges, and relationship guidance for the couple."
       },
       "reading-single": {
-        "name": "Single AI chart reading",
+        "name": "Single chart reading",
         "description": "One in-depth reading section — Personality, Career & Dharma, or Current Dasha — based on your saved birth chart."
       },
       "reading-bundle": {
-        "name": "Complete AI reading bundle",
+        "name": "Complete chart reading bundle",
         "description": "All three reading sections (Personality + Career + Dasha) for one chart at a discounted bundle price."
       }
     },
@@ -56,9 +63,9 @@
   },
   "pricing": {
     "metaTitle": "Pricing | Taara Jyotishyam",
-    "metaDescription": "Transparent pricing for Taara Jyotishyam — free charts and horoscopes; paid AI readings from ₹100.",
+    "metaDescription": "Transparent pricing for Taara Jyotishyam — free charts and horoscopes; paid readings from ₹100 and detailed kundali matching at ₹250.",
     "title": "Pricing",
-    "intro": "Core astrology tools are free. You pay only for optional AI-generated personalised chart readings.",
+    "intro": "Core astrology tools are free. You pay only for optional personalised chart readings and detailed kundali matching.",
     "columnService": "Service",
     "columnPrice": "Price",
     "columnAction": "Action",
@@ -69,7 +76,7 @@
   },
   "checkout": {
     "metaTitle": "Checkout | Taara Jyotishyam",
-    "metaDescription": "Complete your purchase for Taara Jyotishyam AI chart readings.",
+    "metaDescription": "Complete your purchase for Taara Jyotishyam services.",
     "title": "Checkout",
     "orderSummary": "Order summary",
     "merchantDetails": "Merchant details",
@@ -79,18 +86,24 @@
     "acceptTerms": "I agree to the Terms & Conditions, Privacy Policy, Refund Policy, and Cancellation Policy.",
     "payNow": "Pay now",
     "continueToChart": "Continue to birth chart",
+    "continueToMatch": "Continue to kundali matching",
     "instructions": "After payment you will return to the site to generate your reading from your saved birth chart. If you have not entered birth details yet, you will be guided to do so first.",
+    "instructionsMatch": "After payment you will return to the match page to run bride and groom charts and unlock the detailed compatibility analysis.",
     "gatewayNote": "You will be redirected to our secure payment partner to complete the transaction.",
     "invalidSku": "Please choose a valid product from the pricing page.",
     "backToPricing": "Back to pricing",
     "products": {
       "single": {
-        "name": "Single AI chart reading",
+        "name": "Single chart reading",
         "description": "One reading section: Personality, Career & Dharma, or Current Dasha."
       },
       "bundle": {
-        "name": "Complete AI reading bundle",
+        "name": "Complete chart reading bundle",
         "description": "All three reading sections for your chart."
+      },
+      "match-report": {
+        "name": "Kundali matching — detailed analysis",
+        "description": "In-depth written compatibility report for bride and groom."
       }
     }
   },

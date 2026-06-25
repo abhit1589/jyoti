@@ -4,6 +4,7 @@ export type ServiceId =
   | "birth-chart"
   | "horoscope-forecasts"
   | "kundali-match"
+  | "kundali-match-detailed"
   | "reading-single"
   | "reading-bundle";
 
@@ -26,11 +27,19 @@ export function formatInr(paise: number): string {
 export function getServiceCatalog(): ServiceOffering[] {
   const single = getAmountPaise("single");
   const bundle = getAmountPaise("bundle");
+  const matchReport = getAmountPaise("match-report");
 
   return [
     { id: "birth-chart", pricePaise: 0, free: true },
     { id: "horoscope-forecasts", pricePaise: 0, free: true },
     { id: "kundali-match", pricePaise: 0, free: true },
+    {
+      id: "kundali-match-detailed",
+      sku: "match-report",
+      pricePaise: matchReport,
+      free: false,
+      checkoutPath: "/checkout?sku=match-report",
+    },
     {
       id: "reading-single",
       sku: "single",

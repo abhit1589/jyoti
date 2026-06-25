@@ -21,7 +21,7 @@ export async function POST(request: Request) {
   }
 
   const sku = body.sku;
-  if (sku !== "single" && sku !== "bundle") {
+  if (sku !== "single" && sku !== "bundle" && sku !== "match-report") {
     return NextResponse.json({ error: "Invalid product" }, { status: 400 });
   }
 

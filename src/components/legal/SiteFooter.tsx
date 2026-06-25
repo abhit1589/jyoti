@@ -3,15 +3,28 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 
-const FOOTER_LINKS = [
-  { href: "/about", key: "about" },
-  { href: "/services", key: "services" },
-  { href: "/pricing", key: "pricing" },
-  { href: "/terms", key: "terms" },
-  { href: "/privacy", key: "privacy" },
-  { href: "/refund", key: "refund" },
-  { href: "/cancellation", key: "cancellation" },
-] as const;
+const FOOTER_GROUPS = [
+  {
+    labelKey: "groupCompany" as const,
+    links: [{ href: "/about", key: "about" as const }],
+  },
+  {
+    labelKey: "groupServices" as const,
+    links: [
+      { href: "/services", key: "services" as const },
+      { href: "/pricing", key: "pricing" as const },
+    ],
+  },
+  {
+    labelKey: "groupLegal" as const,
+    links: [
+      { href: "/terms", key: "terms" as const },
+      { href: "/privacy", key: "privacy" as const },
+      { href: "/refund", key: "refund" as const },
+      { href: "/cancellation", key: "cancellation" as const },
+    ],
+  },
+];
 
 interface SiteFooterProps {
   disclaimer?: string;
@@ -35,15 +48,26 @@ export function SiteFooter({ disclaimer }: SiteFooterProps) {
         )}
       </span>
       <p className="taara-footer-domain">{tLanding("brand.domain")}</p>
-      <p>{tLanding("footer.tagline")}</p>
+      <p className="taara-footer-tagline">{tLanding("footer.tagline")}</p>
 
-      <nav className="taara-footer-nav" aria-label="Legal and company">
-        {FOOTER_LINKS.map((link) => (
-          <Link key={link.href} href={link.href}>
-            {tLegal(link.key)}
-          </Link>
+      <div className="taara-footer-links">
+        {FOOTER_GROUPS.map((group) => (
+          <nav
+            key={group.labelKey}
+            className="taara-footer-group"
+            aria-label={tLegal(group.labelKey)}
+          >
+            <p className="taara-footer-group-label">{tLegal(group.labelKey)}</p>
+            <ul>
+              {group.links.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href}>{tLegal(link.key)}</Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
         ))}
-      </nav>
+      </div>
 
       <p className="taara-footer-disclaimer">
         {disclaimer ?? tLanding("footer.disclaimer")}

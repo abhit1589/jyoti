@@ -7,6 +7,9 @@ export interface BusinessDetails {
   website: string;
 }
 
+const DEFAULT_AADHAAR_ADDRESS =
+  "D401, Lansum Etania, Gachibowli, Ranga Reddy Dt. Hyderabad, Telangana 500089";
+
 export function getBusinessDetails(): BusinessDetails {
   return {
     legalName:
@@ -16,7 +19,7 @@ export function getBusinessDetails(): BusinessDetails {
     aadhaarAddress:
       process.env.BUSINESS_AADHAAR_ADDRESS?.trim() ||
       process.env.NEXT_PUBLIC_BUSINESS_AADHAAR_ADDRESS?.trim() ||
-      "",
+      DEFAULT_AADHAAR_ADDRESS,
     email: process.env.BUSINESS_EMAIL?.trim() || "support@jyotishyam.in",
     phone: process.env.BUSINESS_PHONE?.trim() || "",
     website: "https://jyotishyam.in",
