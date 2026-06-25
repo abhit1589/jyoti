@@ -2,7 +2,9 @@
 
 **Last updated:** 2026-06-23  
 **Repo:** [abhit1589/jyoti](https://github.com/abhit1589/jyoti) · branch `master`  
-**Latest commit:** `9807aac` — *Add teaser, Q&A, kundali matching, and Razorpay scaffolding.*  
+**Latest commits:**  
+- `006c971` — Add HANDOVER.md  
+- `9807aac` — Add teaser, Q&A, kundali matching, and Razorpay scaffolding.  
 **Local path:** `c:\Users\flyam\OneDrive\Desktop\astro`  
 **Production:** Vercel (auto-deploy from `master`) · domain `jyotishyam.in`
 
@@ -173,7 +175,7 @@ curl -X POST http://localhost:3000/api/dev/reset-limits   # dev only
 ## Commit history (recent)
 
 ```
+006c971 Add HANDOVER.md for agent and maintainer context.
 9807aac Add teaser, Q&A, kundali matching, and Razorpay scaffolding.
 64356d4 Rebrand to Taara Jyotishyam and polish six-locale UX.
-c8a9bb5 Add GitHub Actions cron to warm weekly rashifal cache
 ```
