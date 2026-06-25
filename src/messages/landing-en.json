@@ -8,124 +8,140 @@
     "cta": "Free reading ↗"
   },
   "hero": {
-    "eyebrow": "Vedic Jyotish",
+    "eyebrow": "Vedic Astrology — Free & Precise",
     "title": "Ancient wisdom.<br></br><em>Precisely calculated.</em>",
-    "quote": "The sky wrote your story at the moment of your birth. We help you read it.",
-    "subtitle": "Vedic astrology is the precise study of planetary positions at the moment of your birth — and their lasting influence on your life's path. Every calculation grounded in the exact science of the cosmos.",
-    "tagline": "Your birth chart — accurate, clear, in your language",
-    "ctaPrimary": "Get your free reading",
-    "ctaSecondary": "How it works",
-    "note": "No signup required · Daily free readings · Six Indian languages"
+    "quote": "Most astrologers tell you what they think your chart says. Your chart shows what is — to the arcsecond. We help you read it.",
+    "subtitle": "Vedic Jyotish isn't newspaper horoscopes. At the exact second of your birth, nine planets were at precise astronomical positions — permanently recorded, mathematically verifiable. Most people have never had those positions read honestly. Here, we do exactly that: classical Jyotish, in your language, with no pressure to buy anything.",
+    "tagline": "Your personal Vedic horoscope — accurate, honest, in your language",
+    "note": "No signup required · Free daily readings · Six Indian languages"
+  },
+  "services": {
+    "ariaLabel": "Astrology services",
+    "chart": {
+      "icon": "✦",
+      "label": "Free Horoscope",
+      "hint": "Birth chart & reading"
+    },
+    "match": {
+      "icon": "◎",
+      "label": "Horoscope Matching",
+      "hint": "36-point compatibility"
+    },
+    "weekly": {
+      "icon": "☽",
+      "label": "Weekly Horoscope",
+      "hint": "Moon sign forecast"
+    }
   },
   "science": {
-    "label": "The Science",
-    "title": "Jyotish is not <em>belief.</em><br></br>It is observation.",
-    "intro": "For over 5,000 years, Vedic astronomers mapped the precise positions of planets and correlated them with human experience. These positions are mathematically verifiable — the same astronomy that powers modern orbital mechanics.",
+    "label": "The Foundation",
+    "title": "Jyotish is not <em>belief.</em><br></br>It is astronomy.",
+    "intro": "Tell any astronomer your exact date, time, and place of birth — they can calculate where every planet was at that moment, to the arcsecond, using the same orbital mechanics that guides space probes. That precise astronomical data is what Jyotish works with. Five thousand years of careful observation, systematically correlating planetary positions with human experience. Not symbolism. Observed patterns.",
     "cards": {
       "planets": {
         "icon": "🪐",
-        "title": "Planetary positions are mathematical",
-        "body": "At the moment of your birth, every planet occupies a precise degree in the sky — calculable to the arcsecond. This is astronomy, not opinion."
+        "title": "Planetary positions are mathematical facts",
+        "body": "Every planet's position at your birth is calculable from any point in time — past or future. The same mathematics that predicts eclipses centuries in advance calculates your birth chart to the exact degree. This is not opinion. This is measurement."
       },
       "snapshot": {
         "icon": "📜",
-        "title": "The chart is a cosmic snapshot",
-        "body": "Your kundali is a map of where every planet was, relative to your birthplace, at the exact moment you arrived. Two people born minutes apart in different cities have meaningfully different charts."
+        "title": "Your chart is unique to the minute",
+        "body": "Your horoscope is unique to your birthplace and the exact minute you arrived. Two people born five minutes apart in different cities will have meaningfully different charts — different house placements, potentially different rising signs, different planetary periods. The precision of the chart is the precision of the sky."
       },
       "framework": {
         "icon": "📐",
-        "title": "Interpretation follows a framework",
-        "body": "Each planet governs domains of life. Each rashi modifies expression. Each house represents a life area. Reading a chart applies a consistent, structured framework — not guesswork."
+        "title": "Interpretation follows a consistent structure",
+        "body": "Nine grahas (planets) each govern specific domains of life — mind, family, career, relationships, health, and wealth. Each rashi (sign) shapes how a planet's energy expresses. Each of the twelve bhavas (houses) maps a life area. Classical Jyotish applies this framework consistently — not intuitively, not with guesswork."
       },
       "dasha": {
         "icon": "⏱️",
-        "title": "Dasha periods are time-coded",
-        "body": "The Vimshottari dasha system divides your life into planetary periods calculated from your Moon's nakshatra at birth. Every person's sequence is unique — and mathematically precise."
+        "title": "Your life phases are time-coded",
+        "body": "The Vimshottari dasha system divides your life into planetary periods, each calculated from the exact degree of your Moon's nakshatra at birth. Your entire dasha sequence is mathematical. When people see their dasha timeline for the first time, they often recognise the turning points immediately: 'That's exactly when everything shifted.'"
       }
     }
   },
   "comparison": {
     "label": "Why Taara Jyotishyam",
-    "title": "Your reading,<br></br><em>from home — instantly.</em>",
-    "intro": "No travel, no appointment, no waiting. An honest reflection of your chart — without bias, and without being pushed toward pujas, gemstones, or costly remedies.",
+    "title": "An honest reading,<br></br><em>without the sales pitch.</em>",
+    "intro": "If you've visited a traditional astrologer, you've likely encountered at least one of these: a vague reading that could describe anyone, a dosha warning followed by a ₹2,000 remedy recommendation, or predictions that shifted depending on what you seemed willing to spend. Taara Jyotishyam works differently — because it must. The chart is calculated precisely, and the reading follows only from that chart. No mood, no bias, no upselling.",
     "colFactor": "What matters to you",
-    "colTraditional": "Traditional reading",
+    "colTraditional": "Traditional astrologer",
     "colTaaraa": "Taara Jyotishyam",
     "rows": {
       "availability": {
         "factor": "When & where",
         "traditional": "In-person visit, appointment, days of waiting",
-        "taaraa": "At home, instantly — no appointment needed"
+        "taaraa": "At home, right now — no appointment needed"
       },
       "neutrality": {
         "factor": "Neutrality",
         "traditional": "Reader's mood, opinions & personal bias",
-        "taaraa": "Your chart only — a calm reflection, no agenda"
+        "taaraa": "Your chart only — a calm, unbiased reading"
       },
       "upselling": {
         "factor": "Pujas, gems & remedies",
-        "traditional": "Often pushed — rituals, gemstones, add-ons",
-        "taaraa": "Never — interpretation only, no upselling"
+        "traditional": "Often pushed — rituals, gemstones, costly add-ons",
+        "taaraa": "Never — interpretation only, nothing sold"
       },
       "accuracy": {
         "factor": "Planetary calculation",
         "traditional": "Manual, prone to error",
-        "taaraa": "Lahiri sidereal — exact positions"
+        "taaraa": "Lahiri sidereal — precise to the arcsecond"
       },
       "language": {
         "factor": "Language",
-        "traditional": "Depends on the reader",
+        "traditional": "Depends on the astrologer",
         "taaraa": "English, Hindi, Marathi, Kannada, Telugu & Tamil"
       },
       "cost": {
         "factor": "Cost",
         "traditional": "₹500–₹5,000 per session, plus remedies",
-        "taaraa": "₹100 per reading — clear pricing, no upsells"
+        "taaraa": "₹100 per reading — clear pricing, nothing extra"
       }
     }
   },
   "process": {
-    "label": "Process",
-    "title": "Three steps to<br></br><em>your reading.</em>",
-    "intro": "No account needed. No waiting. Just your birth details — and we handle the rest.",
+    "label": "How it works",
+    "title": "Three steps.<br></br><em>Your chart in minutes.</em>",
+    "intro": "No account, no appointment, no back-and-forth. Enter your birth details — date, time, and place — and your chart is calculated immediately using Lahiri sidereal astronomy, the standard of classical Indian astrology.",
     "steps": {
       "birth": {
         "title": "Enter your birth details",
-        "body": "Date, time, and place of birth. The more accurate your birth time, the more precise your lagna and house placements will be."
+        "body": "Date, time, and place of birth — that's all. An accurate birth time gives you a precise lagna (rising sign) and house placements, the most personal parts of your chart. Even an approximate time gives you meaningful information."
       },
       "calculate": {
         "title": "We calculate your chart",
-        "body": "Using precise sidereal astronomy with the Lahiri ayanamsa, we compute your exact planetary positions in the Vedic system."
+        "body": "Your chart is built using the Lahiri ayanamsa — the sidereal standard recognised in classical Jyotish and validated against modern astronomical data. Every planet's degree, nakshatra, and pada is calculated precisely."
       },
       "read": {
         "title": "Read your interpretation",
-        "body": "Classical Jyotish principles are applied to your exact chart. You receive a personalised reading in plain language — in the language you choose."
+        "body": "Classical Jyotish principles are applied to your exact planetary positions — not to your sun sign, not to a generic Moon sign profile. You receive a reading specific to your chart, in plain language, in the language you choose."
       }
     }
   },
   "readings": {
     "label": "What You Get",
-    "title": "What your<br></br><em>kundali reveals.</em>",
-    "intro": "Three focused readings, each grounded in your exact chart positions — not your sun sign, not a generic weekly forecast.",
+    "title": "Three readings,<br></br><em>from your exact chart.</em>",
+    "intro": "Not your newspaper sun sign. Not a generic Moon sign forecast. Your actual Vedic chart — nine planetary positions, twelve houses, and the dasha period active in your life right now — read with the precision of classical Jyotish.",
     "included": "Included",
     "cards": {
       "personality": {
         "icon": "☉",
         "title": "Personality",
         "native": "Inner self & temperament",
-        "body": "How you show up in the world, your inner emotional life, and your strongest natural gifts — described in everyday language, not astrological jargon."
+        "body": "Your lagna (ascendant) describes how you present to the world. Your Moon sign reveals your emotional inner life and instinctive reactions. This reading explains how these two interact in your specific chart — your natural strengths, recurring patterns, how others first perceive you, and the temperament you were born with. Specific to your chart, not just your zodiac sign."
       },
       "career": {
         "icon": "♄",
         "title": "Career & Dharma",
         "native": "Work & life purpose",
-        "body": "Career paths that suit your nature, your working style and strengths, and practical advice for your professional life — from your 10th house and its lord."
+        "body": "The 10th bhava and its ruling planet reveal the kind of work that energises you — environments, roles, and working styles that align with your chart rather than fight it. This reading also draws from your current dasha period for timing: what is being activated professionally right now, and what the next phase may bring."
       },
       "dasha": {
         "icon": "☽",
         "title": "Current Dasha",
-        "native": "Current life phase",
-        "body": "Which planetary period governs your life right now, what themes it activates in your chart, and what the next 12–18 months may hold."
+        "native": "Your present life phase",
+        "body": "Your Vimshottari dasha and antardasha — the planetary period and sub-period governing your current life chapter — shape your energy, relationships, opportunities, and inner shifts. This reading names your exact dasha, explains what these planets activate in your natal chart, and gives an honest picture of the next 12–18 months."
       }
     }
   },
@@ -135,52 +151,52 @@
     "items": {
       "one": {
         "stars": "★★★★★",
-        "quote": "The chart was more accurate than others I had seen. Reading it in Telugu made everything easy to understand.",
+        "quote": "The reading described my personality so precisely that I shared it with my family immediately. Reading it in Telugu — my actual language — made it feel real, not translated.",
         "name": "Lakshmi P. · Hyderabad"
       },
       "two": {
         "stars": "★★★★★",
-        "quote": "The personality reading described me more accurately than two astrologers I had paid ₹2,000 each. No upselling, no fear tactics.",
+        "quote": "Every astrologer I've visited wanted to sell me something after the reading. Here I got a more honest personality reading than all of them — for ₹100, with nothing pushed afterward.",
         "name": "Ravi K. · Vijayawada"
       },
       "three": {
         "stars": "★★★★☆",
-        "quote": "The dasha reading was spot on for what's happening in my life this year. Practical and clear — not vague predictions.",
+        "quote": "The dasha reading named the exact period when my career changed. I came in sceptical and left genuinely impressed — specific to my chart, no vague predictions.",
         "name": "Preethi M. · Bengaluru"
       }
     }
   },
   "match": {
-    "label": "Kundali matching",
+    "label": "Horoscope matching",
     "title": "Marriage compatibility,<br></br><em>precisely scored.</em>",
-    "intro": "Classic 36-point guna milan (Ashtakoot) from both birth charts — plus a plain-language reading of what it means for you two.",
-    "roleHint": "Enter the bride's birth details on the left and the groom's on the right.",
+    "intro": "The Ashtakoot system scores compatibility across eight dimensions of human life — from innate temperament and emotional rapport, to physical harmony, family prosperity, and health themes. All 36 points are calculated from both birth charts using classical weightings. The result is a specific, honest read on how your charts interact — not a vague 'are you compatible?' verdict.",
+    "roleHint": "Important: enter the bride's birth details on the left and the groom's on the right. The Ashtakoot method scores directionally (bride vs groom), so switching sides will change the result.",
     "partner1": "Bride",
     "partner2": "Groom",
     "compare": "Compare charts",
-    "comparing": "Calculating guna milan…",
+    "comparing": "Calculating compatibility…",
     "limit": "{used} of {limit} comparisons used today",
     "limitReached": "Daily comparison limit reached. Try again tomorrow.",
     "genericError": "Could not compare charts. Please try again.",
-    "scoreLabel": "Guna milan score",
-    "verdictGood": "Traditionally acceptable (18+)",
-    "verdictLow": "Below classical threshold (18)",
+    "scoreLabel": "Compatibility score",
+    "verdictGood": "Traditionally favourable (18+)",
+    "verdictLow": "Below the classical threshold (18)",
     "percentage": "{value}% overall",
-    "kootaTitle": "Eight kootas breakdown",
+    "kootaTitle": "Eight-koota breakdown",
     "mangalTitle": "Mangal dosha check",
     "reportTitle": "Plain-language match reading",
-    "reportHint": "A warm explanation of your score — strengths, friction points, and what to understand together.",
-    "reportGenerate": "Generate match reading",
+    "reportHint": "A thorough, warm reading of your compatibility — what the scores reveal about your natural strengths together, which kootas deserve honest discussion, and what both charts suggest about the life you would build.",
+    "reportGenerate": "Get match reading",
     "reportLoading": "Writing your match reading…",
     "reportUnavailable": "Match readings are not available right now.",
     "reportLimitReached": "Daily match reading limit reached.",
     "reportError": "Could not generate match reading.",
     "reportEmpty": "No reading was returned. Please try again.",
-    "disclaimer": "Guna milan is traditional guidance, not a verdict on your relationship. For entertainment and reflection only.",
+    "disclaimer": "Ashtakoot compatibility is traditional guidance, not a verdict on your relationship. For reflection and self-understanding only.",
     "mangal": {
-      "none": "No mangal dosha concern for this pair.",
-      "present": "One chart shows mangal dosha — worth understanding together; classical texts note exceptions and cancellations.",
-      "cancelled": "Both charts show mangal dosha — traditionally this can cancel out for the pair.",
+      "none": "No Mangal dosha concern for this pair.",
+      "present": "One chart shows Mangal dosha — classical texts note several exceptions and cancellations; worth understanding together.",
+      "cancelled": "Both charts show Mangal dosha — traditionally this cancels out for the pair.",
       "personNone": "None",
       "personPresent": "Present",
       "personCancelled": "Cancelled (own/exalted sign)"
@@ -188,11 +204,11 @@
     "kootas": {
       "varna": {
         "name": "Varna",
-        "desc": "Spiritual / ego alignment"
+        "desc": "Spiritual & ego alignment"
       },
       "vashya": {
         "name": "Vashya",
-        "desc": "Mutual attraction and influence"
+        "desc": "Mutual attraction & influence"
       },
       "tara": {
         "name": "Tara",
@@ -208,34 +224,59 @@
       },
       "gana": {
         "name": "Gana",
-        "desc": "Temperament match"
+        "desc": "Temperament compatibility"
       },
       "bhakoot": {
         "name": "Bhakoot",
-        "desc": "Prosperity and family harmony"
+        "desc": "Prosperity & family harmony"
       },
       "nadi": {
         "name": "Nadi",
-        "desc": "Health and progeny themes"
+        "desc": "Health & progeny themes"
       }
     },
-    "nav": "Kundali matching"
+    "qa": {
+      "title": "Ask about your match",
+      "subtitle": "Follow-up questions grounded in your compatibility score and both charts — not generic advice.",
+      "checking": "Checking match Q&A…",
+      "unavailable": "Match Q&A is not available right now.",
+      "limit": "{used} of {limit} questions used today",
+      "limitReached": "Daily question limit reached. Try again tomorrow.",
+      "empty": "Ask about any koota, Mangal dosha, family themes, or what your score means for you two.",
+      "you": "You",
+      "guide": "Taara guide",
+      "placeholder": "e.g. Why is our Bhakoot score low, and should we worry?",
+      "ask": "Ask",
+      "sending": "Asking…",
+      "thinking": "Thinking about your match…",
+      "genericError": "Could not get an answer. Please try again.",
+      "emptyReply": "No answer was returned. Please try again.",
+      "disclaimer": "Answers are for guidance and reflection only. Not medical, legal, or financial advice.",
+      "suggestions": {
+        "koota": "Which koota needs the most understanding?",
+        "mangal": "What does Mangal dosha mean for us?",
+        "nadi": "Should we be concerned about Nadi?",
+        "overall": "Is our overall score good enough?",
+        "children": "What do our charts say about children?"
+      }
+    },
+    "nav": "Horoscope matching"
   },
   "chart": {
     "label": "Your chart",
     "title": "Enter your details.<br></br><em>Read your stars.</em>",
-    "intro": "Generate your Lahiri sidereal chart and choose a reading — personality, career, or current life phase.",
+    "intro": "Generate your Lahiri sidereal chart and choose a reading — personality, career, or your current life phase.",
     "placeholder": "Fill in your birth details and tap Generate Chart"
   },
   "cta": {
     "label": "Begin",
-    "title": "Your chart has been written.<br></br><em>Read it.</em>",
-    "body": "The planets do not change their positions based on who is reading your chart. We simply make sure nothing is lost between the cosmos and you.",
+    "title": "Your chart was written<br></br><em>the moment you were born.</em>",
+    "body": "Whatever you believe about astrology, your planetary positions at birth are mathematical fact. We calculate them precisely, apply the principles of classical Jyotish, and explain what they mean in your language — honest, free to start, with no pressure to go further.",
     "button": "Get your free reading ↗",
-    "note": "Daily free readings · No credit card needed"
+    "note": "Free daily readings · No credit card needed"
   },
   "footer": {
-    "tagline": "Vedic astrology, calculated precisely · Six Indian languages",
+    "tagline": "Vedic astrology, precisely calculated · Six Indian languages",
     "disclaimer": "Taara Jyotishyam uses precise sidereal calculations and structured Jyotish interpretation. We do not offer remedies, gemstone recommendations, or religious services. Readings are for self-reflection and guidance only."
   }
 }

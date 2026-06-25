@@ -44,7 +44,11 @@
     "birthStar": "जन्म नक्षत्र",
     "lagnaNakshatra": "लग्न नक्षत्र",
     "pada": "पाद",
-    "retrograde": "वक्री"
+    "retrograde": "वक्री",
+    "print": "प्रिंट / PDF सहेजें",
+    "printHint": "ब्राउज़र प्रिंट डायलॉग खुलेगा — PDF के लिए Save as PDF चुनें।",
+    "birthDetails": "जन्म विवरण",
+    "printedFrom": "jyotishyam.in · लाहिरी साइडरीय (अयनांश)"
   },
   "reading": {
     "title": "ज्योतिष वाचन",

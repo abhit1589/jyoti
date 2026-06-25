@@ -2,13 +2,10 @@
 
 import { useTranslations } from "next-intl";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
-import { Link, usePathname } from "@/i18n/navigation";
+import { Link } from "@/i18n/navigation";
 
 export function AppNav() {
   const tLanding = useTranslations("landing");
-  const tWeekly = useTranslations("weekly");
-  const pathname = usePathname();
-  const onWeekly = pathname === "/weekly";
   const brandNative = tLanding("brand.native");
 
   return (
@@ -24,15 +21,9 @@ export function AppNav() {
         )}
       </Link>
       <div className="taara-nav-actions">
-        <Link
-          href="/weekly"
-          className={`taara-nav-link taara-nav-weekly${onWeekly ? " taara-nav-link-active" : ""}`}
-        >
-          {tWeekly("nav.weekly")}
-        </Link>
         <LanguageSwitcher />
         <Link href="/#chart" className="taara-nav-cta">
-          {tWeekly("nav.reading")} ↗
+          {tLanding("nav.cta")}
         </Link>
       </div>
     </nav>

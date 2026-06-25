@@ -44,7 +44,11 @@
     "birthStar": "జన్మ నక్షత్రం (జన్మ తార)",
     "lagnaNakshatra": "లగ్న నక్షత్రం",
     "pada": "పాదం",
-    "retrograde": "వక్రి"
+    "retrograde": "వక్రి",
+    "print": "ప్రింట్ / PDF సేవ్",
+    "printHint": "బ్రౌజర్ ప్రింట్ డైలాగ్ తెరుచుకుంటుంది — PDF కోసం Save as PDF ఎంచుకోండి.",
+    "birthDetails": "జనన వివరాలు",
+    "printedFrom": "jyotishyam.in · లాహిరి సైడీరియల్ (అయనాంశం)"
   },
   "reading": {
     "title": "జ్యోతిష వివరణ",

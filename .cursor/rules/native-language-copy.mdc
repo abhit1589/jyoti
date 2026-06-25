@@ -1,0 +1,102 @@
+---
+description: Rules for authentic native-language copy in i18n JSON files. Apply whenever editing any landing-*.json or weekly-*.json translation file.
+globs: src/messages/landing-*.json,src/messages/weekly-*.json
+alwaysApply: false
+---
+
+# Native Language Copy Standards
+
+All i18n strings must feel native — not translated from English. Before writing or editing any translation, ask: *would a monolingual speaker of this language actually say this?*
+
+## The Golden Rule
+
+**Never translate English copy word-for-word.** Rephrase in natural idioms of the target language. When in doubt, use the simpler, shorter, more common word.
+
+---
+
+## Language-Specific Vocabulary
+
+### Telugu (`landing-te.json`)
+
+| Use | Avoid |
+|-----|-------|
+| జాతకం | kundali, కుండలి |
+| జాతక పొందిక | kundali matching, కుండలి మిలాన్ |
+| వారఫలం | weekly rashifal, వీక్లీ రాశిఫలం |
+| రాశిఫలం | horoscope (transliteration) |
+| ఫలితాలు / జాతకఫలం | రీడింగ్ (English loanword) |
+| పద్ధతిని | ఫ్రేమ్‌వర్క్‌ (English loanword) |
+| నక్షత్రం | star (English) |
+
+- No English words unless they are universally used technical terms with no Telugu equivalent.
+- Avoid Hindi loanwords that are not in common Telugu usage.
+
+### Tamil (`landing-ta.json`)
+
+| Use | Avoid |
+|-----|-------|
+| ஜாதகம் | kundali |
+| ஜாதக பொருத்தம் | kundali matching |
+| வார ராசிப்பலன் | weekly rashifal |
+| பலன் / ஜாதகப் பலன் | வாசிப்பு (literal: reading — unnatural in astrology context) |
+| 36 குண பொருத்தம் | 36-point (English) |
+
+- Prefer pure Tamil vocabulary. Classical Sanskrit terms used in Tamil astrology (ஜாதகம், நட்சத்திரம்) are acceptable.
+- Do not transliterate English UI words into Tamil script.
+
+### Kannada (`landing-kn.json`)
+
+| Use | Avoid |
+|-----|-------|
+| ಜಾತಕ | kundali |
+| ಜಾತಕ ಹೊಂದಾಣಿಕೆ | kundali matching |
+| ವಾರ ಭವಿಷ್ಯ | weekly rashifal |
+| ಜಾತಕ ಫಲ / ಭವಿಷ್ಯ | ಓದು (literal: reading — unnatural for horoscope) |
+| ಗ್ರಹ ಸ್ಥಿತಿ | planetary position (English) |
+
+- Prefer Kannada-origin or well-established Sanskrit-in-Kannada terms.
+- Do not write English words in Kannada script (e.g. avoid ರೀಡಿಂಗ್).
+
+### Hindi (`landing-hi.json`)
+
+| Use | Avoid |
+|-----|-------|
+| कुंडली मिलान | kundali matching (English mix) |
+| फलित / भविष्यफल | रीडिंग (English loanword) |
+| साप्ताहिक राशिफल | weekly horoscope (English) |
+| शास्त्रीय | classical (English) |
+| पद्धति | framework (English) |
+
+- Sanskrit-origin vocabulary is natural and correct in Hindi.
+- Avoid mixing English words mid-sentence when a Hindi equivalent exists.
+
+### Marathi (`landing-mr.json`)
+
+| Use | Avoid |
+|-----|-------|
+| राशीभविष्य | राशिफल (Hindi form — Marathi uses the long ई) |
+| जन्मपत्रिका / पत्रिका | (कुंडली is acceptable, but पत्रिका feels more native) |
+| मोफत | फ्री (English) |
+| अचूक | खच्ची (Urdu/Hindi slang — not standard Marathi) |
+| गुण मिलान / जुळणी | matching (English) |
+
+- Use long ई in राशीभविष्य (not short इ like the Hindi राशिफल).
+- Marathi has its own vocabulary; prefer it over borrowed Hindi where natural.
+
+---
+
+## All Languages — Structural Rules
+
+1. **No untranslated English strings** in any `landing-*.json` file. Every value must be in the target language. Search for Latin characters before committing.
+2. **No mixed-language strings** — do not write `"जन्मपत्रिका और reading"`. Pick one language per string.
+3. **Astrological terms** that are classically Sanskrit (नक्षत्र, दशा, लग्न, राशी, भाव) are acceptable in all languages — they are the canonical terms.
+4. **UI action words** (button labels, nav items) must always be translated. Never leave `"Compare"`, `"Get Reading"`, or `"Try again"` in English inside a non-English file.
+5. **Numbers and symbols** (₹, %, →, ↗, ★) are fine in all languages.
+
+---
+
+## Tone
+
+- Warm, direct, confident — not clinical or bureaucratic.
+- Speak to the user as *you* (तुम्ही / నువ్వు / நீ / ನೀವು) — not in the third person.
+- Do not use formal register where casual register is natural (e.g. Marathi आपण is overly formal for most UI copy; तुम्ही is appropriate).

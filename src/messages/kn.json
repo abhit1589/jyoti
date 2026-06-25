@@ -44,7 +44,11 @@
     "birthStar": "ಜನ್ಮ ನಕ್ಷತ್ರ",
     "lagnaNakshatra": "ಲಗ್ನ ನಕ್ಷತ್ರ",
     "pada": "ಪಾದ",
-    "retrograde": "ವಕ್ರಿ"
+    "retrograde": "ವಕ್ರಿ",
+    "print": "ಮುದ್ರಿಸಿ / PDF ಉಳಿಸಿ",
+    "printHint": "ಬ್ರೌಸರ್ ಪ್ರಿಂಟ್ ಡೈಲಾಗ್ ತೆರೆಯುತ್ತದೆ — PDF ಗಾಗಿ Save as PDF ಆಯ್ಕೆಮಾಡಿ.",
+    "birthDetails": "ಜನ್ಮ ವಿವರಗಳು",
+    "printedFrom": "jyotishyam.in · ಲಾಹಿರಿ ಸೈಡರಿಯಲ್ (ಅಯನಾಂಶ)"
   },
   "reading": {
     "title": "ಜ್ಯೋತಿಷ್ಯ ಓದು",

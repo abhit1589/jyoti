@@ -33,10 +33,11 @@ Return ONLY valid JSON — no markdown — in this exact shape:
 
 Rules for EACH value:
 - Exactly 2 or 3 short sentences (one brief paragraph)
-- personality: how they come across and inner emotional nature
-- career: work style and life direction themes
-- dasha: the flavor of this chapter of life right now (use current period data)
+- personality: how they come across and one distinctive inner trait or contradiction — not generic praise
+- career: name at least one concrete field or way of working; include an unconventional or non-obvious path if the chart supports it (e.g. independent, creative, research, service, tech, teaching)
+- dasha: the flavor of this chapter right now — tie to the current period in the chart data; name what feels emphasised (work, relationships, change, rest, etc.)
 - Warm, direct "you" voice
+- Chart-specific only — nothing that could apply to anyone
 - No fear-based predictions`;
 }
 

@@ -30,8 +30,33 @@ export function ChartDisplay({ chart }: ChartDisplayProps) {
 
   const currentDasha = chart.vimshottari.periods.find((p) => p.isCurrent);
 
+  function handlePrint() {
+    window.print();
+  }
+
   return (
     <div className="space-y-6">
+      <div className="flex flex-wrap items-center justify-end gap-2 no-print">
+        <button type="button" onClick={handlePrint} className="btn-primary">
+          {t("print")}
+        </button>
+        <p className="w-full text-right text-xs text-muted sm:w-auto sm:text-left">
+          {t("printHint")}
+        </p>
+      </div>
+
+      <div id="chart-print-area" className="chart-print-area space-y-6">
+        <div className="chart-print-header hidden print:block">
+          <p className="text-lg font-semibold text-slate-900">Taara Jyotishyam</p>
+          <p className="text-sm text-slate-600">{t("printedFrom")}</p>
+          {chart.birth.placeName && (
+            <p className="mt-3 text-sm text-slate-700">
+              <span className="font-medium">{t("birthDetails")}:</span>{" "}
+              {chart.birth.placeName} · {chart.birth.date} · {chart.birth.time}
+            </p>
+          )}
+        </div>
+
       <div className="card p-6">
         <h2 className="mb-4 text-lg font-semibold text-slate-800">{t("title")}</h2>
 
@@ -159,6 +184,7 @@ export function ChartDisplay({ chart }: ChartDisplayProps) {
             </div>
           ))}
         </div>
+      </div>
       </div>
     </div>
   );

@@ -451,10 +451,118 @@ a.taara-logo {
 .taara-hero-native {
   position: relative;
   z-index: 1;
-  margin-bottom: 2.75rem;
+  margin-bottom: 1.75rem;
   font-size: 1rem;
   opacity: 0.8;
   color: var(--brown-light);
+}
+
+.taara-service-tiles {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 100%;
+  max-width: 48rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 520px) {
+  .taara-service-tiles {
+    grid-template-columns: 1fr;
+    max-width: 20rem;
+  }
+}
+
+.taara-service-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 8rem;
+  padding: 1.15rem 0.85rem;
+  border-radius: 14px;
+  border: 2px solid rgba(194, 106, 58, 0.22);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 252, 247, 0.98) 0%,
+    rgba(255, 245, 235, 0.94) 100%
+  );
+  text-decoration: none;
+  color: inherit;
+  box-shadow:
+    0 2px 0 rgba(62, 39, 35, 0.06),
+    0 4px 16px rgba(62, 39, 35, 0.05);
+  cursor: pointer;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s,
+    transform 0.2s,
+    background 0.2s;
+}
+
+.taara-service-tile:hover {
+  border-color: rgba(139, 58, 58, 0.45);
+  box-shadow:
+    0 3px 0 rgba(62, 39, 35, 0.08),
+    0 8px 24px rgba(62, 39, 35, 0.1);
+  transform: translateY(-2px);
+}
+
+.taara-service-tile:focus-visible {
+  outline: 2px solid var(--maroon);
+  outline-offset: 3px;
+}
+
+.taara-service-tile-primary {
+  border-color: rgba(194, 106, 58, 0.55);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 241, 225, 0.98) 0%,
+    rgba(255, 232, 210, 0.96) 100%
+  );
+  box-shadow:
+    0 3px 0 rgba(194, 106, 58, 0.15),
+    0 6px 20px rgba(194, 106, 58, 0.12);
+}
+
+.taara-service-tile-primary:hover {
+  border-color: var(--maroon);
+}
+
+.taara-service-icon {
+  font-size: 1.65rem;
+  line-height: 1;
+  color: var(--maroon);
+}
+
+.taara-service-label {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--brown-dark);
+  text-align: center;
+}
+
+.taara-service-hint {
+  font-size: 0.68rem;
+  line-height: 1.35;
+  letter-spacing: 0.02em;
+  color: var(--brown-light);
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .taara-service-label {
+    font-size: 1.02rem;
+  }
+
+  .taara-service-hint {
+    font-size: 0.72rem;
+  }
 }
 
 .taara-hero-actions {
@@ -966,5 +1074,49 @@ a.taara-logo {
   .taara-th-factor,
   .taara-td-factor {
     width: 30%;
+  }
+}
+
+@media print {
+  @page {
+    margin: 1.2cm;
+  }
+
+  body {
+    background: white !important;
+  }
+
+  body * {
+    visibility: hidden;
+  }
+
+  #chart-print-area,
+  #chart-print-area * {
+    visibility: visible;
+  }
+
+  #chart-print-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .chart-print-area .card {
+    break-inside: avoid;
+    box-shadow: none !important;
+    border: 1px solid #e2e8f0 !important;
+    background: white !important;
+  }
+
+  .chart-print-header {
+    display: block !important;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e2e8f0;
   }
 }

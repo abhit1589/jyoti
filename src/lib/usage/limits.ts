@@ -8,6 +8,7 @@ const FREE_DAILY_QA = Number(process.env.FREE_DAILY_QA ?? "8");
 const PREMIUM_DAILY_QA = Number(process.env.PREMIUM_DAILY_QA ?? "30");
 const FREE_DAILY_MATCH = Number(process.env.FREE_DAILY_MATCH ?? "10");
 const FREE_DAILY_MATCH_REPORT = Number(process.env.FREE_DAILY_MATCH_REPORT ?? "5");
+const FREE_DAILY_MATCH_QA = Number(process.env.FREE_DAILY_MATCH_QA ?? "8");
 
 export function isUsageLimitsDisabled(): boolean {
   return process.env.DISABLE_USAGE_LIMITS === "true";
@@ -19,6 +20,7 @@ type UsageRecord = {
   qaCount: number;
   matchCount: number;
   matchReportCount: number;
+  matchQaCount: number;
   premium: boolean;
 };
 
@@ -87,12 +89,14 @@ export function checkAndConsumeReadingForSession(
   const qaCount = record?.date === today ? (record.qaCount ?? 0) : 0;
   const matchCount = record?.date === today ? (record.matchCount ?? 0) : 0;
   const matchReportCount = record?.date === today ? (record.matchReportCount ?? 0) : 0;
+  const matchQaCount = record?.date === today ? (record.matchQaCount ?? 0) : 0;
   store.set(sessionId, {
     date: today,
     count: count + 1,
     qaCount,
     matchCount,
     matchReportCount,
+    matchQaCount,
     premium,
   });
   return { allowed: true, remaining: limit - count - 1, limit, premium };
@@ -123,6 +127,7 @@ export function checkAndConsumeQaForSession(
     qaCount: qaCount + 1,
     matchCount: record?.date === today ? (record.matchCount ?? 0) : 0,
     matchReportCount: record?.date === today ? (record.matchReportCount ?? 0) : 0,
+    matchQaCount: record?.date === today ? (record.matchQaCount ?? 0) : 0,
     premium,
   });
   return { allowed: true, remaining: limit - qaCount - 1, limit, premium };
@@ -167,6 +172,7 @@ export function checkAndConsumeMatchForSession(sessionId: string): {
     qaCount: record?.date === today ? (record.qaCount ?? 0) : 0,
     matchCount: matchCount + 1,
     matchReportCount: record?.date === today ? (record.matchReportCount ?? 0) : 0,
+    matchQaCount: record?.date === today ? (record.matchQaCount ?? 0) : 0,
     premium: record?.date === today ? record.premium : false,
   });
   return { allowed: true, remaining: limit - matchCount - 1, limit };
@@ -195,6 +201,7 @@ export function checkAndConsumeMatchReportForSession(sessionId: string): {
     qaCount: record?.date === today ? (record.qaCount ?? 0) : 0,
     matchCount: record?.date === today ? (record.matchCount ?? 0) : 0,
     matchReportCount: matchReportCount + 1,
+    matchQaCount: record?.date === today ? (record.matchQaCount ?? 0) : 0,
     premium: record?.date === today ? record.premium : false,
   });
   return { allowed: true, remaining: limit - matchReportCount - 1, limit };
@@ -226,6 +233,50 @@ export function getMatchStatusForSession(sessionId: string): {
     reportUsed,
     reportLimit: FREE_DAILY_MATCH_REPORT,
   };
+}
+
+export function checkAndConsumeMatchQaForSession(sessionId: string): {
+  allowed: boolean;
+  remaining: number;
+  limit: number;
+} {
+  const limit = FREE_DAILY_MATCH_QA;
+  if (isUsageLimitsDisabled()) return unlimited(limit);
+
+  const store = getStore();
+  const today = todayKey();
+  const record = store.get(sessionId);
+  const matchQaCount = record?.date === today ? (record.matchQaCount ?? 0) : 0;
+
+  if (matchQaCount >= limit) {
+    return { allowed: false, remaining: 0, limit };
+  }
+
+  store.set(sessionId, {
+    date: today,
+    count: record?.date === today ? record.count : 0,
+    qaCount: record?.date === today ? (record.qaCount ?? 0) : 0,
+    matchCount: record?.date === today ? (record.matchCount ?? 0) : 0,
+    matchReportCount: record?.date === today ? (record.matchReportCount ?? 0) : 0,
+    matchQaCount: matchQaCount + 1,
+    premium: record?.date === today ? record.premium : false,
+  });
+  return { allowed: true, remaining: limit - matchQaCount - 1, limit };
+}
+
+export function getMatchQaStatusForSession(sessionId: string): {
+  used: number;
+  limit: number;
+} {
+  if (isUsageLimitsDisabled()) {
+    return { used: 0, limit: FREE_DAILY_MATCH_QA };
+  }
+
+  const store = getStore();
+  const today = todayKey();
+  const record = store.get(sessionId);
+  const used = record?.date === today ? (record.matchQaCount ?? 0) : 0;
+  return { used, limit: FREE_DAILY_MATCH_QA };
 }
 
 export function getQaStatusForSession(sessionId: string): {

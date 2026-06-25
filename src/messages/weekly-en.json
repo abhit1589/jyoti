@@ -1,17 +1,17 @@
 {
-  "title": "This week's rashifal",
-  "subtitle": "See what the week holds for your Moon sign — in work, relationships, health, and the chances ahead.",
+  "title": "Weekly horoscope",
+  "subtitle": "Your Moon sign moves through life's themes week by week — relationships, work, health, and what the current planetary alignments bring. More personal than a sun sign prediction, more immediate than your birth chart.",
   "badge": "Always free",
   "weekOf": "This week · {range}",
-  "disclaimer": "Guidance for your Chandra (Moon) sign from birth. For insight from your full chart — lagna, planets, and dashas — explore your personalised reading on the home page.",
+  "disclaimer": "This is a Moon sign forecast — based on your Chandra rashi (Moon sign at birth), not your sun sign. For a reading grounded in your full chart — lagna, all nine planets, and your current dasha period — get your personalised reading on the home page.",
   "loading": "Reading this week's stars for you…",
   "errorTitle": "Just a moment",
-  "error": "We couldn't show this week's rashifal right now. Please check back in a little while.",
+  "error": "We couldn't load this week's horoscope right now. Please check back in a little while.",
   "retry": "Try again",
   "backHome": "Back to home",
-  "personalReading": "Get your personal chart reading",
+  "personalReading": "Get your personalised chart reading",
   "nav": {
-    "weekly": "Rashifal",
+    "weekly": "Weekly horoscope",
     "reading": "Free reading"
   }
 }

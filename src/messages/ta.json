@@ -44,7 +44,11 @@
     "birthStar": "ஜன்ம நட்சத்திரம்",
     "lagnaNakshatra": "லக்ன நட்சத்திரம்",
     "pada": "பாதம்",
-    "retrograde": "வக்ரி"
+    "retrograde": "வக்ரி",
+    "print": "அச்சிடு / PDF சேமி",
+    "printHint": "உலாவி அச்சு உரையாடல் திறக்கும் — PDF க்கு Save as PDF தேர்வு செய்யுங்கள்.",
+    "birthDetails": "பிறப்பு விவரங்கள்",
+    "printedFrom": "jyotishyam.in · லாகிரி சைடீரியல் (அயனாம்சம்)"
   },
   "reading": {
     "title": "ஜோதிட விளக்கம்",

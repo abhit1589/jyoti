@@ -110,3 +110,10 @@ export interface MatchReportRequest {
   person2Chart: VedicChart;
   locale: Locale;
 }
+
+export interface MatchQaRequest {
+  person1Chart: VedicChart;
+  person2Chart: VedicChart;
+  locale: Locale;
+  messages: QaMessage[];
+}

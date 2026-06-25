@@ -54,6 +54,13 @@ export const PLAIN_LANGUAGE_FOOTER: Record<Locale, string> = {
   kn: "\n\nಮುಖ್ಯ: 3 ಪ್ಯಾರಾಗ್ರಾಫ್‌ಗಳಲ್ಲಿ ಜ್ಯೋತಿಷ್ಯ ಪದಗಳಿಲ್ಲ — ಸಂಪೂರ್ಣ ಸರಳ ಕನ್ನಡ ಮಾತ್ರ. ಯಾವುದೇ ಇಂಗ್ಲಿಷ್ ಪದ ಬೇಡ.",
 };
 
+/** Applied to all locales — model follows English instruction blocks reliably. */
+export const CHART_SPECIFICITY_RULE = `CHART-SPECIFICITY RULE (critical):
+- This reading is for ONE person only. Generic horoscope or sun-sign advice is forbidden.
+- Each paragraph must include at least one distinctive insight that would NOT apply to most people — a tension, gift, blind spot, or life pattern that feels personally recognisable.
+- Anchor insights in the chart data provided. If two paths seem possible, name both and say which the chart emphasises.
+- Never use filler like "you are destined for success", "hard work will pay off", or "trust the journey" without a specific chart-based reason.`;
+
 export const SYSTEM_BASE: Record<Locale, string> = {
   en: `You are a warm, insightful life guide who reads Vedic birth charts. Speak directly to the person — use "you" and "your". Be specific and personal; never vague or generic.
 
@@ -107,11 +114,11 @@ export const PERSONALITY_INSTRUCTIONS: Record<Locale, string> = {
 
 Paragraph 1: Who they are on the surface — natural temperament, first impression, default way of moving through life.
 
-Paragraph 2: Their inner emotional world — what they need to feel secure, how they process feelings, what drives them beneath the surface.
+Paragraph 2: Their inner emotional world — what they need to feel secure, how they process feelings, what drives them beneath the surface. Include one inner contradiction or surprising depth (e.g. confident outside but cautious inside).
 
-Paragraph 3: Their single strongest gift or defining life pattern — what it means for their life in practical, human terms.
+Paragraph 3: Their single strongest gift or defining life pattern — what it means for their life in practical, human terms. Name a specific way this shows up in relationships or daily life.
 
-Be specific to this chart, not a generic horoscope.`,
+Be specific to this chart, not a generic horoscope. Avoid traits everyone could claim.`,
 
   hi: `इस कुंडली डेटा के आधार पर, इस व्यक्ति के व्यक्तित्व पर 3 पैराग्राफ लिखें।
 
@@ -165,11 +172,11 @@ Be specific to this chart, not a generic horoscope.`,
 export const CAREER_INSTRUCTIONS: Record<Locale, string> = {
   en: `Using this chart data, write a 3 paragraph career and life-purpose reading.
 
-Paragraph 1: What career paths, roles, and fields naturally suit this person — name actual jobs and paths, not vague themes.
+Paragraph 1: What career paths, roles, and fields naturally suit this person — name 2–4 concrete job titles or fields (e.g. product designer, civil servant, therapist, data analyst, founder, journalist, architect). Include at least one unconventional or non-obvious path when the chart supports it — independent/creative work, research, teaching, healing or service roles, tech, media, entrepreneurship, or a pivot away from a "safe" traditional track. No vague themes like "success through dedication".
 
-Paragraph 2: Their working style, professional strengths, and how they naturally succeed — leader, specialist, communicator, builder? What gives them an edge?
+Paragraph 2: Their working style, professional strengths, and how they naturally succeed — leader, specialist, communicator, builder, or hybrid? What gives them an edge in real workplaces? Mention one environment they thrive in and one they should avoid.
 
-Paragraph 3: Career challenges or blind spots, plus one practical piece of advice for their professional life.`,
+Paragraph 3: Career challenges or blind spots tied to this chart, plus one practical piece of advice for their professional life now.`,
 
   hi: `इस कुंडली डेटा के आधार पर, करियर और जीवन उद्देश्य पर 3 पैराग्राफ लिखें।
 
@@ -213,11 +220,11 @@ Paragraph 3: Career challenges or blind spots, plus one practical piece of advic
 export const DASHA_INSTRUCTIONS: Record<Locale, string> = {
   en: `Using this chart data, write a 3 paragraph reading about their current life phase.
 
-Paragraph 1: The life chapter they are in now — its overall tone, quality, and main themes. Is this phase broadly supportive, challenging, or mixed?
+Paragraph 1: The life chapter they are in now — use the current Mahadasha and Antardasha from the chart data. Describe its overall tone, quality, and main themes. Is this phase broadly supportive, challenging, or mixed?
 
-Paragraph 2: What this phase is bringing to their life right now — relationships, career, health, finances, inner growth. Be specific and realistic.
+Paragraph 2: What this specific dasha period is bringing to their life right now — relationships, career, health, finances, inner growth. Tie at least two themes directly to the active period. Be specific and realistic, not generic timing advice.
 
-Paragraph 3: The flavor of the next 12–18 months — what to focus on, what to be careful about, what opportunities are opening.`,
+Paragraph 3: The flavor of the next 12–18 months within this chapter — what to focus on, what to be careful about, what opportunities are opening. Name one concrete area of life most activated now.`,
 
   hi: `इस कुंडली डेटा के आधार पर, वर्तमान जीवन चरण पर 3 पैराग्राफ लिखें।
 
@@ -268,7 +275,7 @@ export const FOCUS_SYSTEM_SUFFIX: Record<ReadingFocus, Record<Locale, string>> =
     kn: "ನಿಖರವಾಗಿ 3 ಪ್ಯಾರಾಗ್ರಾಫ್‌ಗಳು — ಪ್ಯಾರಾಗ್ರಾಫ್ 1: ಹೊರಗೆ ಹೇಗೆ ಕಾಣಿಸುತ್ತಾರೆ, ಪ್ಯಾರಾಗ್ರಾಫ್ 2: ಒಳಗಿನ ಭಾವನೆ, ಪ್ಯಾರಾಗ್ರಾಫ್ 3: ಅತ್ಯಂತ ಬಲವಾದ ಉಡುಗೊರೆ ಅಥವಾ ಮಾದರಿ. ಶೀರ್ಷಿಕೆಗಳಿಲ್ಲ. ಸಂಪೂರ್ಣ ಕನ್ನಡ.",
   },
   career: {
-    en: "Write exactly 3 paragraphs — Paragraph 1: suited careers, Paragraph 2: working style and strengths, Paragraph 3: challenges and one practical advice. No headings.",
+    en: "Write exactly 3 paragraphs — Paragraph 1: 2–4 concrete career paths including at least one unconventional option if supported, Paragraph 2: working style and strengths, Paragraph 3: challenges and one practical advice. No headings.",
     hi: "ठीक 3 पैराग्राफ — पैरा 1: उपयुक्त करियर, पैरा 2: काम की शैली और ताकत, पैरा 3: चुनौतियाँ + एक सलाह। शीर्षक नहीं। पूरी हिंदी।",
     te: "ఖచ్చితంగా 3 పేరాలు — పేరా 1: అనుకూల వృత్తులు, పేరా 2: పని శైలి మరియు బలాలు, పేరా 3: సవాళ్లు + ఒక సలహా. శీర్షికలు లేవు. పూర్తి తెలుగు.",
     ta: "3 பத்திகள் — பத்தி 1: பொருத்தமான தொழில்கள், பத்தி 2: பணி முறை மற்றும் பலங்கள், பத்தி 3: சவால்கள் + ஒரு அறிவுரை. தலைப்புகள் இல்லை. முழு தமிழ்.",
@@ -297,6 +304,7 @@ export const CONTINUE_PROMPT: Record<Locale, string> = {
 export function buildSystemPrompt(locale: Locale, focus: ReadingFocus): string {
   const parts = [
     SYSTEM_BASE[locale],
+    CHART_SPECIFICITY_RULE,
     NATIVE_OUTPUT_RULE[locale],
     PLAIN_LANGUAGE[locale],
     FOCUS_SYSTEM_SUFFIX[focus][locale],

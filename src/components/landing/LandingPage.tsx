@@ -3,12 +3,10 @@
 import { useTranslations } from "next-intl";
 import { AppNav } from "@/components/AppNav";
 import { ChartSection } from "@/components/ChartSection";
-import { MatchSection } from "@/components/MatchSection";
-import { Link } from "@/i18n/navigation";
+import { LandingServiceTiles } from "@/components/landing/LandingServiceTiles";
 
 export function LandingPage() {
   const t = useTranslations("landing");
-  const tWeekly = useTranslations("weekly");
   const brandNative = t("brand.native");
 
   const scienceCards = ["planets", "snapshot", "framework", "dasha"] as const;
@@ -42,20 +40,7 @@ export function LandingPage() {
         <blockquote className="taara-hero-quote">{t("hero.quote")}</blockquote>
         <p className="taara-hero-sub">{t("hero.subtitle")}</p>
         <p className="taara-hero-native">{t("hero.tagline")}</p>
-        <div className="taara-hero-actions">
-          <a href="#chart" className="taara-btn-primary">
-            {t("hero.ctaPrimary")}
-          </a>
-          <a href="#match" className="taara-btn-ghost hidden md:inline-flex">
-            {t("match.nav")}
-          </a>
-          <Link href="/weekly" className="taara-btn-ghost">
-            {tWeekly("nav.weekly")}
-          </Link>
-          <a href="#science" className="taara-btn-ghost hidden sm:inline-flex">
-            {t("hero.ctaSecondary")}
-          </a>
-        </div>
+        <LandingServiceTiles />
         <p className="taara-hero-note">{t("hero.note")}</p>
       </header>
 
@@ -210,10 +195,6 @@ export function LandingPage() {
           </div>
         </div>
       </div>
-
-      <hr className="taara-hr" />
-
-      <MatchSection />
 
       <hr className="taara-hr" />
 

@@ -1,14 +1,14 @@
 {
   "meta": {
-    "title": "Taara Jyotishyam — Vedic Astrology, Precisely",
-    "description": "The sky wrote your story at the moment of your birth. We help you read it. Lahiri sidereal birth charts and Jyotish readings in six Indian languages."
+    "title": "Taara Jyotishyam — Free Vedic Birth Chart & Jyotish Reading",
+    "description": "Generate your accurate Vedic birth chart in seconds. Free Jyotish readings for personality, career, and your current life phase — in English, Hindi, Marathi, Kannada, Telugu, and Tamil. No signup. No upselling."
   },
   "nav": {
     "language": "Language"
   },
   "hero": {
-    "title": "Vedic Astrology for India",
-    "subtitle": "Accurate Lahiri sidereal charts with personalised Jyotish readings in English, Hindi, Marathi, Kannada, Telugu, and Tamil.",
+    "title": "Your Vedic Birth Chart",
+    "subtitle": "Accurate Lahiri sidereal chart with personalised Jyotish readings — in English, Hindi, Marathi, Kannada, Telugu, and Tamil.",
     "badge": "Lahiri Ayanamsa · Sidereal"
   },
   "form": {
@@ -44,11 +44,15 @@
     "birthStar": "Birth star (Janma Nakshatra)",
     "lagnaNakshatra": "Lagna nakshatra",
     "pada": "Pada",
-    "retrograde": "Retrograde"
+    "retrograde": "Retrograde",
+    "print": "Print / Save PDF",
+    "printHint": "Opens your browser print dialog — choose Save as PDF to keep a copy.",
+    "birthDetails": "Birth details",
+    "printedFrom": "jyotishyam.in · Lahiri sidereal (ayanamsa)"
   },
   "reading": {
     "title": "Jyotish Reading",
-    "subtitle": "Personalised reading based on your calculated chart data only.",
+    "subtitle": "Grounded in your calculated chart — nine planetary positions read with classical Jyotish principles. Specific to you, not your sun sign.",
     "birthStar": "Birth star (Janma Nakshatra)",
     "birthRashi": "Birth rashi (Moon)",
     "lagnaRashi": "Lagna rashi",
@@ -78,16 +82,16 @@
     "teaser": {
       "label": "Free preview",
       "title": "A glimpse of your chart",
-      "subtitle": "2–3 lines each on personality, career, and your current life chapter.",
+      "subtitle": "A brief look at your personality, career outlook, and current life phase — drawn from your actual chart positions, not your sun sign.",
       "free": "Free",
       "upgradeHint": "Like what you see? Unlock the full reading for any section below."
     },
     "payments": {
-      "intro": "Unlock a personalised reading for this chart. Pay once per section, or get all three together.",
+      "intro": "Unlock a full personalised reading for this chart. Pay once per section — yours to keep, no subscription.",
       "singleTitle": "Single reading",
-      "singleHint": "One section — Personality, Career, or Dasha (your choice).",
+      "singleHint": "One section of your choice — Personality, Career, or your current Dasha period.",
       "bundleTitle": "Complete reading",
-      "bundleHint": "All three sections — Personality, Career & Dasha — with longer detailed output.",
+      "bundleHint": "All three sections — Personality, Career & Dasha — with longer, more detailed output.",
       "bundleSave": "Save {amount} vs buying separately",
       "paySingle": "Pay for {focus}",
       "payBundle": "Pay for complete reading",
@@ -110,7 +114,7 @@
     },
     "qa": {
       "title": "Ask about your chart",
-      "subtitle": "Personal Q&A grounded in your birth chart — not generic rashifal.",
+      "subtitle": "Ask anything about your chart — grounded in your actual planetary positions, not generic zodiac advice.",
       "checking": "Checking Q&A service…",
       "unavailable": "Chart Q&A is not available right now.",
       "limit": "{used} of {limit} questions used today",
@@ -139,7 +143,7 @@
     "invalidBirth": "Please check your birth date, time, and place."
   },
   "footer": {
-    "license": "Sidereal calculations use Lahiri ayanamsa.",
-    "payments": "Payments via Razorpay."
+    "license": "Sidereal calculations use Lahiri ayanamsa. No remedies, no gemstone recommendations.",
+    "payments": "Payments processed securely via Razorpay."
   }
 }

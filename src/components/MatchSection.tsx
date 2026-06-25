@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { MatchResultPanel } from "@/components/MatchResultPanel";
+import { MatchQaPanel } from "@/components/MatchQaPanel";
 import {
   defaultPartnerBirth,
   PartnerBirthFields,
@@ -241,13 +242,15 @@ export function MatchSection() {
   }
 
   return (
-    <section id="match" className="taara-section scroll-mt-24">
+    <section className="taara-section scroll-mt-24">
       <p className="taara-label">{t("label")}</p>
       <h2 className="taara-heading">
         {t.rich("title", { em: (c) => <em>{c}</em>, br: () => <br /> })}
       </h2>
-      <p className="taara-intro mb-2">{t("intro")}</p>
-      <p className="mb-8 text-sm text-[var(--brown-light)]">{t("roleHint")}</p>
+      <p className="taara-intro mb-4">{t("intro")}</p>
+      <p className="mb-8 rounded-xl border border-orange-200/80 bg-orange-50/70 px-4 py-3 text-sm leading-relaxed text-slate-700">
+        {t("roleHint")}
+      </p>
 
       {usage.loaded && (
         <p className="mb-6 text-xs text-muted">
@@ -283,7 +286,7 @@ export function MatchSection() {
       </form>
 
       {matchData && (
-        <div className="mt-10">
+        <div className="mt-10 space-y-6">
           <MatchResultPanel
             gunaMilan={matchData.gunaMilan}
             mangalDosha={matchData.mangalDosha}
@@ -292,6 +295,10 @@ export function MatchSection() {
             onGenerateReport={() => void handleGenerateReport()}
             canGenerateReport={usage.hasApiKey}
             reportLimitReached={reportLimitReached}
+          />
+          <MatchQaPanel
+            person1Chart={matchData.person1Chart}
+            person2Chart={matchData.person2Chart}
           />
         </div>
       )}
