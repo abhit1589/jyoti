@@ -22,6 +22,14 @@ export function LandingServiceTiles() {
         <span className="taara-service-hint">{t("chart.hint")}</span>
       </a>
 
+      <Link href="/panchang" className="taara-service-tile">
+        <span className="taara-service-icon" aria-hidden>
+          {t("panchang.icon")}
+        </span>
+        <span className="taara-service-label">{t("panchang.label")}</span>
+        <span className="taara-service-hint">{t("panchang.hint")}</span>
+      </Link>
+
       <Link href="/match" className="taara-service-tile">
         <span className="taara-service-icon" aria-hidden>
           {t("match.icon")}

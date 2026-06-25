@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { AppNav } from "@/components/AppNav";
 import { ChartSection } from "@/components/ChartSection";
 import { LandingServiceTiles } from "@/components/landing/LandingServiceTiles";
+import { PanchangCard } from "@/components/panchang/PanchangCard";
 import { SiteFooter } from "@/components/legal/SiteFooter";
 
 export function LandingPage() {
@@ -47,6 +48,10 @@ export function LandingPage() {
       <p className="taara-ornament" aria-hidden>
         ✦ &nbsp; ✦ &nbsp; ✦
       </p>
+      <hr className="taara-hr" />
+
+      <PanchangCard />
+
       <hr className="taara-hr" />
 
       <section id="science" className="taara-section scroll-mt-24">

@@ -16,6 +16,10 @@ export async function BusinessVerificationBlock() {
           <dd>{business.legalName}</dd>
         </div>
         <div>
+          <dt>{t("proprietorNameLabel")}</dt>
+          <dd>{business.proprietorName}</dd>
+        </div>
+        <div>
           <dt>{t("addressLabel")}</dt>
           <dd>
             {business.aadhaarAddress || (

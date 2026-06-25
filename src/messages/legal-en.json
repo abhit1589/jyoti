@@ -5,6 +5,7 @@
     "groupLegal": "Legal",
     "about": "About us",
     "services": "Services",
+    "panchang": "Panchang",
     "pricing": "Pricing",
     "terms": "Terms & Conditions",
     "privacy": "Privacy Policy",
@@ -19,6 +20,7 @@
     "intro": "Taara Jyotishyam (jyotishyam.in) provides Vedic astrology services online — precise Lahiri sidereal birth charts, Moon-sign horoscopes, kundali matching, and AI-assisted personalised readings in English, Hindi, Marathi, Kannada, Telugu, and Tamil.",
     "verificationTitle": "Merchant verification details",
     "legalNameLabel": "Legal name",
+    "proprietorNameLabel": "Name",
     "addressLabel": "Registered address",
     "emailLabel": "Support email",
     "phoneLabel": "Phone",
@@ -54,8 +56,8 @@
         "description": "One in-depth reading section — Personality, Career & Dharma, or Current Dasha — based on your saved birth chart."
       },
       "reading-bundle": {
-        "name": "Complete chart reading bundle",
-        "description": "All three reading sections (Personality + Career + Dasha) for one chart at a discounted bundle price."
+        "name": "Complete chart reading",
+        "description": "All three reading sections (Personality + Career + Dasha) for one chart at a discounted price."
       }
     },
     "freeBadge": "Free",
@@ -98,7 +100,7 @@
         "description": "One reading section: Personality, Career & Dharma, or Current Dasha."
       },
       "bundle": {
-        "name": "Complete chart reading bundle",
+        "name": "Complete chart reading",
         "description": "All three reading sections for your chart."
       },
       "match-report": {

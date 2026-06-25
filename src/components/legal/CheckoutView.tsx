@@ -16,6 +16,7 @@ interface PaymentConfig {
 
 interface BusinessPublic {
   legalName: string;
+  proprietorName: string;
   aadhaarAddress: string;
   email: string;
   phone: string;
@@ -46,6 +47,7 @@ interface CheckoutViewProps {
 
 export function CheckoutView({ skuParam }: CheckoutViewProps) {
   const t = useTranslations("legal.checkout");
+  const tAbout = useTranslations("legal.about");
   const [config, setConfig] = useState<PaymentConfig | null>(null);
   const [business, setBusiness] = useState<BusinessPublic | null>(null);
   const [accepted, setAccepted] = useState(false);
@@ -156,11 +158,15 @@ export function CheckoutView({ skuParam }: CheckoutViewProps) {
             {business ? (
               <dl className="taara-legal-dl">
                 <div>
-                  <dt>Legal name</dt>
+                  <dt>{tAbout("legalNameLabel")}</dt>
                   <dd>{business.legalName}</dd>
                 </div>
                 <div>
-                  <dt>Address</dt>
+                  <dt>{tAbout("proprietorNameLabel")}</dt>
+                  <dd>{business.proprietorName}</dd>
+                </div>
+                <div>
+                  <dt>{tAbout("addressLabel")}</dt>
                   <dd>{business.aadhaarAddress || "—"}</dd>
                 </div>
                 <div>

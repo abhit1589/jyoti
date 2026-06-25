@@ -30,16 +30,22 @@ import monthlyKn from "../messages/monthly-kn.json";
 import monthlyMr from "../messages/monthly-mr.json";
 import monthlyTe from "../messages/monthly-te.json";
 import monthlyTa from "../messages/monthly-ta.json";
+import panchangEn from "../messages/panchang-en.json";
+import panchangHi from "../messages/panchang-hi.json";
+import panchangKn from "../messages/panchang-kn.json";
+import panchangMr from "../messages/panchang-mr.json";
+import panchangTe from "../messages/panchang-te.json";
+import panchangTa from "../messages/panchang-ta.json";
 import legalEn from "../messages/legal-en.json";
 import { isLocale } from "@/lib/i18n/locales";
 
 const messages = {
-  en: { ...en, landing: landingEn, weekly: weeklyEn, daily: dailyEn, monthly: monthlyEn, legal: legalEn },
-  hi: { ...hi, landing: landingHi, weekly: weeklyHi, daily: dailyHi, monthly: monthlyHi, legal: legalEn },
-  mr: { ...mr, landing: landingMr, weekly: weeklyMr, daily: dailyMr, monthly: monthlyMr, legal: legalEn },
-  kn: { ...kn, landing: landingKn, weekly: weeklyKn, daily: dailyKn, monthly: monthlyKn, legal: legalEn },
-  te: { ...te, landing: landingTe, weekly: weeklyTe, daily: dailyTe, monthly: monthlyTe, legal: legalEn },
-  ta: { ...ta, landing: landingTa, weekly: weeklyTa, daily: dailyTa, monthly: monthlyTa, legal: legalEn },
+  en: { ...en, landing: landingEn, weekly: weeklyEn, daily: dailyEn, monthly: monthlyEn, panchang: panchangEn, legal: legalEn },
+  hi: { ...hi, landing: landingHi, weekly: weeklyHi, daily: dailyHi, monthly: monthlyHi, panchang: panchangHi, legal: legalEn },
+  mr: { ...mr, landing: landingMr, weekly: weeklyMr, daily: dailyMr, monthly: monthlyMr, panchang: panchangMr, legal: legalEn },
+  kn: { ...kn, landing: landingKn, weekly: weeklyKn, daily: dailyKn, monthly: monthlyKn, panchang: panchangKn, legal: legalEn },
+  te: { ...te, landing: landingTe, weekly: weeklyTe, daily: dailyTe, monthly: monthlyTe, panchang: panchangTe, legal: legalEn },
+  ta: { ...ta, landing: landingTa, weekly: weeklyTa, daily: dailyTa, monthly: monthlyTa, panchang: panchangTa, legal: legalEn },
 } as const;
 
 export default getRequestConfig(async ({ requestLocale }) => {

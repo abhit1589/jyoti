@@ -11,6 +11,7 @@ const INDEX_ROUTES: {
     | "daily"
     | "weekly"
     | "monthly"
+    | "panchang"
     | "match"
     | "about"
     | "services"
@@ -27,6 +28,7 @@ const INDEX_ROUTES: {
   { path: "daily", priority: 0.9, changeFrequency: "daily" },
   { path: "weekly", priority: 0.88, changeFrequency: "weekly" },
   { path: "monthly", priority: 0.88, changeFrequency: "monthly" },
+  { path: "panchang", priority: 0.87, changeFrequency: "daily" },
   { path: "match", priority: 0.85, changeFrequency: "monthly" },
   { path: "about", priority: 0.7, changeFrequency: "monthly" },
   { path: "services", priority: 0.7, changeFrequency: "monthly" },

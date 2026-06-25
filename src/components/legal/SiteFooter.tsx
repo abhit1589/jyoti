@@ -12,6 +12,7 @@ const FOOTER_GROUPS = [
     labelKey: "groupServices" as const,
     links: [
       { href: "/services", key: "services" as const },
+      { href: "/panchang", key: "panchang" as const },
       { href: "/pricing", key: "pricing" as const },
     ],
   },

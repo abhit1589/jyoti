@@ -27,6 +27,11 @@
       "label": "Horoscope Matching",
       "hint": "36-point compatibility"
     },
+    "panchang": {
+      "icon": "☀",
+      "label": "Panchang",
+      "hint": "Tithi, nakshatra & Rahukaal"
+    },
     "forecasts": {
       "icon": "☽",
       "label": "Moon sign forecasts",

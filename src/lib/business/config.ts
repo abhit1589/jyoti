@@ -1,6 +1,7 @@
 /** Merchant details for PayU / payment-gateway verification. Set in Vercel env. */
 export interface BusinessDetails {
   legalName: string;
+  proprietorName: string;
   aadhaarAddress: string;
   email: string;
   phone: string;
@@ -16,6 +17,10 @@ export function getBusinessDetails(): BusinessDetails {
       process.env.BUSINESS_LEGAL_NAME?.trim() ||
       process.env.NEXT_PUBLIC_BUSINESS_LEGAL_NAME?.trim() ||
       "Taara Jyotishyam",
+    proprietorName:
+      process.env.BUSINESS_PROPRIETOR_NAME?.trim() ||
+      process.env.NEXT_PUBLIC_BUSINESS_PROPRIETOR_NAME?.trim() ||
+      "Tondepu Amarendra",
     aadhaarAddress:
       process.env.BUSINESS_AADHAAR_ADDRESS?.trim() ||
       process.env.NEXT_PUBLIC_BUSINESS_AADHAAR_ADDRESS?.trim() ||

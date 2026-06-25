@@ -1,4 +1,5 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { PolicyPage } from "@/components/legal/PolicyPage";
 import { formatInr, getServiceCatalog } from "@/lib/business/services";
 import { isLocale } from "@/lib/i18n/locales";
@@ -36,6 +37,7 @@ export default async function ServicesPage({
   const locale = localeParam as Locale;
   setRequestLocale(locale);
   const t = await getTranslations("legal.services");
+  const tPricing = await getTranslations("legal.pricing");
   const catalog = getServiceCatalog();
 
   return (
@@ -52,7 +54,12 @@ export default async function ServicesPage({
             </div>
             <p>{t(`items.${service.id}.description`)}</p>
             {!service.free ? (
-              <p className="taara-services-price">{formatInr(service.pricePaise)}</p>
+              <div className="taara-services-list-actions">
+                <p className="taara-services-price">{formatInr(service.pricePaise)}</p>
+                <Link href={service.checkoutPath!} className="taara-btn-primary taara-pricing-btn">
+                  {tPricing("buyNow")}
+                </Link>
+              </div>
             ) : null}
           </li>
         ))}
