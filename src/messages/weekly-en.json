@@ -1,5 +1,7 @@
 {
   "title": "Weekly horoscope",
+  "metaTitle": "Weekly Horoscope — All 12 Moon Signs Free | Taara Jyotishyam",
+  "metaDescription": "This week's free horoscope for all 12 Moon signs — work, relationships, health, and what's ahead. Fresh forecast every week in six Indian languages.",
   "subtitle": "Your Moon sign moves through life's themes week by week — relationships, work, health, and what the current planetary alignments bring. More personal than a sun sign prediction, more immediate than your birth chart.",
   "badge": "Always free",
   "weekOf": "This week · {range}",
@@ -10,6 +12,11 @@
   "retry": "Try again",
   "backHome": "Back to home",
   "personalReading": "Get your personalised chart reading",
+  "allRashis": "All Moon signs",
+  "rashiTitle": "{rashi} weekly horoscope",
+  "rashiSubtitle": "Your Moon sign forecast for this week — work, relationships, health, and what's ahead.",
+  "rashiMetaTitle": "{rashi} weekly horoscope",
+  "rashiMetaDescription": "This week's Moon sign horoscope for {rashi} — relationships, work, health, and opportunities ahead.",
   "nav": {
     "weekly": "Weekly horoscope",
     "reading": "Free reading"

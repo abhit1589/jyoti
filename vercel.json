@@ -1,8 +1,16 @@
 {
   "crons": [
     {
+      "path": "/api/cron/daily-rashi",
+      "schedule": "30 22 * * *"
+    },
+    {
       "path": "/api/cron/weekly-rashi",
-      "schedule": "0 3 * * 1"
+      "schedule": "30 22 * * 0"
+    },
+    {
+      "path": "/api/cron/monthly-rashi",
+      "schedule": "30 18 1 * *"
     }
   ]
 }

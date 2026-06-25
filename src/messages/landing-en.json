@@ -27,10 +27,14 @@
       "label": "Horoscope Matching",
       "hint": "36-point compatibility"
     },
-    "weekly": {
+    "forecasts": {
       "icon": "☽",
-      "label": "Weekly Horoscope",
-      "hint": "Moon sign forecast"
+      "label": "Moon sign forecasts",
+      "hint": "Free · always updated",
+      "periodsAria": "Choose forecast period",
+      "daily": "Daily",
+      "weekly": "Weekly",
+      "monthly": "Monthly"
     }
   },
   "science": {

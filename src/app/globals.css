@@ -295,6 +295,19 @@ a.taara-logo {
   margin: 0 0 0.75rem;
 }
 
+.taara-rashi-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.taara-rashi-link:hover {
+  color: var(--maroon);
+}
+
 .taara-rashi-symbol {
   display: inline-flex;
   align-items: center;
@@ -530,6 +543,61 @@ a.taara-logo {
 
 .taara-service-tile-primary:hover {
   border-color: var(--maroon);
+}
+
+.taara-service-tile-forecasts {
+  cursor: default;
+}
+
+.taara-service-tile-forecasts:hover {
+  transform: none;
+}
+
+.taara-service-periods {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem;
+  margin-top: 0.35rem;
+  width: 100%;
+}
+
+.taara-service-period {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(139, 58, 58, 0.22);
+  background: rgba(255, 252, 247, 0.9);
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+  color: var(--maroon);
+  text-decoration: none;
+  transition:
+    background 0.15s,
+    border-color 0.15s,
+    color 0.15s;
+}
+
+@media (min-width: 640px) {
+  .taara-service-period {
+    font-size: 0.76rem;
+  }
+}
+
+.taara-service-period:hover {
+  border-color: var(--maroon);
+  background: rgba(255, 241, 225, 0.98);
+  color: var(--maroon);
+}
+
+.taara-service-period:focus-visible {
+  outline: 2px solid var(--maroon);
+  outline-offset: 2px;
 }
 
 .taara-service-icon {
@@ -1023,6 +1091,22 @@ a.taara-logo {
   .taara-nav {
     padding: 0.85rem 1rem;
     gap: 0.55rem;
+    justify-content: flex-start;
+  }
+
+  a.taara-logo {
+    margin-right: auto;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .taara-logo-stack {
+    justify-items: start;
+    text-align: left;
+  }
+
+  .taara-nav-actions {
+    flex-shrink: 0;
   }
 
   .taara-nav-weekly {
@@ -1043,8 +1127,7 @@ a.taara-logo {
   }
 
   .taara-nav-cta {
-    padding: 0.5rem 0.85rem;
-    font-size: 0.84rem;
+    display: none;
   }
 
   .taara-section {

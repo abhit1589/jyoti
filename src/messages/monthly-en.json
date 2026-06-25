@@ -1,0 +1,24 @@
+{
+  "title": "Monthly horoscope",
+  "metaTitle": "Monthly Horoscope — All 12 Moon Signs Free | Taara Jyotishyam",
+  "metaDescription": "This month's free horoscope for all 12 Moon signs — work, relationships, money, health, and broader life themes. Updated monthly in six Indian languages.",
+  "subtitle": "Your Moon sign themes for the full month — work, relationships, money, health, and the broader patterns ahead.",
+  "badge": "Always free",
+  "monthOf": "This month · {month}",
+  "disclaimer": "This is a Moon sign forecast — based on your Chandra rashi (Moon sign at birth), not your sun sign. For a reading grounded in your full chart — lagna, all nine planets, and your current dasha period — get your personalised reading on the home page.",
+  "loading": "Reading this month's stars for you…",
+  "errorTitle": "Just a moment",
+  "error": "We couldn't load this month's horoscope right now. Please check back in a little while.",
+  "retry": "Try again",
+  "backHome": "Back to home",
+  "personalReading": "Get your personalised chart reading",
+  "allRashis": "All Moon signs",
+  "rashiTitle": "{rashi} — this month",
+  "rashiSubtitle": "This month's Moon sign outlook — work, relationships, money, and overall themes.",
+  "rashiMetaTitle": "{rashi} monthly horoscope",
+  "rashiMetaDescription": "This month's Moon sign horoscope for {rashi} — work, relationships, money, health, and themes for the month ahead.",
+  "nav": {
+    "monthly": "Monthly horoscope",
+    "reading": "Free reading"
+  }
+}

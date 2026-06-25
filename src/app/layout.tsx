@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Noto_Sans_Devanagari, Noto_Sans_Kannada, Noto_Sans_Tamil, Noto_Sans_Telugu, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
@@ -43,6 +43,16 @@ export const metadata: Metadata = {
   title: "Taara Jyotishyam — Vedic Astrology, Precisely",
   description:
     "The sky wrote your story at the moment of your birth. We help you read it. Lahiri sidereal birth charts and Jyotish readings in six Indian languages.",
+  applicationName: "Taara Jyotishyam",
+  appleWebApp: {
+    capable: true,
+    title: "Taara Jyotishyam",
+    statusBarStyle: "default",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#8b1a1a",
 };
 
 export default function RootLayout({

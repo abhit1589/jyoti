@@ -1,0 +1,24 @@
+{
+  "title": "Daily horoscope",
+  "metaTitle": "Daily Horoscope — All 12 Moon Signs Free | Taara Jyotishyam",
+  "metaDescription": "Today's free daily horoscope for every Moon sign — mood, work, relationships, and energy. Updated each morning in English, Hindi, Marathi, Kannada, Telugu, and Tamil.",
+  "subtitle": "Your Moon sign outlook for today — mood, work, relationships, and the energy of the day. Updated every morning.",
+  "badge": "Always free",
+  "dayOf": "Today · {date}",
+  "disclaimer": "This is a Moon sign forecast — based on your Chandra rashi (Moon sign at birth), not your sun sign. For a reading grounded in your full chart — lagna, all nine planets, and your current dasha period — get your personalised reading on the home page.",
+  "loading": "Reading today's stars for you…",
+  "errorTitle": "Just a moment",
+  "error": "We couldn't load today's horoscope right now. Please check back in a little while.",
+  "retry": "Try again",
+  "backHome": "Back to home",
+  "personalReading": "Get your personalised chart reading",
+  "allRashis": "All Moon signs",
+  "rashiTitle": "{rashi} — today",
+  "rashiSubtitle": "Today's Moon sign outlook — mood, work, relationships, and energy.",
+  "rashiMetaTitle": "{rashi} daily horoscope",
+  "rashiMetaDescription": "Today's Moon sign horoscope for {rashi} — mood, work, relationships, and what the day may bring.",
+  "nav": {
+    "daily": "Daily horoscope",
+    "reading": "Free reading"
+  }
+}

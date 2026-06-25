@@ -18,15 +18,27 @@ import weeklyKn from "../messages/weekly-kn.json";
 import weeklyMr from "../messages/weekly-mr.json";
 import weeklyTe from "../messages/weekly-te.json";
 import weeklyTa from "../messages/weekly-ta.json";
+import dailyEn from "../messages/daily-en.json";
+import dailyHi from "../messages/daily-hi.json";
+import dailyKn from "../messages/daily-kn.json";
+import dailyMr from "../messages/daily-mr.json";
+import dailyTe from "../messages/daily-te.json";
+import dailyTa from "../messages/daily-ta.json";
+import monthlyEn from "../messages/monthly-en.json";
+import monthlyHi from "../messages/monthly-hi.json";
+import monthlyKn from "../messages/monthly-kn.json";
+import monthlyMr from "../messages/monthly-mr.json";
+import monthlyTe from "../messages/monthly-te.json";
+import monthlyTa from "../messages/monthly-ta.json";
 import { isLocale } from "@/lib/i18n/locales";
 
 const messages = {
-  en: { ...en, landing: landingEn, weekly: weeklyEn },
-  hi: { ...hi, landing: landingHi, weekly: weeklyHi },
-  mr: { ...mr, landing: landingMr, weekly: weeklyMr },
-  kn: { ...kn, landing: landingKn, weekly: weeklyKn },
-  te: { ...te, landing: landingTe, weekly: weeklyTe },
-  ta: { ...ta, landing: landingTa, weekly: weeklyTa },
+  en: { ...en, landing: landingEn, weekly: weeklyEn, daily: dailyEn, monthly: monthlyEn },
+  hi: { ...hi, landing: landingHi, weekly: weeklyHi, daily: dailyHi, monthly: monthlyHi },
+  mr: { ...mr, landing: landingMr, weekly: weeklyMr, daily: dailyMr, monthly: monthlyMr },
+  kn: { ...kn, landing: landingKn, weekly: weeklyKn, daily: dailyKn, monthly: monthlyKn },
+  te: { ...te, landing: landingTe, weekly: weeklyTe, daily: dailyTe, monthly: monthlyTe },
+  ta: { ...ta, landing: landingTa, weekly: weeklyTa, daily: dailyTa, monthly: monthlyTa },
 } as const;
 
 export default getRequestConfig(async ({ requestLocale }) => {
