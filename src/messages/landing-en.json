@@ -46,41 +46,41 @@
   },
   "comparison": {
     "label": "Why Taara Jyotishyam",
-    "title": "The problem with<br></br><em>inconsistent readings.</em>",
-    "intro": "A good astrologer knows Jyotish deeply. But human readers get tired, rushed, or inconsistent — the same chart read on different days can sound different. That is not Jyotish failing. That is inconsistency failing you.",
-    "colFactor": "What affects your reading",
+    "title": "Your reading,<br></br><em>from home — instantly.</em>",
+    "intro": "No travel, no appointment, no waiting. An honest reflection of your chart — without bias, and without being pushed toward pujas, gemstones, or costly remedies.",
+    "colFactor": "What matters to you",
     "colTraditional": "Traditional reading",
     "colTaaraa": "Taara Jyotishyam",
     "rows": {
+      "availability": {
+        "factor": "When & where",
+        "traditional": "In-person visit, appointment, days of waiting",
+        "taaraa": "At home, instantly — no appointment needed"
+      },
+      "neutrality": {
+        "factor": "Neutrality",
+        "traditional": "Reader's mood, opinions & personal bias",
+        "taaraa": "Your chart only — a calm reflection, no agenda"
+      },
+      "upselling": {
+        "factor": "Pujas, gems & remedies",
+        "traditional": "Often pushed — rituals, gemstones, add-ons",
+        "taaraa": "Never — interpretation only, no upselling"
+      },
       "accuracy": {
         "factor": "Planetary calculation",
         "traditional": "Manual, prone to error",
         "taaraa": "Lahiri sidereal — exact positions"
-      },
-      "consistency": {
-        "factor": "Consistency between readings",
-        "traditional": "Varies by mood & fatigue",
-        "taaraa": "Same framework, every time"
-      },
-      "availability": {
-        "factor": "Availability",
-        "traditional": "Appointment, days of waiting",
-        "taaraa": "Instant, any hour"
       },
       "language": {
         "factor": "Language",
         "traditional": "Depends on the reader",
         "taaraa": "English, Hindi, Marathi, Kannada, Telugu & Tamil"
       },
-      "upselling": {
-        "factor": "Upselling & remedies",
-        "traditional": "Common — gems, pujas pushed",
-        "taaraa": "None — interpretation only"
-      },
       "cost": {
         "factor": "Cost",
-        "traditional": "₹500–₹5,000 per session",
-        "taaraa": "Free daily readings included"
+        "traditional": "₹500–₹5,000 per session, plus remedies",
+        "taaraa": "₹100 per reading — clear pricing, no upsells"
       }
     }
   },
@@ -149,6 +149,77 @@
         "name": "Preethi M. · Bengaluru"
       }
     }
+  },
+  "match": {
+    "label": "Kundali matching",
+    "title": "Marriage compatibility,<br></br><em>precisely scored.</em>",
+    "intro": "Classic 36-point guna milan (Ashtakoot) from both birth charts — plus a plain-language reading of what it means for you two.",
+    "roleHint": "Enter the bride's birth details on the left and the groom's on the right.",
+    "partner1": "Bride",
+    "partner2": "Groom",
+    "compare": "Compare charts",
+    "comparing": "Calculating guna milan…",
+    "limit": "{used} of {limit} comparisons used today",
+    "limitReached": "Daily comparison limit reached. Try again tomorrow.",
+    "genericError": "Could not compare charts. Please try again.",
+    "scoreLabel": "Guna milan score",
+    "verdictGood": "Traditionally acceptable (18+)",
+    "verdictLow": "Below classical threshold (18)",
+    "percentage": "{value}% overall",
+    "kootaTitle": "Eight kootas breakdown",
+    "mangalTitle": "Mangal dosha check",
+    "reportTitle": "Plain-language match reading",
+    "reportHint": "A warm explanation of your score — strengths, friction points, and what to understand together.",
+    "reportGenerate": "Generate match reading",
+    "reportLoading": "Writing your match reading…",
+    "reportUnavailable": "Match readings are not available right now.",
+    "reportLimitReached": "Daily match reading limit reached.",
+    "reportError": "Could not generate match reading.",
+    "reportEmpty": "No reading was returned. Please try again.",
+    "disclaimer": "Guna milan is traditional guidance, not a verdict on your relationship. For entertainment and reflection only.",
+    "mangal": {
+      "none": "No mangal dosha concern for this pair.",
+      "present": "One chart shows mangal dosha — worth understanding together; classical texts note exceptions and cancellations.",
+      "cancelled": "Both charts show mangal dosha — traditionally this can cancel out for the pair.",
+      "personNone": "None",
+      "personPresent": "Present",
+      "personCancelled": "Cancelled (own/exalted sign)"
+    },
+    "kootas": {
+      "varna": {
+        "name": "Varna",
+        "desc": "Spiritual / ego alignment"
+      },
+      "vashya": {
+        "name": "Vashya",
+        "desc": "Mutual attraction and influence"
+      },
+      "tara": {
+        "name": "Tara",
+        "desc": "Birth star harmony"
+      },
+      "yoni": {
+        "name": "Yoni",
+        "desc": "Physical compatibility"
+      },
+      "grahaMaitri": {
+        "name": "Graha Maitri",
+        "desc": "Mental rapport (Moon lords)"
+      },
+      "gana": {
+        "name": "Gana",
+        "desc": "Temperament match"
+      },
+      "bhakoot": {
+        "name": "Bhakoot",
+        "desc": "Prosperity and family harmony"
+      },
+      "nadi": {
+        "name": "Nadi",
+        "desc": "Health and progeny themes"
+      }
+    },
+    "nav": "Kundali matching"
   },
   "chart": {
     "label": "Your chart",

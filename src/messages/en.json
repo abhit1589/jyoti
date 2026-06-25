@@ -28,7 +28,8 @@
     "pm": "PM",
     "city": "Birth place",
     "submit": "Generate Chart",
-    "loading": "Calculating…"
+    "loading": "Calculating…",
+    "loadingWithTeaser": "Calculating chart & free preview…"
   },
   "chart": {
     "title": "Rashi Chart (D1)",
@@ -73,7 +74,65 @@
     "genericError": "Reading failed. Please try again.",
     "emptyReading": "No reading was returned. Please try again.",
     "disclaimer": "For guidance and entertainment only. Not medical, legal, or financial advice.",
-    "truncated": "Reading may be incomplete. Try the detailed reading option for more."
+    "truncated": "Reading may be incomplete. Try the detailed reading option for more.",
+    "teaser": {
+      "label": "Free preview",
+      "title": "A glimpse of your chart",
+      "subtitle": "2–3 lines each on personality, career, and your current life chapter.",
+      "free": "Free",
+      "upgradeHint": "Like what you see? Unlock the full reading for any section below."
+    },
+    "payments": {
+      "intro": "Unlock a personalised reading for this chart. Pay once per section, or get all three together.",
+      "singleTitle": "Single reading",
+      "singleHint": "One section — Personality, Career, or Dasha (your choice).",
+      "bundleTitle": "Complete reading",
+      "bundleHint": "All three sections — Personality, Career & Dasha — with longer detailed output.",
+      "bundleSave": "Save {amount} vs buying separately",
+      "paySingle": "Pay for {focus}",
+      "payBundle": "Pay for complete reading",
+      "processing": "Opening Razorpay…",
+      "alreadyUnlocked": "Already unlocked",
+      "bundleOwned": "Complete reading purchased",
+      "unlocked": "Unlocked",
+      "used": "Used",
+      "locked": "Locked",
+      "required": "Please complete payment to generate this reading.",
+      "alreadyUsed": "You have already used this paid reading for this section.",
+      "unlockHint": "Pay above to unlock this section, then tap Get Reading.",
+      "usedHint": "This paid section has already been generated for this chart.",
+      "notConfigured": "Payments are not configured yet.",
+      "orderFailed": "Could not start payment. Please try again.",
+      "verifyFailed": "Payment could not be verified. Contact support if money was deducted.",
+      "failed": "Payment failed. Please try again.",
+      "readingLabel": "Jyotish reading",
+      "disclaimer": "Paid readings are for guidance and entertainment only. Payments are processed securely by Razorpay."
+    },
+    "qa": {
+      "title": "Ask about your chart",
+      "subtitle": "Personal Q&A grounded in your birth chart — not generic rashifal.",
+      "checking": "Checking Q&A service…",
+      "unavailable": "Chart Q&A is not available right now.",
+      "limit": "{used} of {limit} questions used today",
+      "limitReached": "Daily question limit reached. Try again tomorrow.",
+      "empty": "Ask anything about your personality, career, relationships, or current life phase.",
+      "you": "You",
+      "guide": "Taara guide",
+      "placeholder": "e.g. Why might I feel restless in my career right now?",
+      "ask": "Ask",
+      "sending": "Asking…",
+      "thinking": "Thinking about your chart…",
+      "genericError": "Could not get an answer. Please try again.",
+      "emptyReply": "No answer was returned. Please try again.",
+      "disclaimer": "Answers are for guidance and entertainment only. Not medical, legal, or financial advice.",
+      "suggestions": {
+        "career": "What career paths suit me?",
+        "dasha": "What does my current life phase mean?",
+        "relationships": "How do I approach relationships?",
+        "timing": "What should I focus on this year?",
+        "children": "What does my chart say about children?"
+      }
+    }
   },
   "errors": {
     "generic": "Something went wrong. Please try again.",
@@ -81,6 +140,6 @@
   },
   "footer": {
     "license": "Sidereal calculations use Lahiri ayanamsa.",
-    "payments": "Payments via Razorpay — coming after testing."
+    "payments": "Payments via Razorpay."
   }
 }

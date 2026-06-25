@@ -46,41 +46,41 @@
   },
   "comparison": {
     "label": "ಏಕೆ ತಾರಾ ಜ್ಯೋತಿಷ್ಯ",
-    "title": "ಅಸ್ಥಿರ<br></br><em>ಓದುಗಳ ಸಮಸ್ಯೆ.</em>",
-    "intro": "ಒಳ್ಳೆಯ ಜ್ಯೋತಿಷಿ ಜ್ಯೋತಿಷ್ಯವನ್ನು ಆಳವಾಗಿ ತಿಳಿದಿದ್ದಾನೆ. ಆದರೆ ಮಾನವ ಓದುಗರು ಆಯಾಸ, ಆತುರ, ಅಸ್ಥಿರತೆ — ಒಂದೇ ಕುಂಡಲಿಯನ್ನು ಬೇರೆ ದಿನ ಓದಿದರೆ ಬೇರೆ ಕೇಳಿಸುತ್ತದೆ.",
-    "colFactor": "ನಿಮ್ಮ ಓದನ್ನು ಏನು ಪ್ರಭಾವಿಸುತ್ತದೆ",
+    "title": "ನಿಮ್ಮ ಓದು,<br></br><em>ಮನೆಯಿಂದಲೇ — ತಕ್ಷಣ.</em>",
+    "intro": "ಪ್ರಯಾಣ ಇಲ್ಲ, ಅಪಾಯಿಂಟ್‌ಮೆಂಟ್ ಇಲ್ಲ, ಕಾಯುವಿಕೆ ಇಲ್ಲ. ನಿಮ್ಮ ಕುಂಡಲಿಯ ಪ್ರಾಮಾಣಿಕ ಪ್ರತಿಬಿಂಬ — ಪಕ್ಷಪಾತವಿಲ್ಲದೆ, ಪೂಜೆ, ರತ್ನ ಅಥವಾ ದುಬ್ಬರ ಪರಿಹಾರಗಳ ಒತ್ತಡವಿಲ್ಲದೆ.",
+    "colFactor": "ನಿಮಗೆ ಮುಖ್ಯವಾದದ್ದು",
     "colTraditional": "ಸಾಂಪ್ರದಾಯಿಕ ಓದು",
     "colTaaraa": "ತಾರಾ ಜ್ಯೋತಿಷ್ಯ",
     "rows": {
+      "availability": {
+        "factor": "ಯಾವಾಗ & ಎಲ್ಲಿ",
+        "traditional": "ನೇರ ಭೇಟಿ, ಅಪಾಯಿಂಟ್‌ಮೆಂಟ್, ದಿನಗಳ ಕಾಯುವಿಕೆ",
+        "taaraa": "ಮನೆಯಿಂದಲೇ, ತಕ್ಷಣ — ಅಪಾಯಿಂಟ್‌ಮೆಂಟ್ ಬೇಕಿಲ್ಲ"
+      },
+      "neutrality": {
+        "factor": "ತಟಸ್ಥತೆ",
+        "traditional": "ಓದುಗನ ಮನಸ್ಥಿತಿ, ಅಭಿಪ್ರಾಯಗಳು & ವೈಯಕ್ತಿಕ ಪಕ್ಷಪಾತ",
+        "taaraa": "ನಿಮ್ಮ ಕುಂಡಲಿ ಮಾತ್ರ — ಶಾಂತ ಪ್ರತಿಬಿಂಬ, ಯಾವುದೇ ಅಜೆಂಡಾ ಇಲ್ಲ"
+      },
+      "upselling": {
+        "factor": "ಪೂಜೆ, ರತ್ನ & ಪರಿಹಾರಗಳು",
+        "traditional": "ಆಗಾಗ ಒತ್ತಡ — ವಿಧಿಗಳು, ರತ್ನಗಳು, ಹೆಚ್ಚುವರಿ ಖರ್ಚು",
+        "taaraa": "ಎಂದಿಗೂ ಇಲ್ಲ — ವ್ಯಾಖ್ಯಾನ ಮಾತ್ರ, ಮಾರಾಟ ಇಲ್ಲ"
+      },
       "accuracy": {
         "factor": "ಗ್ರಹ ಲೆಕ್ಕಾಚಾರ",
         "traditional": "ಮ್ಯಾನುಯಲ್, ದೋಷ ಸಾಧ್ಯತೆ",
         "taaraa": "ಲಾಹಿರಿ ಸೈಡೀರಿಯಲ್ — ನಿಖರ ಸ್ಥಾನಗಳು"
-      },
-      "consistency": {
-        "factor": "ಓದುಗಳ ನಡುವೆ ಸ್ಥಿರತೆ",
-        "traditional": "ಮನಸ್ಥಿತಿ ಮತ್ತು ಆಯಾಸದ ಮೇಲೆ ಅವಲಂಬಿತ",
-        "taaraa": "ಪ್ರತಿ ಬಾರಿ ಒಂದೇ ಚೌಕಟ್ಟು"
-      },
-      "availability": {
-        "factor": "ಲಭ್ಯತೆ",
-        "traditional": "ಅಪಾಯಿಂಟ್‌ಮೆಂಟ್, ದಿನಗಳ ಕಾಯುವಿಕೆ",
-        "taaraa": "ತಕ್ಷಣ, ಯಾವಾಗಲೂ"
       },
       "language": {
         "factor": "ಭಾಷೆ",
         "traditional": "ಓದುಗನ ಮೇಲೆ ಅವಲಂಬಿತ",
         "taaraa": "ಇಂಗ್ಲಿಷ್, ಹಿಂದಿ, ಮರಾಠಿ, ಕನ್ನಡ, ತೆಲುಗು ಮತ್ತು ತಮಿಳು"
       },
-      "upselling": {
-        "factor": "ಅತಿರಿಕ್ತ ಮಾರಾಟ ಮತ್ತು ಪರಿಹಾರಗಳು",
-        "traditional": "ಸಾಮಾನ್ಯ — ರತ್ನ, ಪೂಜೆ ಸೂಚಿಸಲಾಗುತ್ತದೆ",
-        "taaraa": "ಇಲ್ಲ — ವ್ಯಾಖ್ಯಾನ ಮಾತ್ರ"
-      },
       "cost": {
         "factor": "ವೆಚ್ಚ",
-        "traditional": "₹500–₹5,000 ಪ್ರತಿ ಸೆಷನ್",
-        "taaraa": "ದೈನಂದಿನ ಉಚಿತ ಓದುಗಳು ಸೇರಿವೆ"
+        "traditional": "₹500–₹5,000 ಪ್ರತಿ ಸೆಷನ್, ಪರಿಹಾರಗಳು ಬೇರೆ",
+        "taaraa": "₹100 ಪ್ರತಿ ಓದು — ಸ್ಪಷ್ಟ ಬೆಲೆ, ಮಾರಾಟ ಇಲ್ಲ"
       }
     }
   },
@@ -166,5 +166,76 @@
   "footer": {
     "tagline": "ವೈದಿಕ ಜ್ಯೋತಿಷ್ಯ, ನಿಖರ ಲೆಕ್ಕಾಚಾರ · ಆರು ಭಾರತೀಯ ಭಾಷೆಗಳು",
     "disclaimer": "Taara Jyotishyam ನಿಖರ ಸೈಡೀರಿಯಲ್ ಲೆಕ್ಕಾಚಾರ ಮತ್ತು ಸಂರಚಿತ ಜ್ಯೋತಿಷ್ಯ ವ್ಯಾಖ್ಯಾನ ಬಳಸುತ್ತದೆ. ಪರಿಹಾರ, ರತ್ನ ಅಥವಾ ಧಾರ್ಮಿಕ ಸೇವೆಗಳಿಲ್ಲ. ಓದುಗಳು ಮಾರ್ಗದರ್ಶನಕ್ಕೆ ಮಾತ್ರ."
+  },
+  "match": {
+    "label": "Kundali matching",
+    "title": "Marriage compatibility,<br></br><em>precisely scored.</em>",
+    "intro": "Classic 36-point guna milan (Ashtakoot) from both birth charts — plus a plain-language reading of what it means for you two.",
+    "roleHint": "ಎಡಭಾಗ ವಧು, ಬಲಭಾಗ ವರ — ಸರಿಯಾದ ಜನ್ಮ ಸಮಯ ನಮೂದಿಸಿ.",
+    "partner1": "ವಧು",
+    "partner2": "ವರ",
+    "compare": "Compare charts",
+    "comparing": "Calculating guna milan…",
+    "limit": "{used} of {limit} comparisons used today",
+    "limitReached": "Daily comparison limit reached. Try again tomorrow.",
+    "genericError": "Could not compare charts. Please try again.",
+    "scoreLabel": "Guna milan score",
+    "verdictGood": "Traditionally acceptable (18+)",
+    "verdictLow": "Below classical threshold (18)",
+    "percentage": "{value}% overall",
+    "kootaTitle": "Eight kootas breakdown",
+    "mangalTitle": "Mangal dosha check",
+    "reportTitle": "Plain-language match reading",
+    "reportHint": "A warm explanation of your score — strengths, friction points, and what to understand together.",
+    "reportGenerate": "Generate match reading",
+    "reportLoading": "Writing your match reading…",
+    "reportUnavailable": "Match readings are not available right now.",
+    "reportLimitReached": "Daily match reading limit reached.",
+    "reportError": "Could not generate match reading.",
+    "reportEmpty": "No reading was returned. Please try again.",
+    "disclaimer": "Guna milan is traditional guidance, not a verdict on your relationship. For entertainment and reflection only.",
+    "mangal": {
+      "none": "No mangal dosha concern for this pair.",
+      "present": "One chart shows mangal dosha — worth understanding together; classical texts note exceptions and cancellations.",
+      "cancelled": "Both charts show mangal dosha — traditionally this can cancel out for the pair.",
+      "personNone": "ಇಲ್ಲ",
+      "personPresent": "ಇದೆ",
+      "personCancelled": "ರದ್ದು"
+    },
+    "kootas": {
+      "varna": {
+        "name": "Varna",
+        "desc": "Spiritual / ego alignment"
+      },
+      "vashya": {
+        "name": "Vashya",
+        "desc": "Mutual attraction and influence"
+      },
+      "tara": {
+        "name": "Tara",
+        "desc": "Birth star harmony"
+      },
+      "yoni": {
+        "name": "Yoni",
+        "desc": "Physical compatibility"
+      },
+      "grahaMaitri": {
+        "name": "Graha Maitri",
+        "desc": "Mental rapport (Moon lords)"
+      },
+      "gana": {
+        "name": "Gana",
+        "desc": "Temperament match"
+      },
+      "bhakoot": {
+        "name": "Bhakoot",
+        "desc": "Prosperity and family harmony"
+      },
+      "nadi": {
+        "name": "Nadi",
+        "desc": "Health and progeny themes"
+      }
+    },
+    "nav": "ಕುಂಡಲಿ ಮಿಲನ"
   }
 }

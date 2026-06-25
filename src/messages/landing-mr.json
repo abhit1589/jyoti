@@ -46,41 +46,41 @@
   },
   "comparison": {
     "label": "का तारा ज्योतिष्यम्",
-    "title": "असंगत<br></br><em>वाचनाची समस्या.</em>",
-    "intro": "चांगला ज्योतिषी ज्योतिष खोल जाणतो. पण मानवी वाचक थकवा, घाई, असंगती — एकच कुंडली वेगवेगळ्या दिवशी वेगळी वाटू शकते.",
-    "colFactor": "तुमच्या वाचनावर काय परिणाम करते",
+    "title": "तुमचे वाचन,<br></br><em>घरी बसून — तत्काळ.</em>",
+    "intro": "प्रवास नाही, अपॉइंटमेंट नाही, वाट नाही. तुमच्या कुंडलीचे प्रामाणिक प्रतिबिंब — पक्षपाताशिवाय, आणि पूजा, रत्न किंवा महाग उपायांसाठी दबावाशिवाय.",
+    "colFactor": "तुमच्यासाठी काय महत्त्वाचे",
     "colTraditional": "पारंपरिक वाचन",
     "colTaaraa": "तारा ज्योतिष्यम्",
     "rows": {
+      "availability": {
+        "factor": "कधी आणि कुठे",
+        "traditional": "प्रत्यक्ष भेट, अपॉइंटमेंट, दिवसांची वाट",
+        "taaraa": "घरी, तत्काळ — अपॉइंटमेंटची गरज नाही"
+      },
+      "neutrality": {
+        "factor": "तटस्थता",
+        "traditional": "वाचकाचा मूड, मत आणि वैयक्तिक पक्षपात",
+        "taaraa": "फक्त तुमची कुंडली — शांत प्रतिबिंब, कोणताही अजेंडा नाही"
+      },
+      "upselling": {
+        "factor": "पूजा, रत्न आणि उपाय",
+        "traditional": "अनेकदा दबाव — विधी, रत्न, अतिरिक्त खर्च",
+        "taaraa": "कधीही नाही — फक्त व्याख्या, विक्री नाही"
+      },
       "accuracy": {
         "factor": "ग्रहगणना",
         "traditional": "मॅन्युअल, चुकांची शक्यता",
         "taaraa": "लाहिरी साइडरीय — अचूक स्थिती"
-      },
-      "consistency": {
-        "factor": "वाचनांमधील सातत्य",
-        "traditional": "मूड आणि थकव्यावर अवलंबून",
-        "taaraa": "प्रत्येक वेळी एकच चौकट"
-      },
-      "availability": {
-        "factor": "उपलब्धता",
-        "traditional": "अपॉइंटमेंट, दिवसांची वाट",
-        "taaraa": "तत्काळ, कधीही"
       },
       "language": {
         "factor": "भाषा",
         "traditional": "वाचकावर अवलंबून",
         "taaraa": "इंग्रजी, हिंदी, मराठी, कन्नड, तेलुगु आणि तमिळ"
       },
-      "upselling": {
-        "factor": "अतिरिक्त विक्री आणि उपाय",
-        "traditional": "सामान्य — रत्न, पूजा सुचवली जाते",
-        "taaraa": "नाही — फक्त व्याख्या"
-      },
       "cost": {
         "factor": "खर्च",
-        "traditional": "₹500–₹5,000 प्रति सत्र",
-        "taaraa": "दैनिक मोफत वाचन समाविष्ट"
+        "traditional": "₹500–₹5,000 प्रति सत्र, उपाय वेगळे",
+        "taaraa": "₹100 प्रति वाचन — स्पष्ट किंमत, विक्री नाही"
       }
     }
   },
@@ -166,5 +166,76 @@
   "footer": {
     "tagline": "वैदिक ज्योतिष, अचूक गणना · सहा भारतीय भाषा",
     "disclaimer": "Taara Jyotishyam अचूक साइडरीय गणना आणि संरचित ज्योतिष व्याख्या वापरते. उपाय, रत्न किंवा धार्मिक सेवा नाहीत. वाचन फक्त मार्गदर्शनासाठी."
+  },
+  "match": {
+    "label": "Kundali matching",
+    "title": "Marriage compatibility,<br></br><em>precisely scored.</em>",
+    "intro": "Classic 36-point guna milan (Ashtakoot) from both birth charts — plus a plain-language reading of what it means for you two.",
+    "roleHint": "डावीकडे वधू, उजवीकडे वर — दोघांचे अचूक जन्म वेळ भरा.",
+    "partner1": "वधू",
+    "partner2": "वर",
+    "compare": "Compare charts",
+    "comparing": "Calculating guna milan…",
+    "limit": "{used} of {limit} comparisons used today",
+    "limitReached": "Daily comparison limit reached. Try again tomorrow.",
+    "genericError": "Could not compare charts. Please try again.",
+    "scoreLabel": "Guna milan score",
+    "verdictGood": "Traditionally acceptable (18+)",
+    "verdictLow": "Below classical threshold (18)",
+    "percentage": "{value}% overall",
+    "kootaTitle": "Eight kootas breakdown",
+    "mangalTitle": "Mangal dosha check",
+    "reportTitle": "Plain-language match reading",
+    "reportHint": "A warm explanation of your score — strengths, friction points, and what to understand together.",
+    "reportGenerate": "Generate match reading",
+    "reportLoading": "Writing your match reading…",
+    "reportUnavailable": "Match readings are not available right now.",
+    "reportLimitReached": "Daily match reading limit reached.",
+    "reportError": "Could not generate match reading.",
+    "reportEmpty": "No reading was returned. Please try again.",
+    "disclaimer": "Guna milan is traditional guidance, not a verdict on your relationship. For entertainment and reflection only.",
+    "mangal": {
+      "none": "No mangal dosha concern for this pair.",
+      "present": "One chart shows mangal dosha — worth understanding together; classical texts note exceptions and cancellations.",
+      "cancelled": "Both charts show mangal dosha — traditionally this can cancel out for the pair.",
+      "personNone": "नाही",
+      "personPresent": "आहे",
+      "personCancelled": "रद्द"
+    },
+    "kootas": {
+      "varna": {
+        "name": "Varna",
+        "desc": "Spiritual / ego alignment"
+      },
+      "vashya": {
+        "name": "Vashya",
+        "desc": "Mutual attraction and influence"
+      },
+      "tara": {
+        "name": "Tara",
+        "desc": "Birth star harmony"
+      },
+      "yoni": {
+        "name": "Yoni",
+        "desc": "Physical compatibility"
+      },
+      "grahaMaitri": {
+        "name": "Graha Maitri",
+        "desc": "Mental rapport (Moon lords)"
+      },
+      "gana": {
+        "name": "Gana",
+        "desc": "Temperament match"
+      },
+      "bhakoot": {
+        "name": "Bhakoot",
+        "desc": "Prosperity and family harmony"
+      },
+      "nadi": {
+        "name": "Nadi",
+        "desc": "Health and progeny themes"
+      }
+    },
+    "nav": "कुंडली मिलान"
   }
 }

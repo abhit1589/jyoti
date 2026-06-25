@@ -64,6 +64,18 @@ export interface BirthInput {
   latitude: number;
   longitude: number;
   placeName?: string;
+  locale?: Locale;
+}
+
+export interface ReadingTeaser {
+  personality: string;
+  career: string;
+  dasha: string;
+}
+
+export interface ChartResponse {
+  chart: VedicChart;
+  teaser: ReadingTeaser | null;
 }
 
 export type ReadingFocus = "personality" | "career" | "dasha";
@@ -74,4 +86,27 @@ export interface InterpretRequest {
   readingType: "brief" | "detailed";
   focus?: ReadingFocus;
   stream?: boolean;
+}
+
+export type QaMessage = {
+  role: "user" | "assistant";
+  content: string;
+};
+
+export interface QaRequest {
+  chart: VedicChart;
+  locale: Locale;
+  messages: QaMessage[];
+}
+
+export interface MatchRequest {
+  person1: BirthInput;
+  person2: BirthInput;
+  locale: Locale;
+}
+
+export interface MatchReportRequest {
+  person1Chart: VedicChart;
+  person2Chart: VedicChart;
+  locale: Locale;
 }

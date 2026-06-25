@@ -46,41 +46,41 @@
   },
   "comparison": {
     "label": "क्यों तारा ज्योतिष्यम्",
-    "title": "असंगत<br></br><em>वाचन की समस्या।</em>",
-    "intro": "अच्छा ज्योतिषी ज्योतिष को गहराई से जानता है। पर मानव पाठक थकान, जल्दबाज़ी, असंगति से प्रभावित होते हैं — एक ही कुंडली अलग दिन अलग सुनाई दे सकती है।",
-    "colFactor": "आपके वाचन को क्या प्रभावित करता है",
+    "title": "आपका वाचन,<br></br><em>घर बैठे — तुरंत।</em>",
+    "intro": "न जाना, न अपॉइंटमेंट, न इंतज़ार। आपकी कुंडली का सच्चा प्रतिबिंब — बिना पक्षपात, और बिना पूजा, रत्न या महंगे उपायों के दबाव के।",
+    "colFactor": "आपके लिए क्या मायने रखता है",
     "colTraditional": "पारंपरिक वाचन",
     "colTaaraa": "तारा ज्योतिष्यम्",
     "rows": {
+      "availability": {
+        "factor": "कब और कहाँ",
+        "traditional": "सामने मिलना, अपॉइंटमेंट, दिनों की प्रतीक्षा",
+        "taaraa": "घर पर, तुरंत — अपॉइंटमेंट की ज़रूरत नहीं"
+      },
+      "neutrality": {
+        "factor": "निष्पक्षता",
+        "traditional": "पाठक का मूड, राय और व्यक्तिगत पक्षपात",
+        "taaraa": "सिर्फ़ आपकी कुंडली — शांत प्रतिबिंब, कोई एजेंडा नहीं"
+      },
+      "upselling": {
+        "factor": "पूजा, रत्न और उपाय",
+        "traditional": "अक्सर दबाव — अनुष्ठान, रत्न, अतिरिक्त खर्च",
+        "taaraa": "कभी नहीं — केवल व्याख्या, कोई अतिरिक्त बिक्री नहीं"
+      },
       "accuracy": {
         "factor": "ग्रह गणना",
         "traditional": "मैनुअल, त्रुटि की संभावना",
         "taaraa": "लाहिरी साइडरीय — सटीक स्थितियाँ"
-      },
-      "consistency": {
-        "factor": "वाचनों के बीच स्थिरता",
-        "traditional": "मूड और थकान पर निर्भर",
-        "taaraa": "हर बार एक ही ढाँचा"
-      },
-      "availability": {
-        "factor": "उपलब्धता",
-        "traditional": "अपॉइंटमेंट, दिनों की प्रतीक्षा",
-        "taaraa": "तुरंत, किसी भी समय"
       },
       "language": {
         "factor": "भाषा",
         "traditional": "पाठक पर निर्भर",
         "taaraa": "अंग्रेज़ी, हिंदी, मराठी, कन्नड, तेलुगु और तमिल"
       },
-      "upselling": {
-        "factor": "अतिरिक्त बिक्री और उपाय",
-        "traditional": "आम — रत्न, पूजा की सिफ़ारिश",
-        "taaraa": "नहीं — केवल व्याख्या"
-      },
       "cost": {
         "factor": "लागत",
-        "traditional": "₹500–₹5,000 प्रति सत्र",
-        "taaraa": "दैनिक मुफ़्त वाचन शामिल"
+        "traditional": "₹500–₹5,000 प्रति सत्र, उपाय अलग",
+        "taaraa": "₹100 प्रति वाचन — स्पष्ट कीमत, कोई अतिरिक्त बिक्री नहीं"
       }
     }
   },
@@ -166,5 +166,76 @@
   "footer": {
     "tagline": "वैदिक ज्योतिष, सटीक गणना · छह भारतीय भाषाएँ",
     "disclaimer": "Taara Jyotishyam सटीक साइडरीय गणना और संरचित ज्योतिष व्याख्या का उपयोग करता है। हम उपाय, रत्न या धार्मिक सेवाएँ नहीं देते। पाठ केवल मार्गदर्शन के लिए हैं।"
+  },
+  "match": {
+    "label": "कुंडली मिलान",
+    "title": "विवाह अनुकूलता,<br></br><em>सटीक अंक।</em>",
+    "intro": "दोनों जन्म कुंडलियों से classical 36-अंक गुण मिलान — और सादी भाषा में इसका अर्थ।",
+    "roleHint": "बाईं ओर वधू, दाईं ओर वर — दोनों का सही जन्म समय दर्ज करें।",
+    "partner1": "वधू",
+    "partner2": "वर",
+    "compare": "कुंडली मिलाएँ",
+    "comparing": "गुण मिलान हो रहा है…",
+    "limit": "आज {used} / {limit} तुलना",
+    "limitReached": "दैनिक सीमा पूरी। कल फिर कोशिश करें।",
+    "genericError": "तुलना विफल। फिर कोशिश करें।",
+    "scoreLabel": "गुण मिलान अंक",
+    "verdictGood": "पारंपरिक रूप से स्वीकार्य (18+)",
+    "verdictLow": "classical सीमा से कम (18)",
+    "percentage": "कुल {value}%",
+    "kootaTitle": "आठ कूट विवरण",
+    "mangalTitle": "मंगल दोष जाँच",
+    "reportTitle": "सादी भाषा में मिलान वाचन",
+    "reportHint": "आपके अंकों का गर्मजोशी भरा स्पष्टीकरण।",
+    "reportGenerate": "मिलान वाचन पाएँ",
+    "reportLoading": "वाचन तैयार हो रहा है…",
+    "reportUnavailable": "मिलान वाचन अभी उपलब्ध नहीं।",
+    "reportLimitReached": "दैनिक वाचन सीमा पूरी।",
+    "reportError": "वाचन विफल।",
+    "reportEmpty": "कोई वाचन नहीं मिला।",
+    "disclaimer": "गुण मिलान traditional मार्गदर्शन है, रिश्ते का अंतिम फैसला नहीं।",
+    "mangal": {
+      "none": "इस जोड़े के लिए मंगल दोष की चिंता नहीं।",
+      "present": "एक कुंडली में मंगल दोष — समझने योग्य; शास्त्र में अपवाद हैं।",
+      "cancelled": "दोनों में मंगल दोष — पारंपरिक रूप से परस्पर निष्प्रभावी हो सकता है।",
+      "personNone": "नहीं",
+      "personPresent": "है",
+      "personCancelled": "निष्प्रभाव (स्वराशि/उच्च)"
+    },
+    "kootas": {
+      "varna": {
+        "name": "Varna",
+        "desc": "Spiritual / ego alignment"
+      },
+      "vashya": {
+        "name": "Vashya",
+        "desc": "Mutual attraction and influence"
+      },
+      "tara": {
+        "name": "Tara",
+        "desc": "Birth star harmony"
+      },
+      "yoni": {
+        "name": "Yoni",
+        "desc": "Physical compatibility"
+      },
+      "grahaMaitri": {
+        "name": "Graha Maitri",
+        "desc": "Mental rapport (Moon lords)"
+      },
+      "gana": {
+        "name": "Gana",
+        "desc": "Temperament match"
+      },
+      "bhakoot": {
+        "name": "Bhakoot",
+        "desc": "Prosperity and family harmony"
+      },
+      "nadi": {
+        "name": "Nadi",
+        "desc": "Health and progeny themes"
+      }
+    },
+    "nav": "कुंडली मिलान"
   }
 }

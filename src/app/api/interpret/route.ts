@@ -1,5 +1,17 @@
 import { NextResponse } from "next/server";
 import { buildReadingMessages, streamReading } from "@/lib/anthropic/interpret";
+import { getChartId } from "@/lib/payments/chart-id";
+import { isPaymentsEnabled } from "@/lib/payments/config";
+import {
+  canConsumeEntitlement,
+  consumeEntitlement,
+  entitlementCookieOptions,
+  ENTITLEMENTS_COOKIE,
+  findActiveEntitlement,
+  getChartEntitlementStatus,
+  readEntitlementStore,
+  serializeEntitlementStore,
+} from "@/lib/payments/entitlements";
 import {
   checkAndConsumeReadingForSession,
   createSessionId,
@@ -31,6 +43,24 @@ function jsonWithSession(
   return response;
 }
 
+function jsonWithSessionAndEntitlements(
+  data: Record<string, unknown>,
+  sessionId: string,
+  isNewSession: boolean,
+  entitlementCookie?: string,
+  init?: ResponseInit,
+) {
+  const response = jsonWithSession(data, sessionId, isNewSession, init);
+  if (entitlementCookie) {
+    response.cookies.set(
+      ENTITLEMENTS_COOKIE,
+      entitlementCookie,
+      entitlementCookieOptions(),
+    );
+  }
+  return response;
+}
+
 async function resolveSession(): Promise<{ sessionId: string; isNew: boolean }> {
   const existing = await getSessionId();
   if (existing) return { sessionId: existing, isNew: false };
@@ -53,8 +83,18 @@ function parseBody(body: InterpretRequest): InterpretRequest {
 export async function GET() {
   try {
     const { sessionId, isNew } = await resolveSession();
+    const paymentsEnabled = isPaymentsEnabled();
     const status = getUsageStatusForSession(sessionId);
-    return jsonWithSession({ ...status, hasApiKey: hasApiKey() }, sessionId, isNew);
+
+    return jsonWithSession(
+      {
+        ...status,
+        hasApiKey: hasApiKey(),
+        paymentsEnabled,
+      },
+      sessionId,
+      isNew,
+    );
   } catch (error) {
     console.error("Interpret GET error:", error);
     return NextResponse.json(
@@ -64,6 +104,7 @@ export async function GET() {
         used: 0,
         limit: 5,
         premium: false,
+        paymentsEnabled: isPaymentsEnabled(),
       },
       { status: 500 },
     );
@@ -76,6 +117,7 @@ export async function POST(request: Request) {
   }
 
   const { sessionId, isNew } = await resolveSession();
+  const paymentsEnabled = isPaymentsEnabled();
 
   try {
     const body = (await request.json()) as InterpretRequest;
@@ -90,18 +132,62 @@ export async function POST(request: Request) {
     }
 
     const parsed = parseBody(body);
-    const usage = checkAndConsumeReadingForSession(sessionId, false);
-    if (!usage.allowed) {
-      return jsonWithSession(
-        {
-          error: "daily_limit_reached",
-          limit: usage.limit,
-          premium: usage.premium,
-        },
-        sessionId,
-        isNew,
-        { status: 429 },
+    const chartId = getChartId(parsed.chart);
+    let entitlementStore = await readEntitlementStore();
+    let entitlementCookie: string | undefined;
+
+    if (paymentsEnabled) {
+      const access = canConsumeEntitlement(
+        entitlementStore,
+        parsed.chart,
+        parsed.focus ?? "personality",
+        true,
       );
+
+      if (!access.allowed) {
+        const status = getChartEntitlementStatus(entitlementStore, chartId, true);
+        return jsonWithSession(
+          {
+            error: access.reason ?? "payment_required",
+            paymentsEnabled: true,
+            focuses: status.focuses,
+          },
+          sessionId,
+          isNew,
+          { status: access.reason === "already_used" ? 409 : 402 },
+        );
+      }
+
+      const active = findActiveEntitlement(
+        entitlementStore,
+        chartId,
+        parsed.focus ?? "personality",
+      );
+      if (active?.sku === "bundle") {
+        parsed.readingType = "detailed";
+      }
+
+      entitlementStore = consumeEntitlement(
+        entitlementStore,
+        parsed.chart,
+        parsed.focus ?? "personality",
+      );
+      entitlementCookie = serializeEntitlementStore(entitlementStore);
+    } else {
+      const usage = checkAndConsumeReadingForSession(sessionId, false);
+      if (!usage.allowed) {
+        return jsonWithSession(
+          {
+            error: "daily_limit_reached",
+            limit: usage.limit,
+            premium: usage.premium,
+            paymentsEnabled: false,
+          },
+          sessionId,
+          isNew,
+          { status: 429 },
+        );
+      }
     }
 
     const wantsStream =
@@ -111,24 +197,30 @@ export async function POST(request: Request) {
     if (!wantsStream) {
       const { generateReading } = await import("@/lib/anthropic/interpret");
       const { text, truncated } = await generateReading(parsed);
-      return jsonWithSession(
+      const usage = paymentsEnabled
+        ? null
+        : getUsageStatusForSession(sessionId);
+
+      return jsonWithSessionAndEntitlements(
         {
           reading: text,
           truncated,
-          remaining: usage.remaining,
-          limit: usage.limit,
+          remaining: usage ? usage.limit - usage.used : undefined,
+          limit: usage?.limit,
           hasApiKey: true,
+          paymentsEnabled,
         },
         sessionId,
         isNew,
+        entitlementCookie,
       );
     }
 
-    // Validate prompt builds before streaming
     buildReadingMessages(parsed);
 
     const encoder = new TextEncoder();
     let hasContent = false;
+    const usage = paymentsEnabled ? null : getUsageStatusForSession(sessionId);
 
     const readable = new ReadableStream({
       async start(controller) {
@@ -141,8 +233,9 @@ export async function POST(request: Request) {
         try {
           send({
             type: "meta",
-            remaining: usage.remaining,
-            limit: usage.limit,
+            remaining: usage ? usage.limit - usage.used : undefined,
+            limit: usage?.limit,
+            paymentsEnabled,
           });
 
           const { truncated } = await streamReading(parsed, (chunk) => {
@@ -179,6 +272,12 @@ export async function POST(request: Request) {
       response.headers.append(
         "Set-Cookie",
         `${SESSION_COOKIE_NAME}=${sessionId}; Path=/; Max-Age=31536000; HttpOnly; SameSite=Lax`,
+      );
+    }
+    if (entitlementCookie) {
+      response.headers.append(
+        "Set-Cookie",
+        `${ENTITLEMENTS_COOKIE}=${entitlementCookie}; Path=/; Max-Age=31536000; HttpOnly; SameSite=Lax`,
       );
     }
 

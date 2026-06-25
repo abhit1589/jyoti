@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { AppNav } from "@/components/AppNav";
 import { ChartSection } from "@/components/ChartSection";
+import { MatchSection } from "@/components/MatchSection";
 import { Link } from "@/i18n/navigation";
 
 export function LandingPage() {
@@ -14,11 +15,11 @@ export function LandingPage() {
   const steps = ["birth", "calculate", "read"] as const;
   const readings = ["personality", "career", "dasha"] as const;
   const comparisonRows = [
-    "accuracy",
-    "consistency",
     "availability",
-    "language",
+    "neutrality",
     "upselling",
+    "accuracy",
+    "language",
     "cost",
   ] as const;
   const testimonials = ["one", "two", "three"] as const;
@@ -44,6 +45,9 @@ export function LandingPage() {
         <div className="taara-hero-actions">
           <a href="#chart" className="taara-btn-primary">
             {t("hero.ctaPrimary")}
+          </a>
+          <a href="#match" className="taara-btn-ghost hidden md:inline-flex">
+            {t("match.nav")}
           </a>
           <Link href="/weekly" className="taara-btn-ghost">
             {tWeekly("nav.weekly")}
@@ -86,6 +90,29 @@ export function LandingPage() {
             {t.rich("comparison.title", { em: (c) => <em>{c}</em>, br: () => <br /> })}
           </h2>
           <p className="taara-intro">{t("comparison.intro")}</p>
+
+          <div className="taara-comparison-cards" aria-label={t("comparison.label")}>
+            {comparisonRows.map((key) => (
+              <article key={key} className="taara-comparison-card">
+                <h3 className="taara-comparison-card-factor">
+                  {t(`comparison.rows.${key}.factor`)}
+                </h3>
+                <div className="taara-comparison-card-row">
+                  <p className="taara-comparison-card-label">{t("comparison.colTraditional")}</p>
+                  <span className="taara-badge-bad">
+                    {t(`comparison.rows.${key}.traditional`)}
+                  </span>
+                </div>
+                <div className="taara-comparison-card-row">
+                  <p className="taara-comparison-card-label">{t("comparison.colTaaraa")}</p>
+                  <span className="taara-badge-good">
+                    {t(`comparison.rows.${key}.taaraa`)}
+                  </span>
+                </div>
+              </article>
+            ))}
+          </div>
+
           <div className="taara-table-wrap">
             <table className="taara-table">
               <thead>
@@ -183,6 +210,10 @@ export function LandingPage() {
           </div>
         </div>
       </div>
+
+      <hr className="taara-hr" />
+
+      <MatchSection />
 
       <hr className="taara-hr" />
 

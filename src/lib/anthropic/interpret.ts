@@ -47,7 +47,8 @@ export function buildReadingMessages(request: InterpretRequest): {
   return {
     system: buildSystemPrompt(locale, focus),
     messages: [{ role: "user", content: buildUserPrompt(chart, locale, focus) }],
-    maxTokens: TOKEN_LIMITS.brief,
+    maxTokens:
+      request.readingType === "detailed" ? TOKEN_LIMITS.detailed : TOKEN_LIMITS.brief,
   };
 }
 

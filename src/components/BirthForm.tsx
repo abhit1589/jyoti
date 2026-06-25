@@ -5,10 +5,10 @@ import { useTranslations, useLocale } from "next-intl";
 import { getCitiesForLocale, getCityById } from "@/lib/vedic/cities";
 import { DateTimePicker } from "@/components/DateTimePicker";
 import { parseJsonResponse } from "@/lib/api/client";
-import type { BirthInput, Locale, VedicChart } from "@/lib/types";
+import type { BirthInput, Locale, ReadingTeaser, VedicChart } from "@/lib/types";
 
 interface BirthFormProps {
-  onChart: (chart: VedicChart) => void;
+  onChart: (chart: VedicChart, teaser: ReadingTeaser | null) => void;
 }
 
 export function BirthForm({ onChart }: BirthFormProps) {
@@ -50,6 +50,7 @@ export function BirthForm({ onChart }: BirthFormProps) {
       latitude: city.latitude,
       longitude: city.longitude,
       placeName: city.name[locale],
+      locale,
     };
 
     try {
@@ -58,10 +59,14 @@ export function BirthForm({ onChart }: BirthFormProps) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
-      const data = await parseJsonResponse<{ chart?: VedicChart; error?: string }>(res);
+      const data = await parseJsonResponse<{
+        chart?: VedicChart;
+        teaser?: ReadingTeaser | null;
+        error?: string;
+      }>(res);
       if (!res.ok) throw new Error(data.error ?? te("generic"));
       if (!data.chart) throw new Error(te("generic"));
-      if (mountedRef.current) onChart(data.chart);
+      if (mountedRef.current) onChart(data.chart, data.teaser ?? null);
     } catch (err) {
       if (mountedRef.current) {
         setError(err instanceof Error ? err.message : te("generic"));
@@ -108,7 +113,7 @@ export function BirthForm({ onChart }: BirthFormProps) {
       {error && <p className="mt-4 text-sm text-red-600">{error}</p>}
 
       <button type="submit" disabled={loading} className="btn-primary mt-6 w-full">
-        {loading ? t("loading") : t("submit")}
+        {loading ? t("loadingWithTeaser") : t("submit")}
       </button>
     </form>
   );

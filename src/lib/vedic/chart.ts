@@ -316,6 +316,71 @@ export function formatChartForDashaReadingPrompt(chart: VedicChart, locale: Loca
   ].join("\n");
 }
 
+export function formatChartForQaPrompt(chart: VedicChart, locale: Locale): string {
+  const rashis = RASHIS[locale];
+  const labels = PLANET_LABELS[locale];
+  const L = getChartReadingLabels(locale);
+  const base = formatChartForTeaserPrompt(chart, locale);
+
+  const inHouse = (h: number) => {
+    const ids = chart.houses[h];
+    if (!ids?.length) return "none";
+    return ids.map((id) => labels[id]).join(", ");
+  };
+
+  const fifthRashi = houseRashi(chart.lagna.rashi, 5);
+  const fifthLord = rashiLord(fifthRashi);
+  const fifthLordPlanet = chart.planets.find((p) => p.id === fifthLord);
+  const fifthLordSign = fifthLordPlanet ? rashis[fifthLordPlanet.rashi - 1] : "?";
+  const fifthLordHouse = fifthLordPlanet?.house;
+
+  const seventhRashi = houseRashi(chart.lagna.rashi, 7);
+  const seventhLord = rashiLord(seventhRashi);
+  const seventhLordPlanet = chart.planets.find((p) => p.id === seventhLord);
+  const seventhLordSign = seventhLordPlanet ? rashis[seventhLordPlanet.rashi - 1] : "?";
+  const seventhLordHouse = seventhLordPlanet?.house;
+
+  const jupiter = chart.planets.find((p) => p.id === "jupiter");
+
+  return [
+    base,
+    "",
+    "Progeny & family indicators:",
+    `- 5th house (children, creativity) sign: ${rashis[fifthRashi - 1]}, planets in 5th: ${inHouse(5)}`,
+    `- 5th lord ${labels[fifthLord]} in ${fifthLordSign}, ${typeof fifthLordHouse === "number" ? L.house(fifthLordHouse) : "?"}`,
+    `- Jupiter (putrakaraka) in ${jupiter ? rashis[jupiter.rashi - 1] : "?"}, ${typeof jupiter?.house === "number" ? L.house(jupiter.house) : "?"}`,
+    `- 7th house (partnership) sign: ${rashis[seventhRashi - 1]}, planets in 7th: ${inHouse(7)}`,
+    `- 7th lord ${labels[seventhLord]} in ${seventhLordSign}, ${typeof seventhLordHouse === "number" ? L.house(seventhLordHouse) : "?"}`,
+  ].join("\n");
+}
+
+export function formatChartForTeaserPrompt(chart: VedicChart, locale: Locale): string {
+  const rashis = RASHIS[locale];
+  const labels = PLANET_LABELS[locale];
+  const L = getChartReadingLabels(locale);
+  const base = formatChartForReadingPrompt(chart, locale);
+
+  const tenthRashi = houseRashi(chart.lagna.rashi, 10);
+  const tenthLord = rashiLord(tenthRashi);
+  const tenthLordPlanet = chart.planets.find((p) => p.id === tenthLord);
+  const tenthLordSign = tenthLordPlanet ? rashis[tenthLordPlanet.rashi - 1] : "?";
+  const tenthLordHouse = tenthLordPlanet?.house ?? "?";
+
+  const dasha = getCurrentDashaPeriods(chart);
+  const dashaLines = dasha
+    ? [
+        `${L.mahadasha}: ${labels[dasha.mahadasha.lord]}`,
+        `${L.antardasha}: ${labels[dasha.antardasha.lord]}`,
+      ]
+    : [`${L.mahadasha}: ${L.dashaUnknown}`];
+
+  return [
+    base,
+    `${L.tenthLord}: ${labels[tenthLord]} ${L.inSign} ${tenthLordSign}, ${typeof tenthLordHouse === "number" ? L.house(tenthLordHouse) : tenthLordHouse}`,
+    ...dashaLines,
+  ].join("\n");
+}
+
 export function chartToSummary(chart: VedicChart, locale: Locale): string {
   const isTe = locale === "te";
   const lines: string[] = [];

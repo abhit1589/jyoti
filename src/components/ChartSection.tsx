@@ -2,14 +2,22 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import type { VedicChart } from "@/lib/types";
+import type { ReadingTeaser, VedicChart } from "@/lib/types";
 import { BirthForm } from "@/components/BirthForm";
 import { ChartDisplay } from "@/components/ChartDisplay";
 import { ReadingPanel } from "@/components/ReadingPanel";
+import { ReadingTeaserPanel } from "@/components/ReadingTeaserPanel";
+import { ChartQaPanel } from "@/components/ChartQaPanel";
 
 export function ChartSection() {
   const t = useTranslations("landing.chart");
   const [chart, setChart] = useState<VedicChart | null>(null);
+  const [teaser, setTeaser] = useState<ReadingTeaser | null>(null);
+
+  function handleChart(chartResult: VedicChart, teaserResult: ReadingTeaser | null) {
+    setChart(chartResult);
+    setTeaser(teaserResult);
+  }
 
   return (
     <section id="chart" className="taara-section scroll-mt-24">
@@ -20,7 +28,7 @@ export function ChartSection() {
       <p className="taara-intro mb-10">{t("intro")}</p>
 
       <div className="grid gap-8 lg:grid-cols-2">
-        <BirthForm onChart={setChart} />
+        <BirthForm onChart={handleChart} />
         {chart ? (
           <ChartDisplay chart={chart} />
         ) : (
@@ -30,9 +38,21 @@ export function ChartSection() {
         )}
       </div>
 
+      {teaser && (
+        <div className="mt-8">
+          <ReadingTeaserPanel teaser={teaser} />
+        </div>
+      )}
+
       {chart && (
         <div className="mt-8">
           <ReadingPanel chart={chart} />
+        </div>
+      )}
+
+      {chart && (
+        <div className="mt-8">
+          <ChartQaPanel chart={chart} />
         </div>
       )}
     </section>

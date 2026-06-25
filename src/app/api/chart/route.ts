@@ -1,8 +1,11 @@
 import { NextResponse } from "next/server";
+import { canGenerateTeaser, generateReadingTeaser } from "@/lib/anthropic/teaser";
+import { parseLocale } from "@/lib/i18n/locales";
 import { calculateVedicChart } from "@/lib/vedic/chart";
 import type { BirthInput } from "@/lib/types";
 
 export const runtime = "nodejs";
+export const maxDuration = 90;
 
 export async function POST(request: Request) {
   try {
@@ -25,7 +28,18 @@ export async function POST(request: Request) {
     }
 
     const chart = await calculateVedicChart(body);
-    return NextResponse.json({ chart });
+    const locale = parseLocale(body.locale);
+
+    let teaser = null;
+    if (canGenerateTeaser()) {
+      try {
+        teaser = await generateReadingTeaser(chart, locale);
+      } catch (error) {
+        console.error("Teaser generation error:", error);
+      }
+    }
+
+    return NextResponse.json({ chart, teaser });
   } catch (error) {
     console.error("Chart calculation error:", error);
     return NextResponse.json(
