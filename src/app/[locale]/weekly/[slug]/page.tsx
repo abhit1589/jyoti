@@ -13,7 +13,8 @@ import { isRashiSlug, rashiSlugToIndex } from "@/lib/seo/rashi-slugs";
 import { getWeeklyRashiHoroscopes } from "@/lib/weekly-rashi/service";
 import type { Locale } from "@/lib/types";
 
-export const maxDuration = 60;
+export const maxDuration = 120;
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({
   params,

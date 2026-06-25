@@ -4,7 +4,7 @@ import { isLocale } from "@/lib/i18n/locales";
 import { routing } from "@/i18n/routing";
 
 export const runtime = "nodejs";
-export const maxDuration = 60;
+export const maxDuration = 120;
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);

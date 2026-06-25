@@ -10,7 +10,8 @@ import { buildHoroscopeCollectionJsonLd } from "@/lib/seo/horoscope-jsonld";
 import { notFound } from "next/navigation";
 import type { Locale } from "@/lib/types";
 
-export const maxDuration = 60;
+export const maxDuration = 120;
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({
   params,
