@@ -6,7 +6,20 @@ import { SITE_URL } from "@/lib/seo/metadata";
 type ChangeFrequency = NonNullable<MetadataRoute.Sitemap[number]["changeFrequency"]>;
 
 const INDEX_ROUTES: {
-  path: "" | "daily" | "weekly" | "monthly" | "match";
+  path:
+    | ""
+    | "daily"
+    | "weekly"
+    | "monthly"
+    | "match"
+    | "about"
+    | "services"
+    | "pricing"
+    | "terms"
+    | "privacy"
+    | "refund"
+    | "cancellation"
+    | "checkout";
   priority: number;
   changeFrequency: ChangeFrequency;
 }[] = [
@@ -15,6 +28,14 @@ const INDEX_ROUTES: {
   { path: "weekly", priority: 0.88, changeFrequency: "weekly" },
   { path: "monthly", priority: 0.88, changeFrequency: "monthly" },
   { path: "match", priority: 0.85, changeFrequency: "monthly" },
+  { path: "about", priority: 0.7, changeFrequency: "monthly" },
+  { path: "services", priority: 0.7, changeFrequency: "monthly" },
+  { path: "pricing", priority: 0.75, changeFrequency: "monthly" },
+  { path: "terms", priority: 0.5, changeFrequency: "yearly" },
+  { path: "privacy", priority: 0.5, changeFrequency: "yearly" },
+  { path: "refund", priority: 0.5, changeFrequency: "yearly" },
+  { path: "cancellation", priority: 0.5, changeFrequency: "yearly" },
+  { path: "checkout", priority: 0.6, changeFrequency: "monthly" },
 ];
 
 const RASHI_ROUTES: {

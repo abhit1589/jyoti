@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { AppNav } from "@/components/AppNav";
 import { MatchSection } from "@/components/MatchSection";
+import { SiteFooter } from "@/components/legal/SiteFooter";
 import { Link } from "@/i18n/navigation";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { isLocale } from "@/lib/i18n/locales";
@@ -39,7 +40,6 @@ export default async function MatchPage({
   setRequestLocale(locale);
   const t = await getTranslations("landing");
   const tWeekly = await getTranslations("weekly");
-  const brandNative = t("brand.native");
 
   return (
     <>
@@ -69,21 +69,7 @@ export default async function MatchPage({
             </Link>
           </div>
         </div>
-        <footer className="taara-footer">
-          <span className="taara-footer-logo">
-            {brandNative ? (
-              <span className="taara-logo-stack taara-logo-stack-center">
-                <span className="taara-logo-primary">{brandNative}</span>
-                <span className="taara-logo-sub">{t("brand.name")}</span>
-              </span>
-            ) : (
-              t("brand.name")
-            )}
-          </span>
-          <p className="taara-footer-domain">{t("brand.domain")}</p>
-          <p>{t("footer.tagline")}</p>
-          <p className="taara-footer-disclaimer">{t("match.disclaimer")}</p>
-        </footer>
+        <SiteFooter disclaimer={t("match.disclaimer")} />
       </div>
     </>
   );

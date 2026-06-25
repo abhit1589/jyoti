@@ -1087,6 +1087,262 @@ a.taara-logo {
   opacity: 0.6;
 }
 
+.taara-footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1rem;
+  margin: 1.25rem auto 0;
+  max-width: 720px;
+}
+
+.taara-footer-nav a {
+  color: var(--brown);
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.taara-footer-nav a:hover {
+  color: var(--maroon);
+  text-decoration: underline;
+}
+
+.taara-legal-main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+
+.taara-legal-updated {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--brown-light);
+  margin: -0.5rem 0 2rem;
+}
+
+.taara-legal-body,
+.taara-legal-prose {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.taara-legal-section h2 {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 1.1rem;
+  color: var(--maroon);
+  margin: 0 0 0.5rem;
+}
+
+.taara-legal-section p {
+  margin: 0;
+  line-height: 1.7;
+  color: var(--brown);
+}
+
+.taara-legal-card {
+  border: 0.5px solid var(--border);
+  border-radius: 10px;
+  background: var(--parchment);
+  padding: 1.25rem 1.35rem;
+}
+
+.taara-legal-card-title {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 1.05rem;
+  color: var(--maroon);
+  margin: 0 0 1rem;
+}
+
+.taara-legal-dl {
+  margin: 0;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.taara-legal-dl dt {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--brown-light);
+  margin-bottom: 0.15rem;
+}
+
+.taara-legal-dl dd {
+  margin: 0;
+  line-height: 1.55;
+  color: var(--brown);
+}
+
+.taara-legal-dl a {
+  color: var(--maroon);
+}
+
+.taara-legal-muted {
+  color: var(--brown-light);
+}
+
+.taara-services-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.taara-services-list-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.taara-services-list h2 {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 1.05rem;
+  color: var(--maroon);
+  margin: 0;
+}
+
+.taara-services-price {
+  margin: 0.75rem 0 0;
+  font-weight: 700;
+  color: var(--maroon);
+}
+
+.taara-badge-free,
+.taara-badge-paid {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.taara-badge-free {
+  background: rgba(34, 120, 70, 0.12);
+  color: #1f6b3f;
+}
+
+.taara-badge-paid {
+  background: rgba(120, 34, 34, 0.1);
+  color: var(--maroon);
+}
+
+.taara-pricing-table-wrap {
+  overflow-x: auto;
+}
+
+.taara-pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.taara-pricing-table th,
+.taara-pricing-table td {
+  border: 0.5px solid var(--border);
+  padding: 0.85rem 1rem;
+  vertical-align: top;
+  text-align: left;
+}
+
+.taara-pricing-table th {
+  background: var(--parchment-deeper);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--brown-light);
+}
+
+.taara-pricing-desc {
+  margin: 0.35rem 0 0;
+  font-size: 0.82rem;
+  color: var(--brown-light);
+  line-height: 1.5;
+}
+
+.taara-pricing-btn {
+  display: inline-block;
+  font-size: 0.85rem !important;
+  padding: 0.45rem 0.9rem !important;
+  white-space: nowrap;
+}
+
+.taara-checkout-grid {
+  display: grid;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+@media (min-width: 768px) {
+  .taara-checkout-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.taara-checkout-product-name {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 1.1rem;
+  color: var(--maroon);
+  margin: 0 0 0.35rem;
+}
+
+.taara-checkout-product-desc {
+  margin: 0 0 1rem;
+  color: var(--brown-light);
+  line-height: 1.55;
+}
+
+.taara-checkout-totals {
+  margin: 0;
+  border-top: 0.5px solid var(--border);
+  padding-top: 0.75rem;
+}
+
+.taara-checkout-totals div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.taara-checkout-total-row {
+  font-weight: 700;
+  color: var(--maroon);
+  margin-top: 0.35rem;
+}
+
+.taara-checkout-terms {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin: 1rem 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.taara-checkout-terms input {
+  margin-top: 0.2rem;
+}
+
+.taara-checkout-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.taara-checkout-error {
+  color: #9b2c2c;
+  font-size: 0.9rem;
+  margin: 0.75rem 0 0;
+}
+
 @media (max-width: 640px) {
   .taara-nav {
     padding: 0.85rem 1rem;

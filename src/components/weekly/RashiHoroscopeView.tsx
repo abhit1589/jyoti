@@ -5,6 +5,7 @@ import { RASHIS } from "@/lib/vedic/constants";
 import { formatRashiNakshatraPadas } from "@/lib/vedic/rashi-nakshatras";
 import { RashiSymbol } from "@/components/weekly/RashiSymbol";
 import { rashiIndexToSlug } from "@/lib/seo/rashi-slugs";
+import { SiteFooter } from "@/components/legal/SiteFooter";
 import type { HoroscopePeriod } from "@/lib/rashi-horoscope/types";
 import type { Locale } from "@/lib/types";
 
@@ -23,8 +24,6 @@ export async function RashiHoroscopeView({
 }: RashiHoroscopeViewProps) {
   const t = await getTranslations(period);
   const tChart = await getTranslations("chart");
-  const tBrand = await getTranslations("landing");
-  const brandNative = tBrand("brand.native");
   const rashis = RASHIS[locale];
 
   return (
@@ -75,19 +74,7 @@ export async function RashiHoroscopeView({
         </div>
       </main>
 
-      <footer className="taara-footer">
-        <span className="taara-footer-logo">
-          {brandNative ? (
-            <span className="taara-logo-stack taara-logo-stack-center">
-              <span className="taara-logo-primary">{brandNative}</span>
-              <span className="taara-logo-sub">{tBrand("brand.name")}</span>
-            </span>
-          ) : (
-            tBrand("brand.name")
-          )}
-        </span>
-        <p className="taara-footer-domain">{tBrand("brand.domain")}</p>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

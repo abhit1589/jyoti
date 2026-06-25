@@ -1,0 +1,241 @@
+{
+  "footer": {
+    "about": "About us",
+    "services": "Services",
+    "pricing": "Pricing",
+    "terms": "Terms & Conditions",
+    "privacy": "Privacy Policy",
+    "refund": "Refund Policy",
+    "cancellation": "Cancellation Policy",
+    "contact": "Contact"
+  },
+  "about": {
+    "metaTitle": "About us | Taara Jyotishyam",
+    "metaDescription": "Learn about Taara Jyotishyam — Vedic birth charts, horoscopes, and AI readings in six Indian languages.",
+    "title": "About us",
+    "intro": "Taara Jyotishyam (jyotishyam.in) provides Vedic astrology services online — precise Lahiri sidereal birth charts, Moon-sign horoscopes, kundali matching, and AI-assisted personalised readings in English, Hindi, Marathi, Kannada, Telugu, and Tamil.",
+    "verificationTitle": "Merchant verification details",
+    "legalNameLabel": "Legal name (as per Aadhaar)",
+    "addressLabel": "Registered address (as per Aadhaar)",
+    "emailLabel": "Support email",
+    "phoneLabel": "Phone",
+    "websiteLabel": "Website",
+    "addressMissing": "Business address will be published here for payment-gateway verification. Set BUSINESS_AADHAAR_ADDRESS in your deployment environment.",
+    "missionTitle": "Our mission",
+    "missionBody": "We make classical Jyotish accessible — accurate calculations, clear language, and transparent pricing — without the upselling common in offline consultations."
+  },
+  "services": {
+    "metaTitle": "Services | Taara Jyotishyam",
+    "metaDescription": "Free birth charts, daily weekly and monthly horoscopes, kundali matching, and paid AI chart readings.",
+    "title": "Services we provide",
+    "intro": "All calculations use the Lahiri ayanamsa. Paid readings are digital products delivered instantly on the website after payment.",
+    "items": {
+      "birth-chart": {
+        "name": "Vedic birth chart (Kundali)",
+        "description": "Full sidereal chart with lagna, nine planets, houses, and nakshatra — calculated from your date, time, and place of birth."
+      },
+      "horoscope-forecasts": {
+        "name": "Daily, weekly & monthly horoscopes",
+        "description": "Moon-sign (Chandra rashi) forecasts for all twelve rashis, updated on a schedule in six languages."
+      },
+      "kundali-match": {
+        "name": "Kundali matching (Ashtakoot)",
+        "description": "36-point compatibility report for bride and groom charts, with an optional AI relationship summary."
+      },
+      "reading-single": {
+        "name": "Single AI chart reading",
+        "description": "One in-depth reading section — Personality, Career & Dharma, or Current Dasha — based on your saved birth chart."
+      },
+      "reading-bundle": {
+        "name": "Complete AI reading bundle",
+        "description": "All three reading sections (Personality + Career + Dasha) for one chart at a discounted bundle price."
+      }
+    },
+    "freeBadge": "Free",
+    "paidBadge": "Paid"
+  },
+  "pricing": {
+    "metaTitle": "Pricing | Taara Jyotishyam",
+    "metaDescription": "Transparent pricing for Taara Jyotishyam — free charts and horoscopes; paid AI readings from ₹100.",
+    "title": "Pricing",
+    "intro": "Core astrology tools are free. You pay only for optional AI-generated personalised chart readings.",
+    "columnService": "Service",
+    "columnPrice": "Price",
+    "columnAction": "Action",
+    "buyNow": "Buy now",
+    "getStarted": "Get started",
+    "freeNote": "Free services require no payment. Paid readings are one-time purchases per chart.",
+    "checkoutNote": "Secure checkout on our website. Payments are processed via authorised payment partners (PayU / Razorpay)."
+  },
+  "checkout": {
+    "metaTitle": "Checkout | Taara Jyotishyam",
+    "metaDescription": "Complete your purchase for Taara Jyotishyam AI chart readings.",
+    "title": "Checkout",
+    "orderSummary": "Order summary",
+    "merchantDetails": "Merchant details",
+    "subtotal": "Subtotal",
+    "total": "Total payable",
+    "currency": "INR",
+    "acceptTerms": "I agree to the Terms & Conditions, Privacy Policy, Refund Policy, and Cancellation Policy.",
+    "payNow": "Pay now",
+    "continueToChart": "Continue to birth chart",
+    "instructions": "After payment you will return to the site to generate your reading from your saved birth chart. If you have not entered birth details yet, you will be guided to do so first.",
+    "gatewayNote": "You will be redirected to our secure payment partner to complete the transaction.",
+    "invalidSku": "Please choose a valid product from the pricing page.",
+    "backToPricing": "Back to pricing",
+    "products": {
+      "single": {
+        "name": "Single AI chart reading",
+        "description": "One reading section: Personality, Career & Dharma, or Current Dasha."
+      },
+      "bundle": {
+        "name": "Complete AI reading bundle",
+        "description": "All three reading sections for your chart."
+      }
+    }
+  },
+  "terms": {
+    "metaTitle": "Terms & Conditions | Taara Jyotishyam",
+    "metaDescription": "Terms and conditions for using Taara Jyotishyam.",
+    "title": "Terms & Conditions",
+    "lastUpdated": "Last updated: 25 June 2026",
+    "sections": [
+      {
+        "heading": "1. Acceptance",
+        "body": "By accessing jyotishyam.in (\"Taara Jyotishyam\", \"we\", \"us\") you agree to these Terms & Conditions. If you do not agree, please do not use the website."
+      },
+      {
+        "heading": "2. Services",
+        "body": "We provide online Vedic astrology tools including birth-chart calculation, horoscopes, kundali matching, and optional AI-generated readings. Services are for personal guidance and entertainment only — not medical, legal, financial, or professional advice."
+      },
+      {
+        "heading": "3. Accounts and eligibility",
+        "body": "You must be at least 18 years old to make purchases. You are responsible for the accuracy of birth data you submit. We do not guarantee specific outcomes from any reading."
+      },
+      {
+        "heading": "4. Payments",
+        "body": "Paid products are listed on our Pricing and Checkout pages. Prices are in Indian Rupees (INR) and include applicable taxes unless stated otherwise. Payment is collected through authorised payment gateways (e.g. PayU, Razorpay)."
+      },
+      {
+        "heading": "5. Digital delivery",
+        "body": "AI readings are delivered digitally on the website immediately after successful payment and chart generation. No physical goods are shipped."
+      },
+      {
+        "heading": "6. Acceptable use",
+        "body": "You may not misuse the site, attempt to circumvent payment, scrape content at scale, or use the service for unlawful purposes."
+      },
+      {
+        "heading": "7. Intellectual property",
+        "body": "Website content, branding, and software are owned by the merchant operating Taara Jyotishyam. You receive a personal, non-transferable licence to view readings you purchase."
+      },
+      {
+        "heading": "8. Limitation of liability",
+        "body": "To the fullest extent permitted by law, we are not liable for indirect or consequential damages arising from use of the site or reliance on readings."
+      },
+      {
+        "heading": "9. Governing law",
+        "body": "These terms are governed by the laws of India. Disputes shall be subject to the courts of the merchant's registered jurisdiction."
+      },
+      {
+        "heading": "10. Contact",
+        "body": "For questions about these terms, email support@jyotishyam.in."
+      }
+    ]
+  },
+  "privacy": {
+    "metaTitle": "Privacy Policy | Taara Jyotishyam",
+    "metaDescription": "How Taara Jyotishyam collects and uses your data.",
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: 25 June 2026",
+    "sections": [
+      {
+        "heading": "1. Information we collect",
+        "body": "We collect birth details (date, time, place) that you enter for chart calculation, browser session data for usage limits, and payment metadata from our payment partners when you purchase a reading. We do not store full card or UPI credentials on our servers."
+      },
+      {
+        "heading": "2. How we use information",
+        "body": "Birth data is used to calculate charts and generate readings. Payment data is used to confirm your purchase and unlock paid features. We may use aggregated, anonymised analytics to improve the service."
+      },
+      {
+        "heading": "3. AI processing",
+        "body": "Personalised readings are generated using third-party AI services. Chart summaries sent for generation contain astrological data derived from your birth details, not your name unless you include it."
+      },
+      {
+        "heading": "4. Cookies",
+        "body": "We use cookies and similar storage for language preference, entitlement after payment, and session limits. You can control cookies through your browser settings."
+      },
+      {
+        "heading": "5. Sharing",
+        "body": "We share data only with service providers necessary to operate the site (hosting, payments, AI APIs) and when required by law. We do not sell personal data."
+      },
+      {
+        "heading": "6. Retention",
+        "body": "Chart and reading data may be stored in your browser session. Server logs are retained for a limited period for security and debugging."
+      },
+      {
+        "heading": "7. Your rights",
+        "body": "You may request access or deletion of personal data we hold by contacting support@jyotishyam.in. Indian users may have rights under applicable data-protection laws."
+      },
+      {
+        "heading": "8. Contact",
+        "body": "Privacy queries: support@jyotishyam.in."
+      }
+    ]
+  },
+  "refund": {
+    "metaTitle": "Refund Policy | Taara Jyotishyam",
+    "metaDescription": "Refund policy for Taara Jyotishyam paid readings.",
+    "title": "Refund Policy",
+    "lastUpdated": "Last updated: 25 June 2026",
+    "sections": [
+      {
+        "heading": "1. Digital products",
+        "body": "Paid products on Taara Jyotishyam are digital AI-generated readings delivered instantly on the website. Once a reading has been successfully generated and displayed after payment, the order is considered fulfilled."
+      },
+      {
+        "heading": "2. Eligible refunds",
+        "body": "We will issue a full refund if: (a) payment was charged but the reading could not be delivered due to a technical failure on our side; (b) you were charged twice for the same product; or (c) required by applicable consumer-protection law."
+      },
+      {
+        "heading": "3. Non-refundable cases",
+        "body": "Refunds are generally not provided if you entered incorrect birth details, if you simply changed your mind after receiving the reading, or if you disagree with the interpretive content of an AI reading."
+      },
+      {
+        "heading": "4. How to request",
+        "body": "Email support@jyotishyam.in within 7 days of purchase with your payment reference (order/transaction ID), registered email, and a description of the issue. We aim to respond within 3 business days."
+      },
+      {
+        "heading": "5. Refund method",
+        "body": "Approved refunds are processed to the original payment method within 7–10 business days, depending on your bank or payment provider."
+      }
+    ]
+  },
+  "cancellation": {
+    "metaTitle": "Cancellation Policy | Taara Jyotishyam",
+    "metaDescription": "Cancellation policy for Taara Jyotishyam orders.",
+    "title": "Cancellation Policy",
+    "lastUpdated": "Last updated: 25 June 2026",
+    "sections": [
+      {
+        "heading": "1. One-time purchases",
+        "body": "All paid offerings on Taara Jyotishyam are one-time digital purchases, not recurring subscriptions. There is no automatic renewal to cancel."
+      },
+      {
+        "heading": "2. Before payment",
+        "body": "You may abandon checkout at any time before completing payment with no charge."
+      },
+      {
+        "heading": "3. After payment",
+        "body": "Once payment is successful and the digital reading is generated, the order cannot be cancelled because delivery is immediate. See our Refund Policy for exceptional cases."
+      },
+      {
+        "heading": "4. Failed payments",
+        "body": "If payment fails or is declined, no order is created and you will not be charged."
+      },
+      {
+        "heading": "5. Contact",
+        "body": "Questions about orders: support@jyotishyam.in."
+      }
+    ]
+  }
+}

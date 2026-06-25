@@ -4,10 +4,10 @@ import { useTranslations } from "next-intl";
 import { AppNav } from "@/components/AppNav";
 import { ChartSection } from "@/components/ChartSection";
 import { LandingServiceTiles } from "@/components/landing/LandingServiceTiles";
+import { SiteFooter } from "@/components/legal/SiteFooter";
 
 export function LandingPage() {
   const t = useTranslations("landing");
-  const brandNative = t("brand.native");
 
   const scienceCards = ["planets", "snapshot", "framework", "dasha"] as const;
   const steps = ["birth", "calculate", "read"] as const;
@@ -214,21 +214,7 @@ export function LandingPage() {
         <p className="taara-cta-native">{t("cta.note")}</p>
       </div>
 
-      <footer className="taara-footer">
-        <span className="taara-footer-logo">
-          {brandNative ? (
-            <span className="taara-logo-stack taara-logo-stack-center">
-              <span className="taara-logo-primary">{brandNative}</span>
-              <span className="taara-logo-sub">{t("brand.name")}</span>
-            </span>
-          ) : (
-            t("brand.name")
-          )}
-        </span>
-        <p className="taara-footer-domain">{t("brand.domain")}</p>
-        <p>{t("footer.tagline")}</p>
-        <p className="taara-footer-disclaimer">{t("footer.disclaimer")}</p>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
