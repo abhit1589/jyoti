@@ -2,7 +2,8 @@
 
 **Last updated:** 2026-06-26  
 **Repo:** [abhit1589/jyoti](https://github.com/abhit1589/jyoti) · branch `master`  
-**Latest commit:** `17bda0d` — Add horoscope page, city search, and multi-select chart reading checkout.  
+**Latest commit:** `c79c62b` — Update HANDOVER.md for horoscope page, pricing, and places search.  
+**Latest feature commit:** `17bda0d` — Horoscope page, city search, multi-select chart reading checkout.  
 **Local path:** `c:\Users\flyam\OneDrive\Desktop\astro`  
 **Production:** Vercel (auto-deploy from `master`) · domain [jyotishyam.in](https://jyotishyam.in)
 
@@ -16,7 +17,7 @@ Next.js 16 (Turbopack) · TypeScript · Tailwind · `swisseph-wasm` · Anthropic
 
 ---
 
-## What's shipped (commit `17bda0d`)
+## What's shipped (current `master`, feature baseline `17bda0d`)
 
 | Feature | Status | Notes |
 |--------|--------|-------|
@@ -240,6 +241,7 @@ curl -X POST http://localhost:3000/api/dev/reset-limits   # dev only; adjust por
 ## Commit history (recent)
 
 ```
+c79c62b Update HANDOVER.md for horoscope page, pricing, and places search.
 17bda0d Add horoscope page, city search, and multi-select chart reading checkout.
 a1835f7 Add Panchang and update pricing, checkout, and merchant details.
 6e3ed24 Update pricing, merchant details, and footer layout for PayU.
