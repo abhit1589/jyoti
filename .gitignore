@@ -43,4 +43,8 @@ next-env.d.ts
 # local horoscope cache (dev fallback)
 /.cache/
 
+# geonames raw dumps (generated indian-places.json is committed)
+/data/IN.txt
+/data/IN.zip
+
 .vercel

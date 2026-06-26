@@ -68,9 +68,7 @@ export interface BirthInput {
 }
 
 export interface ReadingTeaser {
-  personality: string;
-  career: string;
-  dasha: string;
+  teaser: string;
 }
 
 export interface ChartResponse {
@@ -78,7 +76,12 @@ export interface ChartResponse {
   teaser: ReadingTeaser | null;
 }
 
-export type ReadingFocus = "personality" | "career" | "dasha";
+export type ReadingFocus =
+  | "personality"
+  | "career"
+  | "dasha"
+  | "financial"
+  | "marriage";
 
 export interface InterpretRequest {
   chart: VedicChart;

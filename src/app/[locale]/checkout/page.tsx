@@ -29,12 +29,12 @@ export default async function CheckoutPage({
   searchParams,
 }: {
   params: Promise<{ locale: string }>;
-  searchParams: Promise<{ sku?: string }>;
+  searchParams: Promise<{ sku?: string; readings?: string }>;
 }) {
   const { locale: localeParam } = await params;
   if (!isLocale(localeParam)) notFound();
 
-  const { sku } = await searchParams;
+  const { sku, readings } = await searchParams;
 
-  return <CheckoutView skuParam={sku ?? null} />;
+  return <CheckoutView skuParam={sku ?? null} readingsParam={readings ?? null} />;
 }

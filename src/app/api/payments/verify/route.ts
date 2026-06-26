@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { getAmountPaise, isPaymentsEnabled } from "@/lib/payments/config";
 import {
+  getReadingOrderAmount,
+  normalizeReadingSelection,
+} from "@/lib/payments/reading-order";
+import {
   addEntitlement,
   entitlementCookieOptions,
   ENTITLEMENTS_COOKIE,
@@ -42,7 +46,10 @@ export async function POST(request: Request) {
     }
 
     const order = await validatePaidOrder(orderId, paymentId);
-    const expectedAmount = getAmountPaise(order.sku);
+    const expectedAmount =
+      order.focuses?.length
+        ? getReadingOrderAmount(normalizeReadingSelection(order.focuses))
+        : getAmountPaise(order.sku);
     if (order.amount !== expectedAmount || order.currency !== "INR") {
       return NextResponse.json({ error: "Payment amount mismatch" }, { status: 400 });
     }
@@ -53,6 +60,7 @@ export async function POST(request: Request) {
       chartId: order.chartId,
       sku: order.sku,
       focus: order.focus,
+      focuses: order.focuses,
       consumed: [],
       createdAt: new Date().toISOString(),
     };
@@ -64,6 +72,7 @@ export async function POST(request: Request) {
       chartId: order.chartId,
       sku: order.sku,
       focus: order.focus ?? null,
+      focuses: order.focuses ?? null,
     });
 
     response.cookies.set(

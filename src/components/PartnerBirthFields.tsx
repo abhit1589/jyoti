@@ -1,14 +1,19 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
+import { CityAutocomplete } from "@/components/CityAutocomplete";
 import { DateTimePicker } from "@/components/DateTimePicker";
-import { getCitiesForLocale, getCityById } from "@/lib/vedic/cities";
+import type { PlaceSearchResult } from "@/lib/vedic/place-types";
 import type { Locale } from "@/lib/types";
 
 export type PartnerBirth = {
   name: string;
   birthDateTime: { date: string; time: string };
   cityId: string;
+  placeName: string;
+  latitude: number;
+  longitude: number;
+  timezone: string;
 };
 
 interface PartnerBirthFieldsProps {
@@ -25,8 +30,17 @@ export function PartnerBirthFields({
   idPrefix,
 }: PartnerBirthFieldsProps) {
   const t = useTranslations("form");
-  const locale = useLocale() as Locale;
-  const cities = getCitiesForLocale(locale);
+
+  function handlePlaceChange(place: PlaceSearchResult) {
+    onChange({
+      ...value,
+      cityId: place.id,
+      placeName: place.label,
+      latitude: place.latitude,
+      longitude: place.longitude,
+      timezone: place.timezone,
+    });
+  }
 
   return (
     <div className="card p-5">
@@ -49,18 +63,11 @@ export function PartnerBirthFields({
 
         <label className="flex flex-col gap-1.5 text-sm" htmlFor={`${idPrefix}-city`}>
           <span className="font-medium text-slate-600">{t("city")}</span>
-          <select
+          <CityAutocomplete
             id={`${idPrefix}-city`}
-            value={value.cityId}
-            onChange={(e) => onChange({ ...value, cityId: e.target.value })}
-            className="input-field"
-          >
-            {cities.map((c) => (
-              <option key={c.id} value={c.id}>
-                {c.name[locale]}
-              </option>
-            ))}
-          </select>
+            valueId={value.cityId}
+            onChange={handlePlaceChange}
+          />
         </label>
       </div>
     </div>
@@ -80,15 +87,14 @@ export function partnerBirthToInput(
   placeName?: string;
   locale: Locale;
 } {
-  const city = getCityById(partner.cityId) ?? getCityById("hyderabad")!;
   return {
     name: partner.name || undefined,
     date: partner.birthDateTime.date,
     time: partner.birthDateTime.time,
-    timezone: city.timezone,
-    latitude: city.latitude,
-    longitude: city.longitude,
-    placeName: city.name[locale],
+    timezone: partner.timezone,
+    latitude: partner.latitude,
+    longitude: partner.longitude,
+    placeName: partner.placeName,
     locale,
   };
 }
@@ -97,4 +103,8 @@ export const defaultPartnerBirth = (): PartnerBirth => ({
   name: "",
   birthDateTime: { date: "1992-06-15", time: "09:00" },
   cityId: "mumbai",
+  placeName: "Mumbai",
+  latitude: 19.076,
+  longitude: 72.8777,
+  timezone: "Asia/Kolkata",
 });

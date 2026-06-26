@@ -1,11 +1,15 @@
 import { NextResponse } from "next/server";
 import { getAmountPaise } from "@/lib/payments/config";
+import { getReadingOrderAmount, normalizeReadingSelection } from "@/lib/payments/reading-order";
+import { parseReadingFocusList } from "@/lib/readings/parse-focus";
 import type { PaymentSku } from "@/lib/payments/config";
 
 export const runtime = "nodejs";
 
 interface PayUInitiateBody {
   sku?: PaymentSku;
+  focuses?: string[] | string;
+  amountPaise?: number;
 }
 
 /** PayU checkout initiation — configure PAYU_* env vars to enable redirect. */
@@ -25,6 +29,14 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid product" }, { status: 400 });
   }
 
+  const focuses = normalizeReadingSelection(parseReadingFocusList(body.focuses));
+  const amountPaise =
+    typeof body.amountPaise === "number" && body.amountPaise > 0
+      ? body.amountPaise
+      : focuses.length > 0
+        ? getReadingOrderAmount(focuses)
+        : getAmountPaise(sku);
+
   if (!merchantKey || !merchantSalt) {
     return NextResponse.json(
       {
@@ -35,7 +47,7 @@ export async function POST(request: Request) {
     );
   }
 
-  const amountInr = (getAmountPaise(sku) / 100).toFixed(2);
+  const amountInr = (amountPaise / 100).toFixed(2);
   const baseUrl = process.env.PAYU_BASE_URL?.trim() || "https://test.payu.in";
   const successUrl =
     process.env.PAYU_SUCCESS_URL?.trim() || "https://jyotishyam.in/en/checkout?status=success";
@@ -47,7 +59,7 @@ export async function POST(request: Request) {
     preview: {
       key: merchantKey,
       amount: amountInr,
-      productinfo: sku,
+      productinfo: focuses.length ? `readings:${focuses.join(",")}` : sku,
       surl: successUrl,
       furl: failureUrl,
       baseUrl,

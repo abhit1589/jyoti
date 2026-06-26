@@ -151,6 +151,18 @@
         "title": "वर्तमान दशा",
         "native": "अभी का जीवन-काल",
         "body": "अभी आपके जीवन पर कौन सा ग्रहकाल चल रहा है, कौन से विषय सक्रिय हैं, और आगे 12–18 महीनों में क्या हो सकता है।"
+      },
+      "financial": {
+        "icon": "₹",
+        "title": "धन और संपत्ति",
+        "native": "आय और समृद्धि",
+        "body": "दूसरे और ग्यारहवें भाव, उनके स्वामी और गुरु/शुक्र — आप कैसे कमाते, बचाते और खर्च करते हैं। व्यावहारिक मार्गदर्शन, कोई शेयर टिप नहीं।"
+      },
+      "marriage": {
+        "icon": "♀",
+        "title": "विवाह और संबंध",
+        "native": "जीवनसाथी और साझेदारी",
+        "body": "सातवां भाव, शुक्र और चंद्र — आप साझेदारी में कैसे हैं और जीवनसाथी में क्या चाहते हैं। लिंग-तटस्थ, आपकी कुंडली पर आधारित।"
       }
     }
   },
@@ -287,5 +299,75 @@
   "footer": {
     "tagline": "वैदिक ज्योतिष, सटीक गणना · छह भारतीय भाषाएँ",
     "disclaimer": "तारा ज्योतिष्यम् सटीक सायन गणना और सुव्यवस्थित ज्योतिष व्याख्या का उपयोग करता है। हम उपाय, रत्न या धार्मिक सेवाएँ नहीं देते। फलित केवल आत्म-चिंतन और मार्गदर्शन के लिए हैं।"
+  },
+  "horoscope": {
+    "metaTitle": "Free Horoscope Generator - Vedic Birth Chart and Readings",
+    "metaDescription": "Generate your free Vedic birth chart, see your planetary positions and dasha, then unlock focused Jyotish readings for personality, career, finance, marriage, and more.",
+    "eyebrow": "Your Free Horoscope Starts Here",
+    "title": "Generate the chart first.<br></br><em>Then choose the reading.</em>",
+    "intro": "This page is where your personal horoscope begins. Enter your birth details above to create your Vedic chart, see the key placements behind your reading, and decide which deeper interpretation you want to unlock.",
+    "charts": {
+      "items": {
+        "birthChart": {
+          "icon": "✦",
+          "title": "Birth Chart / Rashi Chart",
+          "body": "Your free chart shows the Lahiri sidereal snapshot of your birth: ascendant, Moon sign, planetary placements, and house positions. This is the base chart used for every personalised reading on Taara."
+        },
+        "planetaryPositions": {
+          "icon": "◎",
+          "title": "Planetary Positions",
+          "body": "See where each planet sits by sign, house, nakshatra, and pada. These details help explain why two people with the same sun sign can have very different temperaments, work patterns, and life timing."
+        },
+        "dasha": {
+          "icon": "☽",
+          "title": "Current Dasha Timeline",
+          "body": "Your chart also shows the planetary period active in your life right now. The dasha is used to understand what themes may feel more prominent now: work, relationships, change, responsibility, rest, or inner growth."
+        }
+      }
+    },
+    "readings": {
+      "label": "Reading Options",
+      "title": "Pick the part of life<br></br><em>you want explained.</em>",
+      "intro": "The free preview is short by design. Paid readings go deeper into one focused area of your chart, so you can buy only what you actually came to understand.",
+      "bundleBadge": "Best value",
+      "items": {
+        "personality": {
+          "icon": "☉",
+          "title": "Personality Reading",
+          "tag": "Temperament, strengths, inner patterns",
+          "body": "A focused interpretation of how you come across, what drives your instincts, where your natural confidence sits, and the patterns others may notice before you do."
+        },
+        "career": {
+          "icon": "♄",
+          "title": "Career & Dharma Reading",
+          "tag": "Work style, direction, purpose",
+          "body": "Looks at the chart factors connected with work, responsibility, skill, public contribution, and the kind of professional environments that are more likely to suit you."
+        },
+        "dasha": {
+          "icon": "☽",
+          "title": "Current Dasha Reading",
+          "tag": "Your present life chapter",
+          "body": "Explains the active planetary period in plain language: what it is emphasising, what may feel heavier or easier, and what kind of decisions deserve attention now."
+        },
+        "financial": {
+          "icon": "₹",
+          "title": "Financial & Wealth Reading",
+          "tag": "Money patterns, earning style, caution areas",
+          "body": "Reads the chart factors connected with earning, saving, spending, support, gains, and financial temperament. No stock tips, no guarantees, only chart-based guidance."
+        },
+        "marriage": {
+          "icon": "♀",
+          "title": "Marriage & Relationship Reading",
+          "tag": "Partnership style and relationship themes",
+          "body": "Explores how you approach commitment, emotional exchange, attraction, friction patterns, and the kind of partnership dynamics your chart tends to highlight."
+        },
+        "complete": {
+          "icon": "◆",
+          "title": "Complete Chart Reading",
+          "tag": "All five sections together",
+          "body": "Best when you want the full picture: personality, career, current dasha, financial patterns, and relationships in one chart-based analysis at a lower bundle price."
+        }
+      }
+    }
   }
 }

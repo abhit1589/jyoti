@@ -1,13 +1,14 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
+import { CityAutocomplete } from "@/components/CityAutocomplete";
 import { PanchangDisplay } from "@/components/panchang/PanchangDisplay";
 import { parseJsonResponse } from "@/lib/api/client";
 import { todayInTimezone } from "@/lib/panchang/date";
 import type { PanchangResult } from "@/lib/panchang/types";
+import type { PlaceSearchResult } from "@/lib/vedic/place-types";
 import type { Locale } from "@/lib/types";
-import { getCitiesForLocale, getCityById } from "@/lib/vedic/cities";
 
 interface PanchangClientProps {
   initialData: PanchangResult;
@@ -24,12 +25,8 @@ export function PanchangClient({
 }: PanchangClientProps) {
   const t = useTranslations("panchang");
   const locale = useLocale() as Locale;
-  const cities = useMemo(() => getCitiesForLocale(locale), [locale]);
-  const defaultCity = getCityById(initialCityId) ?? getCityById("hyderabad") ?? cities[0];
-  const [cityId, setCityId] = useState(defaultCity.id);
-  const [date, setDate] = useState(
-    initialDate ?? todayInTimezone(defaultCity.timezone),
-  );
+  const [cityId, setCityId] = useState(initialCityId);
+  const [date, setDate] = useState(initialDate ?? todayInTimezone(initialData.timezone));
   const [data, setData] = useState<PanchangResult>(initialData);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -76,11 +73,10 @@ export function PanchangClient({
     void fetchPanchang(cityId, date);
   }, [cityId, date, fetchPanchang]);
 
-  function handleCityChange(nextCityId: string) {
-    setCityId(nextCityId);
-    const city = getCityById(nextCityId);
-    if (city && !initialDate) {
-      setDate(todayInTimezone(city.timezone));
+  function handlePlaceChange(place: PlaceSearchResult) {
+    setCityId(place.id);
+    if (!initialDate) {
+      setDate(todayInTimezone(place.timezone));
     }
   }
 
@@ -89,18 +85,11 @@ export function PanchangClient({
       <div className="taara-panchang-controls">
         <label className="taara-panchang-control">
           <span>{t("cityLabel")}</span>
-          <select
-            value={cityId}
-            onChange={(e) => handleCityChange(e.target.value)}
-            className="input-field"
+          <CityAutocomplete
+            valueId={cityId}
+            onChange={handlePlaceChange}
             disabled={loading}
-          >
-            {cities.map((city) => (
-              <option key={city.id} value={city.id}>
-                {city.name[locale]}
-              </option>
-            ))}
-          </select>
+          />
         </label>
 
         {!compact ? (

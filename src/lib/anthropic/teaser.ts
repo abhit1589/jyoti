@@ -4,10 +4,7 @@ import { formatChartForTeaserPrompt } from "@/lib/vedic/chart";
 import type { Locale, ReadingTeaser, VedicChart } from "@/lib/types";
 
 const MODEL = process.env.ANTHROPIC_MODEL ?? "claude-sonnet-4-6";
-const TEASER_MAX_TOKENS = Number(process.env.TEASER_MAX_TOKENS ?? "450");
-
-const PLAIN_OUTPUT_RULE =
-  "In your JSON values, use everyday life language only. Do NOT mention planet names, rashis, houses, nakshatras, dasha, or other Jyotish terms.";
+const TEASER_MAX_TOKENS = Number(process.env.TEASER_MAX_TOKENS ?? "300");
 
 const LANGUAGE_RULE: Record<Locale, string> = {
   en: "Write in warm, simple English.",
@@ -21,24 +18,23 @@ const LANGUAGE_RULE: Record<Locale, string> = {
 function buildTeaserPrompt(chart: VedicChart, locale: Locale): string {
   const chartBlock = formatChartForTeaserPrompt(chart, locale);
 
-  return `You are Taara Jyotishyam. Write a FREE brief preview of this birth chart.
+  return `You are Taara Jyotishyam. Write a free one-paragraph preview (80–110 words) for this birth chart.
 Language: ${READING_LANGUAGE[locale]}. ${LANGUAGE_RULE[locale]}
-${PLAIN_OUTPUT_RULE}
 
-Chart data (for your analysis only — do not repeat technical details in the output):
+STRICT RULES — follow exactly:
+- Write ONLY what the chart data below supports. Do NOT invent or assume anything not shown.
+- ONE paragraph only. No headings, no bullet points, no lists, no line breaks within the text.
+- Weave together: how this person naturally comes across, the kind of work or direction that suits them, and the flavour of their current life chapter — all from the chart.
+- The final 1–2 sentences must honestly signal that the paid readings (Personality, Career & Dharma, Current Dasha, Financial & Wealth, or Marriage & Relationships) go much deeper into specific areas — name only section names that exist on this website. Do not promise anything not on this website.
+- Use warm, direct "you" voice. Be specific to this chart — nothing that could apply to anyone.
+- Do NOT mention planet names, rashis, house numbers, nakshatras, or any Jyotish technical term.
+- No fear, no predictions, no guarantees.
+
+Chart data (for your analysis only — do not repeat these technical details in output):
 ${chartBlock}
 
-Return ONLY valid JSON — no markdown — in this exact shape:
-{"personality":"...","career":"...","dasha":"..."}
-
-Rules for EACH value:
-- Exactly 2 or 3 short sentences (one brief paragraph)
-- personality: how they come across and one distinctive inner trait or contradiction — not generic praise
-- career: name at least one concrete field or way of working; include an unconventional or non-obvious path if the chart supports it (e.g. independent, creative, research, service, tech, teaching)
-- dasha: the flavor of this chapter right now — tie to the current period in the chart data; name what feels emphasised (work, relationships, change, rest, etc.)
-- Warm, direct "you" voice
-- Chart-specific only — nothing that could apply to anyone
-- No fear-based predictions`;
+Return ONLY valid JSON with no markdown:
+{"teaser":"..."}`;
 }
 
 function parseTeaser(text: string): ReadingTeaser {
@@ -48,16 +44,14 @@ function parseTeaser(text: string): ReadingTeaser {
     throw new Error("Teaser response was not valid JSON");
   }
 
-  const parsed = JSON.parse(jsonMatch[0]) as Partial<ReadingTeaser>;
-  const personality = parsed.personality?.trim();
-  const career = parsed.career?.trim();
-  const dasha = parsed.dasha?.trim();
+  const parsed = JSON.parse(jsonMatch[0]) as Partial<{ teaser: string }>;
+  const teaser = parsed.teaser?.trim();
 
-  if (!personality || !career || !dasha) {
-    throw new Error("Teaser response was missing a section");
+  if (!teaser) {
+    throw new Error("Teaser response was missing the teaser field");
   }
 
-  return { personality, career, dasha };
+  return { teaser };
 }
 
 export function canGenerateTeaser(): boolean {

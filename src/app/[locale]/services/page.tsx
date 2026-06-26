@@ -44,6 +44,18 @@ export default async function ServicesPage({
     <PolicyPage title={t("title")}>
       <p className="taara-intro mx-auto max-w-2xl text-center mb-10">{t("intro")}</p>
       <ul className="taara-services-list">
+        <li className="taara-legal-card">
+          <div className="taara-services-list-head">
+            <h2>{t("items.reading-bundle.name")}</h2>
+            <span className="taara-badge-paid">{t("paidBadge")}</span>
+          </div>
+          <p>{t("items.reading-bundle.description")}</p>
+          <div className="taara-services-list-actions">
+            <Link href="/pricing#chart-readings" className="taara-btn-primary taara-pricing-btn">
+              {tPricing("checkoutSelected")}
+            </Link>
+          </div>
+        </li>
         {catalog.map((service) => (
           <li key={service.id} className="taara-legal-card">
             <div className="taara-services-list-head">

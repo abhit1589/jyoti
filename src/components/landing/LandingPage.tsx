@@ -6,13 +6,13 @@ import { ChartSection } from "@/components/ChartSection";
 import { LandingServiceTiles } from "@/components/landing/LandingServiceTiles";
 import { PanchangCard } from "@/components/panchang/PanchangCard";
 import { SiteFooter } from "@/components/legal/SiteFooter";
+import { ALL_READING_FOCUSES } from "@/lib/payments/config";
 
 export function LandingPage() {
   const t = useTranslations("landing");
 
   const scienceCards = ["planets", "snapshot", "framework", "dasha"] as const;
   const steps = ["birth", "calculate", "read"] as const;
-  const readings = ["personality", "career", "dasha"] as const;
   const comparisonRows = [
     "availability",
     "neutrality",
@@ -162,7 +162,7 @@ export function LandingPage() {
         </h2>
         <p className="taara-intro">{t("readings.intro")}</p>
         <div className="taara-readings-grid">
-          {readings.map((key) => (
+          {ALL_READING_FOCUSES.map((key) => (
             <article
               key={key}
               className={`taara-reading-card ${key === "personality" ? "taara-reading-featured" : ""}`}

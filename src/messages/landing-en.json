@@ -130,7 +130,7 @@
   },
   "readings": {
     "label": "What You Get",
-    "title": "Three readings,<br></br><em>from your exact chart.</em>",
+    "title": "Five readings,<br></br><em>from your exact chart.</em>",
     "intro": "Not your newspaper sun sign. Not a generic Moon sign forecast. Your actual Vedic chart — nine planetary positions, twelve houses, and the dasha period active in your life right now — read with the precision of classical Jyotish.",
     "included": "Included",
     "cards": {
@@ -151,6 +151,18 @@
         "title": "Current Dasha",
         "native": "Your present life phase",
         "body": "Your Vimshottari dasha and antardasha — the planetary period and sub-period governing your current life chapter — shape your energy, relationships, opportunities, and inner shifts. This reading names your exact dasha, explains what these planets activate in your natal chart, and gives an honest picture of the next 12–18 months."
+      },
+      "financial": {
+        "icon": "₹",
+        "title": "Financial & Wealth",
+        "native": "Money patterns & prosperity",
+        "body": "The 2nd and 11th houses, their lords, and Jupiter/Venus in your chart reveal how you earn, save, spend, and build wealth. This reading explains your natural money temperament, realistic income paths, financial strengths and blind spots — without stock tips or guaranteed returns."
+      },
+      "marriage": {
+        "icon": "♀",
+        "title": "Marriage & Relationships",
+        "native": "Partnership & spouse themes",
+        "body": "The 7th house, its lord, Venus, and your Moon describe what you seek in a partner and how you show up in committed relationships. This reading covers partnership style, strengths and friction patterns, and the relationship flavor of your current dasha — gender-neutral and specific to your chart."
       }
     }
   },
@@ -287,5 +299,75 @@
   "footer": {
     "tagline": "Vedic astrology, precisely calculated · Six Indian languages",
     "disclaimer": "Taara Jyotishyam uses precise sidereal calculations and structured Jyotish interpretation. We do not offer remedies, gemstone recommendations, or religious services. Readings are for self-reflection and guidance only."
+  },
+  "horoscope": {
+    "metaTitle": "Free Horoscope Generator - Vedic Birth Chart and Readings",
+    "metaDescription": "Generate your free Vedic birth chart, see your planetary positions and dasha, then unlock focused Jyotish readings for personality, career, finance, marriage, and more.",
+    "eyebrow": "Your Free Horoscope Starts Here",
+    "title": "Generate the chart first.<br></br><em>Then choose the reading.</em>",
+    "intro": "This page is where your personal horoscope begins. Enter your birth details above to create your Vedic chart, see the key placements behind your reading, and decide which deeper interpretation you want to unlock.",
+    "charts": {
+      "items": {
+        "birthChart": {
+          "icon": "✦",
+          "title": "Birth Chart / Rashi Chart",
+          "body": "Your free chart shows the Lahiri sidereal snapshot of your birth: ascendant, Moon sign, planetary placements, and house positions. This is the base chart used for every personalised reading on Taara."
+        },
+        "planetaryPositions": {
+          "icon": "◎",
+          "title": "Planetary Positions",
+          "body": "See where each planet sits by sign, house, nakshatra, and pada. These details help explain why two people with the same sun sign can have very different temperaments, work patterns, and life timing."
+        },
+        "dasha": {
+          "icon": "☽",
+          "title": "Current Dasha Timeline",
+          "body": "Your chart also shows the planetary period active in your life right now. The dasha is used to understand what themes may feel more prominent now: work, relationships, change, responsibility, rest, or inner growth."
+        }
+      }
+    },
+    "readings": {
+      "label": "Reading Options",
+      "title": "Pick the part of life<br></br><em>you want explained.</em>",
+      "intro": "The free preview is short by design. Paid readings go deeper into one focused area of your chart, so you can buy only what you actually came to understand.",
+      "bundleBadge": "Best value",
+      "items": {
+        "personality": {
+          "icon": "☉",
+          "title": "Personality Reading",
+          "tag": "Temperament, strengths, inner patterns",
+          "body": "A focused interpretation of how you come across, what drives your instincts, where your natural confidence sits, and the patterns others may notice before you do."
+        },
+        "career": {
+          "icon": "♄",
+          "title": "Career & Dharma Reading",
+          "tag": "Work style, direction, purpose",
+          "body": "Looks at the chart factors connected with work, responsibility, skill, public contribution, and the kind of professional environments that are more likely to suit you."
+        },
+        "dasha": {
+          "icon": "☽",
+          "title": "Current Dasha Reading",
+          "tag": "Your present life chapter",
+          "body": "Explains the active planetary period in plain language: what it is emphasising, what may feel heavier or easier, and what kind of decisions deserve attention now."
+        },
+        "financial": {
+          "icon": "₹",
+          "title": "Financial & Wealth Reading",
+          "tag": "Money patterns, earning style, caution areas",
+          "body": "Reads the chart factors connected with earning, saving, spending, support, gains, and financial temperament. No stock tips, no guarantees, only chart-based guidance."
+        },
+        "marriage": {
+          "icon": "♀",
+          "title": "Marriage & Relationship Reading",
+          "tag": "Partnership style and relationship themes",
+          "body": "Explores how you approach commitment, emotional exchange, attraction, friction patterns, and the kind of partnership dynamics your chart tends to highlight."
+        },
+        "complete": {
+          "icon": "◆",
+          "title": "Complete Chart Reading",
+          "tag": "All five sections together",
+          "body": "Best when you want the full picture: personality, career, current dasha, financial patterns, and relationships in one chart-based analysis at a lower bundle price."
+        }
+      }
+    }
   }
 }

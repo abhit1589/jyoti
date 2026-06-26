@@ -27,6 +27,9 @@
     "am": "AM",
     "pm": "PM",
     "city": "Birth place",
+    "cityPlaceholder": "Type city or town name…",
+    "citySearching": "Searching…",
+    "noPlacesFound": "No places found — try another spelling",
     "submit": "Generate Chart",
     "loading": "Calculating…",
     "loadingWithTeaser": "Calculating chart & free preview…"
@@ -64,7 +67,9 @@
     "focus": {
       "personality": "Personality",
       "career": "Career & Dharma",
-      "dasha": "Current Dasha"
+      "dasha": "Current Dasha",
+      "financial": "Financial & Wealth",
+      "marriage": "Marriage & Relationships"
     },
     "generate": "Get Reading",
     "loading": "Consulting the stars…",
@@ -82,16 +87,19 @@
     "teaser": {
       "label": "Free preview",
       "title": "A glimpse of your chart",
-      "subtitle": "A brief look at your personality, career outlook, and current life phase — drawn from your actual chart positions, not your sun sign.",
       "free": "Free",
-      "upgradeHint": "Like what you see? Unlock the full reading for any section below."
+      "upsellTitle": "Want to go deeper?",
+      "upsellBody": "Each section below is a full 3-paragraph Jyotish reading drawn entirely from your chart — specific to your planets, not a generic profile. Pick one section or get all five at a discount.",
+      "upsellCta": "Choose your readings →",
+      "upsellBundle": "Complete reading (all 5 sections)",
+      "upsellBundlePrice": "₹400"
     },
     "payments": {
       "intro": "Unlock a full personalised reading for this chart. Pay once per section — yours to keep, no subscription.",
       "singleTitle": "Single reading",
       "singleHint": "One section of your choice — Personality, Career, or your current Dasha period.",
       "bundleTitle": "Complete reading",
-      "bundleHint": "All three sections — Personality, Career & Dasha — with longer, more detailed output.",
+      "bundleHint": "All five sections — Personality, Career, Dasha, Financial & Marriage — with longer, more detailed output.",
       "bundleSave": "Save {amount} vs buying separately",
       "paySingle": "Pay for {focus}",
       "payBundle": "Pay for complete reading",
@@ -103,6 +111,8 @@
       "locked": "Locked",
       "required": "Please complete payment to generate this reading.",
       "alreadyUsed": "You have already used this paid reading for this section.",
+      "pendingTitle": "Your selected readings from checkout",
+      "payPending": "Pay for selected readings",
       "unlockHint": "Pay above to unlock this section, then tap Get Reading.",
       "usedHint": "This paid section has already been generated for this chart.",
       "notConfigured": "Payments are not configured yet.",

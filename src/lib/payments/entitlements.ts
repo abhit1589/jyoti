@@ -15,8 +15,10 @@ export type Entitlement = {
   paymentId: string;
   chartId: string;
   sku: PaymentSku;
-  /** Set for single-SKU purchases. */
+  /** Set for legacy single-SKU purchases. */
   focus?: ReadingFocus;
+  /** Set when multiple reading sections were purchased together. */
+  focuses?: ReadingFocus[];
   consumed: ReadingFocus[];
   createdAt: string;
 };
@@ -91,6 +93,7 @@ export function entitlementCookieOptions() {
 
 function focusesForEntitlement(entitlement: Entitlement): ReadingFocus[] {
   if (entitlement.sku === "bundle") return ALL_READING_FOCUSES;
+  if (entitlement.focuses?.length) return entitlement.focuses;
   return entitlement.focus ? [entitlement.focus] : [];
 }
 
@@ -103,6 +106,8 @@ export function getChartEntitlementStatus(
     personality: paymentsEnabled ? "locked" : "available",
     career: paymentsEnabled ? "locked" : "available",
     dasha: paymentsEnabled ? "locked" : "available",
+    financial: paymentsEnabled ? "locked" : "available",
+    marriage: paymentsEnabled ? "locked" : "available",
   };
 
   if (!paymentsEnabled) {

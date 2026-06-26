@@ -265,6 +265,38 @@ Paragraph 3: The flavor of the next 12–18 months within this chapter — what 
 ಪ್ಯಾರಾಗ್ರಾಫ್ 3: ಮುಂದಿನ 12–18 ತಿಂಗಳ ಸ್ವರ — ಏನರ ಮೇಲೆ ಗಮನ, ಏನರಲ್ಲಿ ಎಚ್ಚರಿಕೆ, ಯಾವ ಅವಕಾಶಗಳು ತೆರೆಯುತ್ತವೆ.`,
 };
 
+export const FINANCIAL_INSTRUCTIONS: Record<Locale, string> = {
+  en: `Using this chart data, write a 3 paragraph financial and wealth reading.
+
+Paragraph 1: Natural money patterns — earning style, saving vs spending temperament, and how the 2nd and 11th house themes show up in this chart. Name 2–3 realistic income paths or wealth-building styles supported by the chart.
+
+Paragraph 2: Strengths and risks for finances — Jupiter/Venus roles, 2nd and 11th lords, planets in wealth houses. What helps accumulation and what can leak money.
+
+Paragraph 3: Practical guidance for the next 12–18 months — dasha flavor for finances without guaranteeing returns. One habit to lean into and one pitfall to watch. No stock tips.`,
+
+  hi: `इस कुंडली डेटा के आधार पर, धन और संपत्ति पर 3 पैराग्राफ लिखें। पैरा 1: कमाई की शैली और 2/11 भाव। पैरा 2: आर्थिक ताकत और जोखिम। पैरा 3: अगले 12–18 महीनों की व्यावहारिक सलाह।`,
+  te: `ఈ కుండలి డేటా ఆధారంగా, ఆర్థికం & సంపద గురించి 3 పేరాలు. పేరా 1: సంపాదన శైలి, 2 & 11 భావాలు. పేరా 2: బలాలు & ప్రమాదాలు. పేరా 3: ముందు 12–18 నెలల మార్గదర్శనం.`,
+  ta: `இந்த ஜாதகத் தரவை வைத்து, நிதி & செல்வத்தை 3 பத்திகளில் எழுதுங்கள். பத்தி 1: வருமான பாணி, 2 & 11 பாவங்கள். பத்தி 2: பலங்கள் & ஆபத்துகள். பத்தி 3: அடுத்த 12–18 மாத வழிகாட்டல்.`,
+  mr: `या कुंडली डेटावर आधारित, धन आणि संपत्तीवर 3 परिच्छेद. परिच्छेद 1: कमाईची पद्धत, 2/11 भाव. परिच्छेद 2: बल आणि धोके. परिच्छेद 3: पुढील 12–18 महिन्यांचा सल्ला.`,
+  kn: `ಈ ಕುಂಡಲಿ ಡೇಟಾವನ್ನು ಆಧರಿಸಿ, ಆರ್ಥಿಕ & ಸಂಪತ್ತಿನ ಬಗ್ಗೆ 3 ಪ್ಯಾರಾಗ್ರಾಫ್‌ಗಳು. ಪ್ಯಾರಾಗ್ರಾಫ್ 1: ಸಂಪಾದನ ಶೈಲಿ, 2 & 11 ಭಾವಗಳು. ಪ್ಯಾರಾಗ್ರಾಫ್ 2: ಬಲಗಳು & ಅಪಾಯಗಳು. ಪ್ಯಾರಾಗ್ರಾಫ್ 3: ಮುಂದಿನ 12–18 ತಿಂಗಳ ಮಾರ್ಗದರ್ಶನ.`,
+};
+
+export const MARRIAGE_INSTRUCTIONS: Record<Locale, string> = {
+  en: `Using this chart data, write a 3 paragraph marriage and relationship reading.
+
+Paragraph 1: Partnership style and what they seek in a spouse — 7th house, 7th lord, Venus, Moon. Gender-neutral.
+
+Paragraph 2: Strengths and challenges in relationships — communication, commitment, independence vs togetherness.
+
+Paragraph 3: Relationship flavor for the next 12–18 months from dasha context. One practical advice. No exact marriage date predictions.`,
+
+  hi: `इस कुंडली डेटा के आधार पर, विवाह और संबंधों पर 3 पैराग्राफ। पैरा 1: साझेदारी शैली, 7 भाव/शुक्र। पैरा 2: ताकत और चुनौतियाँ। पैरा 3: अगले 12–18 महीनों की सलाह। लिंग-तटस्थ।`,
+  te: `ఈ కుండలి డేటా ఆధారంగా, వివాహం & సంబంధాల గురించి 3 పేరాలు. పేరా 1: భాగస్వామ్య శైలి, 7 భావ/శుక్ర. పేరా 2: బలాలు & సవాళ్లు. పేరా 3: ముందు 12–18 నెలల సలహా. లింగ-తటస్థ.`,
+  ta: `இந்த ஜாதகத் தரவை வைத்து, திருமணம் & உறவுகளை 3 பத்திகளில் எழுதுங்கள். பத்தி 1: கூட்டாண்மை பாணி, 7 பாவம்/சுக்ரன். பத்தி 2: பலங்கள் & சவால்கள். பத்தி 3: அடுத்த 12–18 மாத அறிவுரை. பாலின நடுநிலை.`,
+  mr: `या कुंडली डेटावर आधारित, लग्न आणि नातेसंबंधांवर 3 परिच्छेद. परिच्छेद 1: भागीदारी पद्धत, 7 भाव/शुक्र. परिच्छेद 2: बल आणि आव्हाने. परिच्छेद 3: पुढील 12–18 महिन्यांचा सल्ला. लिंग-तटस्थ.`,
+  kn: `ಈ ಕುಂಡಲಿ ಡೇಟಾವನ್ನು ಆಧರಿಸಿ, ವಿವಾಹ & ಸಂಬಂಧಗಳ ಬಗ್ಗೆ 3 ಪ್ಯಾರಾಗ್ರಾಫ್‌ಗಳು. ಪ್ಯಾರಾಗ್ರಾಫ್ 1: ಪಾಲುದಾರಿಕೆ ಶೈಲಿ, 7 ಭಾವ/ಶುಕ್ರ. ಪ್ಯಾರಾಗ್ರಾಫ್ 2: ಬಲಗಳು & ಸವಾಲುಗಳು. ಪ್ಯಾರಾಗ್ರಾಫ್ 3: ಮುಂದಿನ 12–18 ತಿಂಗಳ ಸಲಹೆ. ಲಿಂಗ-ತಟಸ್ಥ.`,
+};
+
 export const FOCUS_SYSTEM_SUFFIX: Record<ReadingFocus, Record<Locale, string>> = {
   personality: {
     en: "Write exactly 3 paragraphs — Paragraph 1: how they show up in the world, Paragraph 2: inner emotional life, Paragraph 3: strongest gift or life pattern. No headings.",
@@ -289,6 +321,22 @@ export const FOCUS_SYSTEM_SUFFIX: Record<ReadingFocus, Record<Locale, string>> =
     ta: "3 பத்திகள் — பத்தி 1: தற்போதைய வாழ்க்கை அத்தியாயம், பத்தி 2: இப்போது என்ன கொண்டுவருகிறது, பத்தி 3: அடுத்த 12–18 மாதங்கள். தலைப்புகள் இல்லை. முழு தமிழ்.",
     mr: "नेमके 3 परिच्छेद — परिच्छेद 1: सध्याचा जीवन अध्याय, परिच्छेद 2: आता काय आणतो, परिच्छेद 3: पुढील 12–18 महिने. शीर्षके नाहीत. पूर्ण मराठी.",
     kn: "3 ಪ್ಯಾರಾಗ್ರಾಫ್‌ಗಳು — ಪ್ಯಾರಾಗ್ರಾಫ್ 1: ಪ್ರಸ್ತುತ ಜೀವನ ಅಧ್ಯಾಯ, ಪ್ಯಾರಾಗ್ರಾಫ್ 2: ಈಗ ಏನು ತರುತ್ತದೆ, ಪ್ಯಾರಾಗ್ರಾಫ್ 3: ಮುಂದಿನ 12–18 ತಿಂಗಳು. ಶೀರ್ಷಿಕೆಗಳಿಲ್ಲ. ಸಂಪೂರ್ಣ ಕನ್ನಡ.",
+  },
+  financial: {
+    en: "Write exactly 3 paragraphs — Paragraph 1: money patterns and income styles, Paragraph 2: financial strengths and risks, Paragraph 3: practical guidance for next 12–18 months. No stock tips or guaranteed returns. No headings.",
+    hi: "ठीक 3 पैराग्राफ — पैरा 1: धन पैटर्न, पैरा 2: ताकत और जोखिम, पैरा 3: व्यावहारिक मार्गदर्शन। शीर्षक नहीं। पूरी हिंदी।",
+    te: "ఖచ్చితంగా 3 పేరాలు — పేరా 1: డబ్బు నమూనాలు, పేరా 2: బలాలు & ప్రమాదాలు, పేరా 3: ప్రాయోగిక మార్గదర్శనం. శీర్షికలు లేవు. పూర్తి తెలుగు.",
+    ta: "3 பத்திகள் — பத்தி 1: பண வடிவங்கள், பத்தி 2: பலங்கள் & ஆபத்துகள், பத்தி 3: நடைமுறை வழிகாட்டல். தலைப்புகள் இல்லை. முழு தமிழ்.",
+    mr: "नेमके 3 परिच्छेद — परिच्छेद 1: धन नमुने, परिच्छेद 2: बल आणि धोके, परिच्छेद 3: व्यावहारिक मार्गदर्शन. शीर्षके नाहीत. पूर्ण मराठी.",
+    kn: "3 ಪ್ಯಾರಾಗ್ರಾಫ್‌ಗಳು — ಪ್ಯಾರಾಗ್ರಾಫ್ 1: ಹಣದ ಮಾದರಿಗಳು, ಪ್ಯಾರಾಗ್ರಾಫ್ 2: ಬಲಗಳು & ಅಪಾಯಗಳು, ಪ್ಯಾರಾಗ್ರಾಫ್ 3: ಪ್ರಾಯೋಗಿಕ ಮಾರ್ಗದರ್ಶನ. ಶೀರ್ಷಿಕೆಗಳಿಲ್ಲ. ಸಂಪೂರ್ಣ ಕನ್ನಡ.",
+  },
+  marriage: {
+    en: "Write exactly 3 paragraphs — Paragraph 1: partnership style, Paragraph 2: relationship strengths and challenges, Paragraph 3: next 12–18 months flavor. Gender-neutral. No exact marriage date predictions. No headings.",
+    hi: "ठीक 3 पैराग्राफ — पैरा 1: साझेदारी शैली, पैरा 2: ताकत और चुनौतियाँ, पैरा 3: अगले 12–18 महीने। लिंग-तटस्थ। शीर्षक नहीं। पूरी हिंदी।",
+    te: "ఖచ్చితంగా 3 పేరాలు — పేరా 1: భాగస్వామ్య శైలి, పేరా 2: బలాలు & సవాళ్లు, పేరా 3: ముందు 12–18 నెలలు. లింగ-తటస్థ. శీర్షికలు లేవు. పూర్తి తెలుగు.",
+    ta: "3 பத்திகள் — பத்தி 1: கூட்டாண்மை பாணி, பத்தி 2: பலங்கள் & சவால்கள், பத்தி 3: அடுத்த 12–18 மாதங்கள். பாலின நடுநிலை. தலைப்புகள் இல்லை. முழு தமிழ்.",
+    mr: "नेमके 3 परिच्छेद — परिच्छेद 1: भागीदारी पद्धत, परिच्छेद 2: बल आणि आव्हाने, परिच्छेद 3: पुढील 12–18 महिने. लिंग-तटस्थ. शीर्षके नाहीत. पूर्ण मराठी.",
+    kn: "3 ಪ್ಯಾರಾಗ್ರಾಫ್‌ಗಳು — ಪ್ಯಾರಾಗ್ರಾಫ್ 1: ಪಾಲುದಾರಿಕೆ ಶೈಲಿ, ಪ್ಯಾರಾಗ್ರಾಫ್ 2: ಬಲಗಳು & ಸವಾಲುಗಳು, ಪ್ಯಾರಾಗ್ರಾಫ್ 3: ಮುಂದಿನ 12–18 ತಿಂಗಳು. ಲಿಂಗ-ತಟಸ್ಥ. ಶೀರ್ಷಿಕೆಗಳಿಲ್ಲ. ಸಂಪೂರ್ಣ ಕನ್ನಡ.",
   },
 };
 
@@ -316,11 +364,12 @@ export function buildUserInstructions(
   locale: Locale,
   focus: ReadingFocus,
 ): string {
-  const body =
-    focus === "personality"
-      ? PERSONALITY_INSTRUCTIONS[locale]
-      : focus === "career"
-        ? CAREER_INSTRUCTIONS[locale]
-        : DASHA_INSTRUCTIONS[locale];
-  return `${body}${PLAIN_LANGUAGE_FOOTER[locale]}`;
+  const instructions: Record<ReadingFocus, Record<Locale, string>> = {
+    personality: PERSONALITY_INSTRUCTIONS,
+    career: CAREER_INSTRUCTIONS,
+    dasha: DASHA_INSTRUCTIONS,
+    financial: FINANCIAL_INSTRUCTIONS,
+    marriage: MARRIAGE_INSTRUCTIONS,
+  };
+  return `${instructions[focus][locale]}${PLAIN_LANGUAGE_FOOTER[locale]}`;
 }

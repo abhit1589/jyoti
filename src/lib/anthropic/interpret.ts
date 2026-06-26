@@ -2,6 +2,8 @@ import Anthropic from "@anthropic-ai/sdk";
 import {
   formatChartForCareerReadingPrompt,
   formatChartForDashaReadingPrompt,
+  formatChartForFinancialReadingPrompt,
+  formatChartForMarriageReadingPrompt,
   formatChartForReadingPrompt,
 } from "@/lib/vedic/chart";
 import {
@@ -29,6 +31,8 @@ export function getClient(): Anthropic {
 function chartBlockForFocus(chart: VedicChart, locale: Locale, focus: ReadingFocus): string {
   if (focus === "career") return formatChartForCareerReadingPrompt(chart, locale);
   if (focus === "dasha") return formatChartForDashaReadingPrompt(chart, locale);
+  if (focus === "financial") return formatChartForFinancialReadingPrompt(chart, locale);
+  if (focus === "marriage") return formatChartForMarriageReadingPrompt(chart, locale);
   return formatChartForReadingPrompt(chart, locale);
 }
 

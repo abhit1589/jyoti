@@ -1,4 +1,4 @@
-import { getAmountPaise, type PaymentSku } from "@/lib/payments/config";
+import { ALL_READING_FOCUSES, getAmountPaise, type PaymentSku } from "@/lib/payments/config";
 
 export type ServiceId =
   | "birth-chart"
@@ -25,8 +25,6 @@ export function formatInr(paise: number): string {
 }
 
 export function getServiceCatalog(): ServiceOffering[] {
-  const single = getAmountPaise("single");
-  const bundle = getAmountPaise("bundle");
   const matchReport = getAmountPaise("match-report");
 
   return [
@@ -40,19 +38,13 @@ export function getServiceCatalog(): ServiceOffering[] {
       free: false,
       checkoutPath: "/checkout?sku=match-report",
     },
-    {
-      id: "reading-single",
-      sku: "single",
-      pricePaise: single,
-      free: false,
-      checkoutPath: "/checkout?sku=single",
-    },
-    {
-      id: "reading-bundle",
-      sku: "bundle",
-      pricePaise: bundle,
-      free: false,
-      checkoutPath: "/checkout?sku=bundle",
-    },
   ];
+}
+
+export function getReadingPricing() {
+  return {
+    singlePaise: getAmountPaise("single"),
+    bundlePaise: getAmountPaise("bundle"),
+    focusCount: ALL_READING_FOCUSES.length,
+  };
 }

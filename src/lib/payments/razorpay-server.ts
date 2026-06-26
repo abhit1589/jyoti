@@ -7,6 +7,12 @@ import {
   getSkuDescription,
   type PaymentSku,
 } from "@/lib/payments/config";
+import {
+  getReadingOrderAmount,
+  isFullReadingBundle,
+  normalizeReadingSelection,
+} from "@/lib/payments/reading-order";
+import { parseReadingFocus, parseReadingFocusList } from "@/lib/readings/parse-focus";
 import type { ReadingFocus } from "@/lib/types";
 
 let client: Razorpay | null = null;
@@ -37,14 +43,43 @@ export async function createRazorpayOrder(input: {
   sku: PaymentSku;
   chartId: string;
   focus?: ReadingFocus;
+  focuses?: ReadingFocus[];
 }): Promise<{
   id: string;
   amount: number;
   currency: string;
   description: string;
+  sku: PaymentSku;
+  focus?: ReadingFocus;
+  focuses?: ReadingFocus[];
 }> {
-  const amount = getAmountPaise(input.sku);
-  const description = getSkuDescription(input.sku, input.focus);
+  let amount: number;
+  let description: string;
+  let sku = input.sku;
+  let focuses = input.focuses ? normalizeReadingSelection(input.focuses) : undefined;
+  let focus = input.focus;
+
+  if (input.sku === "match-report") {
+    amount = getAmountPaise("match-report");
+    description = getSkuDescription("match-report");
+  } else if (focuses?.length) {
+    amount = getReadingOrderAmount(focuses);
+    sku = isFullReadingBundle(focuses) ? "bundle" : "single";
+    description =
+      sku === "bundle"
+        ? getSkuDescription("bundle")
+        : `Jyotish readings (${focuses.length} sections)`;
+    focus = undefined;
+  } else if (input.sku === "bundle") {
+    amount = getAmountPaise("bundle");
+    description = getSkuDescription("bundle");
+    focuses = undefined;
+    focus = undefined;
+  } else {
+    amount = getAmountPaise("single");
+    description = getSkuDescription("single", focus ?? "personality");
+    focuses = focus ? [focus] : undefined;
+  }
 
   const order = await getClient().orders.create({
     amount,
@@ -52,8 +87,9 @@ export async function createRazorpayOrder(input: {
     receipt: `tj_${Date.now().toString(36)}`,
     notes: {
       chartId: input.chartId,
-      sku: input.sku,
-      ...(input.focus ? { focus: input.focus } : {}),
+      sku,
+      ...(focus ? { focus } : {}),
+      ...(focuses?.length ? { focuses: focuses.join(",") } : {}),
     },
   });
 
@@ -62,6 +98,9 @@ export async function createRazorpayOrder(input: {
     amount: Number(order.amount),
     currency: order.currency,
     description,
+    sku,
+    focus,
+    focuses,
   };
 }
 
@@ -74,6 +113,7 @@ export async function validatePaidOrder(
   chartId: string;
   sku: PaymentSku;
   focus?: ReadingFocus;
+  focuses?: ReadingFocus[];
 }> {
   const payment = await getClient().payments.fetch(paymentId);
 
@@ -89,12 +129,6 @@ export async function validatePaidOrder(
   const notes = order.notes ?? {};
 
   const chartId = typeof notes.chartId === "string" ? notes.chartId : "";
-  const sku = notes.sku === "bundle" ? "bundle" : "single";
-  const focus =
-    notes.focus === "career" || notes.focus === "dasha" || notes.focus === "personality"
-      ? notes.focus
-      : undefined;
-
   if (!chartId) {
     throw new Error("Order is missing chart reference");
   }
@@ -103,11 +137,37 @@ export async function validatePaidOrder(
     throw new Error("Payment amount mismatch");
   }
 
+  if (notes.sku === "match-report") {
+    return {
+      amount: Number(order.amount),
+      currency: order.currency,
+      chartId,
+      sku: "match-report",
+    };
+  }
+
+  const focusesRaw = typeof notes.focuses === "string" ? notes.focuses : "";
+  const focuses = focusesRaw ? normalizeReadingSelection(parseReadingFocusList(focusesRaw)) : undefined;
+
+  if (focuses?.length) {
+    const sku = isFullReadingBundle(focuses) ? "bundle" : "single";
+    return {
+      amount: Number(order.amount),
+      currency: order.currency,
+      chartId,
+      sku,
+      focuses,
+    };
+  }
+
+  const sku: PaymentSku = notes.sku === "bundle" ? "bundle" : "single";
+  const focus = sku === "single" ? parseReadingFocus(notes.focus) : undefined;
+
   return {
     amount: Number(order.amount),
     currency: order.currency,
     chartId,
     sku,
-    focus: sku === "single" ? focus ?? "personality" : undefined,
+    focus: sku === "single" ? focus : undefined,
   };
 }

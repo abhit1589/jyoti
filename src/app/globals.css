@@ -1272,6 +1272,126 @@ a.taara-logo {
   color: var(--maroon);
 }
 
+/* ── Teaser panel ─────────────────────────────────────── */
+.taara-teaser-wrap {
+  border: 0.5px solid var(--border);
+  border-radius: 12px;
+  background: var(--parchment);
+  padding: 1.5rem 1.75rem;
+}
+
+.taara-teaser-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.9rem;
+}
+
+.taara-teaser-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--brown-light);
+  margin: 0 0 0.2rem;
+}
+
+.taara-teaser-title {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 1.05rem;
+  color: var(--maroon);
+  margin: 0;
+}
+
+.taara-teaser-body {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--brown);
+  margin: 0 0 1.5rem;
+}
+
+.taara-teaser-upsell {
+  border-top: 0.5px solid var(--border);
+  padding-top: 1.25rem;
+}
+
+.taara-teaser-upsell-title {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 1rem;
+  color: var(--maroon);
+  margin: 0 0 0.35rem;
+}
+
+.taara-teaser-upsell-body {
+  font-size: 0.82rem;
+  color: var(--brown-light);
+  line-height: 1.55;
+  margin: 0 0 1rem;
+}
+
+.taara-teaser-focus-list {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.taara-teaser-focus-item {}
+
+.taara-teaser-focus-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.45rem 0.7rem;
+  border-radius: 6px;
+  border: 0.5px solid var(--border);
+  background: var(--cream);
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.taara-teaser-focus-link:hover {
+  background: var(--parchment-deeper);
+}
+
+.taara-teaser-focus-name {
+  font-size: 0.82rem;
+  color: var(--brown);
+  font-weight: 500;
+}
+
+.taara-teaser-focus-price {
+  font-size: 0.78rem;
+  color: var(--maroon);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.taara-teaser-focus-bundle .taara-teaser-focus-link-bundle {
+  border-style: dashed;
+}
+
+.taara-teaser-focus-bundle .taara-teaser-focus-name {
+  font-weight: 600;
+  color: var(--maroon);
+}
+
+.taara-teaser-cta {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--maroon);
+  text-decoration: none;
+}
+
+.taara-teaser-cta:hover {
+  text-decoration: underline;
+}
+
+/* ─────────────────────────────────────────────────────── */
 .taara-pricing-table-wrap {
   overflow-x: auto;
 }
@@ -1280,6 +1400,7 @@ a.taara-logo {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.92rem;
+  table-layout: fixed;
 }
 
 .taara-pricing-table th,
@@ -1290,12 +1411,34 @@ a.taara-logo {
   text-align: left;
 }
 
+.taara-pricing-table th:nth-child(2),
+.taara-pricing-table td.taara-pricing-price {
+  width: 6.75rem;
+}
+
+.taara-pricing-table th:nth-child(3),
+.taara-pricing-table td.taara-pricing-action {
+  width: 8.75rem;
+}
+
 .taara-pricing-table th {
   background: var(--parchment-deeper);
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--brown-light);
+  font-weight: 600;
+}
+
+.taara-pricing-name {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--brown);
+  line-height: 1.35;
+}
+
+.taara-pricing-table td > .taara-pricing-name {
+  display: block;
 }
 
 .taara-pricing-desc {
@@ -1305,11 +1448,80 @@ a.taara-logo {
   line-height: 1.5;
 }
 
+.taara-pricing-price {
+  white-space: nowrap;
+  vertical-align: top;
+}
+
+.taara-pricing-action {
+  vertical-align: top;
+}
+
 .taara-pricing-btn {
   display: inline-block;
   font-size: 0.85rem !important;
   padding: 0.45rem 0.9rem !important;
   white-space: nowrap;
+}
+
+.taara-pricing-section-row td {
+  border-top: 2px solid var(--border);
+}
+
+.taara-pricing-pick-row td {
+  padding: 0.4rem 1rem;
+  vertical-align: middle;
+}
+
+.taara-pricing-pick-label,
+.taara-pricing-pick-price {
+  font-size: 0.82rem;
+  color: var(--brown-light);
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.taara-pricing-checkout-row .taara-pricing-selected-amount {
+  color: var(--maroon);
+  font-weight: 700;
+}
+
+.taara-pricing-table-check {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  cursor: pointer;
+  font-size: inherit;
+}
+
+.taara-pricing-table-check input {
+  margin: 0;
+  width: 0.9rem;
+  height: 0.9rem;
+  accent-color: var(--maroon);
+  flex-shrink: 0;
+}
+
+.taara-pricing-checkout-row td {
+  border-top: 2px solid var(--border);
+  vertical-align: middle;
+}
+
+.taara-checkout-line-items {
+  list-style: none;
+  margin: 0.75rem 0 1rem;
+  padding: 0;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.taara-checkout-line-items li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: var(--brown);
 }
 
 .taara-checkout-grid {
@@ -1640,6 +1852,62 @@ a.taara-logo {
 .taara-panchang-more {
   margin-top: 1.25rem;
   text-align: center;
+}
+
+.taara-city-autocomplete {
+  position: relative;
+}
+
+.taara-city-suggestions {
+  position: absolute;
+  z-index: 40;
+  top: calc(100% + 0.25rem);
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0.35rem 0;
+  list-style: none;
+  max-height: 16rem;
+  overflow-y: auto;
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(62, 39, 35, 0.12);
+}
+
+.taara-city-suggestion {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.55rem 0.75rem;
+  cursor: pointer;
+  color: var(--brown);
+  font-size: 0.9rem;
+}
+
+.taara-city-suggestion:hover,
+.taara-city-suggestion.is-active {
+  background: var(--parchment-deeper);
+}
+
+.taara-city-suggestion-muted {
+  cursor: default;
+  color: var(--brown-light);
+}
+
+.taara-city-suggestion-muted:hover {
+  background: transparent;
+}
+
+.taara-city-suggestion-name {
+  font-weight: 500;
+}
+
+.taara-city-suggestion-state {
+  font-size: 0.78rem;
+  color: var(--brown-light);
+  white-space: nowrap;
 }
 
 .taara-link-accent {

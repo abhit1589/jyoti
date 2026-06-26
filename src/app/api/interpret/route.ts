@@ -20,7 +20,8 @@ import {
   SESSION_COOKIE_NAME,
   sessionCookieOptions,
 } from "@/lib/usage/limits";
-import type { InterpretRequest, ReadingFocus } from "@/lib/types";
+import { parseReadingFocus } from "@/lib/readings/parse-focus";
+import type { InterpretRequest } from "@/lib/types";
 import { parseLocale } from "@/lib/i18n/locales";
 
 export const runtime = "nodejs";
@@ -68,14 +69,11 @@ async function resolveSession(): Promise<{ sessionId: string; isNew: boolean }> 
 }
 
 function parseBody(body: InterpretRequest): InterpretRequest {
-  const focus: ReadingFocus =
-    body.focus === "career" || body.focus === "dasha" ? body.focus : "personality";
-
   return {
     chart: body.chart,
     locale: parseLocale(body.locale),
     readingType: body.readingType === "detailed" ? "detailed" : "brief",
-    focus,
+    focus: parseReadingFocus(body.focus),
     stream: body.stream,
   };
 }

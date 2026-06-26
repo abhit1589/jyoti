@@ -316,6 +316,108 @@ export function formatChartForDashaReadingPrompt(chart: VedicChart, locale: Loca
   ].join("\n");
 }
 
+function planetsInHouse(chart: VedicChart, locale: Locale, house: number): string {
+  const labels = PLANET_LABELS[locale];
+  const ids = chart.houses[house];
+  if (!ids?.length) return "—";
+  return ids.map((id) => labels[id]).join(", ");
+}
+
+function formatLordLine(
+  chart: VedicChart,
+  locale: Locale,
+  house: number,
+  lordLabel: string,
+): string {
+  const rashis = RASHIS[locale];
+  const labels = PLANET_LABELS[locale];
+  const L = getChartReadingLabels(locale);
+  const rashi = houseRashi(chart.lagna.rashi, house);
+  const lord = rashiLord(rashi);
+  const lordPlanet = chart.planets.find((p) => p.id === lord);
+  const lordSign = lordPlanet ? rashis[lordPlanet.rashi - 1] : "?";
+  const lordHouse = lordPlanet?.house ?? "?";
+  return `${lordLabel}: ${labels[lord]} ${L.inSign} ${lordSign}, ${typeof lordHouse === "number" ? L.house(lordHouse) : lordHouse}`;
+}
+
+function formatChartBaseLines(chart: VedicChart, locale: Locale): string[] {
+  const rashis = RASHIS[locale];
+  const labels = PLANET_LABELS[locale];
+  const L = getChartReadingLabels(locale);
+  const ascSign = rashis[chart.lagna.rashi - 1];
+  const ascDegree = formatDegree(chart.lagna.rashiDegree);
+
+  const planetLines = READING_PLANET_ORDER.map((id) => {
+    const planet = chart.planets.find((p) => p.id === id);
+    if (!planet) return "";
+    const sign = rashis[planet.rashi - 1];
+    const degree = formatDegree(planet.rashiDegree);
+    const retro = planet.retrograde ? L.retrograde : "";
+    return `${labels[id]}: ${sign} ${degree}, ${L.house(planet.house)}${retro}`;
+  }).filter(Boolean);
+
+  return [
+    L.intro,
+    "",
+    `${L.ascendant}: ${ascSign} ${ascDegree}`,
+    ...planetLines,
+  ];
+}
+
+export function formatChartForFinancialReadingPrompt(chart: VedicChart, locale: Locale): string {
+  const L = getChartReadingLabels(locale);
+  const base = formatChartBaseLines(chart, locale);
+  const venus = chart.planets.find((p) => p.id === "venus");
+  const jupiter = chart.planets.find((p) => p.id === "jupiter");
+  const labels = PLANET_LABELS[locale];
+  const rashis = RASHIS[locale];
+
+  const venusLine = venus
+    ? `${labels.venus}: ${rashis[venus.rashi - 1]} ${formatDegree(venus.rashiDegree)}, ${L.house(venus.house)}${venus.retrograde ? L.retrograde : ""}`
+    : "";
+  const jupiterLine = jupiter
+    ? `${labels.jupiter}: ${rashis[jupiter.rashi - 1]} ${formatDegree(jupiter.rashiDegree)}, ${L.house(jupiter.house)}${jupiter.retrograde ? L.retrograde : ""}`
+    : "";
+
+  return [
+    ...base,
+    formatLordLine(chart, locale, 2, L.secondLord),
+    formatLordLine(chart, locale, 11, L.eleventhLord),
+    `${L.planetsIn(2)}: ${planetsInHouse(chart, locale, 2)}`,
+    `${L.planetsIn(11)}: ${planetsInHouse(chart, locale, 11)}`,
+    venusLine,
+    jupiterLine,
+  ]
+    .filter(Boolean)
+    .join("\n");
+}
+
+export function formatChartForMarriageReadingPrompt(chart: VedicChart, locale: Locale): string {
+  const L = getChartReadingLabels(locale);
+  const base = formatChartBaseLines(chart, locale);
+  const venus = chart.planets.find((p) => p.id === "venus");
+  const moon = chart.planets.find((p) => p.id === "moon");
+  const labels = PLANET_LABELS[locale];
+  const rashis = RASHIS[locale];
+
+  const venusLine = venus
+    ? `${labels.venus}: ${rashis[venus.rashi - 1]} ${formatDegree(venus.rashiDegree)}, ${L.house(venus.house)}${venus.retrograde ? L.retrograde : ""}`
+    : "";
+  const moonLine = moon
+    ? `${labels.moon}: ${rashis[moon.rashi - 1]} ${formatDegree(moon.rashiDegree)}, ${L.house(moon.house)}${moon.retrograde ? L.retrograde : ""}`
+    : "";
+
+  return [
+    ...base,
+    formatLordLine(chart, locale, 7, L.seventhLord),
+    `${L.planetsIn(7)}: ${planetsInHouse(chart, locale, 7)}`,
+    venusLine,
+    moonLine,
+  ]
+    .filter(Boolean)
+    .join("\n");
+}
+
 export function formatChartForQaPrompt(chart: VedicChart, locale: Locale): string {
   const rashis = RASHIS[locale];
   const labels = PLANET_LABELS[locale];

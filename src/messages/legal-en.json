@@ -53,11 +53,11 @@
       },
       "reading-single": {
         "name": "Single chart reading",
-        "description": "One in-depth reading section — Personality, Career & Dharma, or Current Dasha — based on your saved birth chart."
+        "description": "One in-depth reading section — Personality, Career & Dharma, Current Dasha, Financial & Wealth, or Marriage & Relationships — based on your saved birth chart."
       },
       "reading-bundle": {
         "name": "Complete chart reading",
-        "description": "All three reading sections (Personality + Career + Dasha) for one chart at a discounted price."
+        "description": "All five reading sections for one chart at a discounted price."
       }
     },
     "freeBadge": "Free",
@@ -65,7 +65,7 @@
   },
   "pricing": {
     "metaTitle": "Pricing | Taara Jyotishyam",
-    "metaDescription": "Transparent pricing for Taara Jyotishyam — free charts and horoscopes; paid readings from ₹100 and detailed kundali matching at ₹250.",
+    "metaDescription": "Transparent pricing for Taara Jyotishyam — free charts and horoscopes; paid readings from ₹100; complete chart reading ₹400.",
     "title": "Pricing",
     "intro": "Core astrology tools are free. You pay only for optional personalised chart readings and detailed kundali matching.",
     "columnService": "Service",
@@ -73,6 +73,13 @@
     "columnAction": "Action",
     "buyNow": "Buy now",
     "getStarted": "Get started",
+    "readingsTitle": "Chart readings — pick what you want",
+    "readingsIntro": "Select one or more reading sections for your birth chart. Each section is a detailed 3-paragraph Jyotish reading. Pay only for what you choose.",
+    "bundleOption": "Complete chart reading (all 5 sections)",
+    "bundleSave": "Save {amount}",
+    "selectedTotal": "Selected total:",
+    "checkoutSelected": "Checkout",
+    "otherServicesTitle": "Other services",
     "freeNote": "Free services require no payment. Paid readings are one-time purchases per chart.",
     "checkoutNote": "Secure checkout on our website. Payments are processed via authorised payment partners (PayU / Razorpay)."
   },
@@ -92,16 +99,18 @@
     "instructions": "After payment you will return to the site to generate your reading from your saved birth chart. If you have not entered birth details yet, you will be guided to do so first.",
     "instructionsMatch": "After payment you will return to the match page to run bride and groom charts and unlock the detailed compatibility analysis.",
     "gatewayNote": "You will be redirected to our secure payment partner to complete the transaction.",
-    "invalidSku": "Please choose a valid product from the pricing page.",
+    "invalidSku": "Please choose readings on the pricing page first.",
     "backToPricing": "Back to pricing",
+    "readingsOrderTitle": "Chart readings",
+    "readingsOrderHint": "One-time purchase for your saved birth chart. Generate each section after payment.",
     "products": {
       "single": {
         "name": "Single chart reading",
-        "description": "One reading section: Personality, Career & Dharma, or Current Dasha."
+        "description": "One reading section: Personality, Career & Dharma, Current Dasha, Financial & Wealth, or Marriage & Relationships."
       },
       "bundle": {
         "name": "Complete chart reading",
-        "description": "All three reading sections for your chart."
+        "description": "All five reading sections for your chart."
       },
       "match-report": {
         "name": "Kundali matching — detailed analysis",

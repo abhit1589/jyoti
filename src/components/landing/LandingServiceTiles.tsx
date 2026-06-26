@@ -14,13 +14,13 @@ export function LandingServiceTiles() {
 
   return (
     <div className="taara-service-tiles" role="navigation" aria-label={t("ariaLabel")}>
-      <a href="#chart" className="taara-service-tile taara-service-tile-primary">
+      <Link href="/horoscope" className="taara-service-tile taara-service-tile-primary">
         <span className="taara-service-icon" aria-hidden>
           {t("chart.icon")}
         </span>
         <span className="taara-service-label">{t("chart.label")}</span>
         <span className="taara-service-hint">{t("chart.hint")}</span>
-      </a>
+      </Link>
 
       <Link href="/panchang" className="taara-service-tile">
         <span className="taara-service-icon" aria-hidden>

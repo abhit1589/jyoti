@@ -1,20 +1,12 @@
+import "server-only";
+
 import type { Locale } from "@/lib/types";
-import { CITY_SEEDS } from "@/lib/vedic/indian-cities-data";
+import type { IndianPlace } from "@/lib/vedic/place-types";
+import placesData from "@/lib/vedic/indian-places.json";
+import { getPlaceById, searchPlaces } from "@/lib/vedic/places-server";
 
-export interface IndianCity {
-  id: string;
-  name: Record<Locale, string>;
-  latitude: number;
-  longitude: number;
-  timezone: string;
-}
-
-const IST = "Asia/Kolkata";
-
-export const INDIAN_CITIES: IndianCity[] = CITY_SEEDS.map((seed) => ({
-  ...seed,
-  timezone: IST,
-}));
+export type { IndianPlace as IndianCity, PlaceSearchResult } from "@/lib/vedic/place-types";
+export { getPlaceById as getCityById, searchPlaces };
 
 const LOCALE_SORT: Record<Locale, string> = {
   en: "en-IN",
@@ -25,14 +17,10 @@ const LOCALE_SORT: Record<Locale, string> = {
   ta: "ta-IN",
 };
 
-/** Cities sorted alphabetically by display name in the active locale. */
-export function getCitiesForLocale(locale: Locale): IndianCity[] {
+/** @deprecated Use searchPlaces via API on the client. Server-side listing only. */
+export function getCitiesForLocale(locale: Locale): IndianPlace[] {
   const collator = new Intl.Collator(LOCALE_SORT[locale], { sensitivity: "base" });
-  return [...INDIAN_CITIES].sort((a, b) =>
-    collator.compare(a.name[locale], b.name[locale]),
+  return [...(placesData as IndianPlace[])].sort((a, b) =>
+    collator.compare(a.name[locale] || a.name.en, b.name[locale] || b.name.en),
   );
-}
-
-export function getCityById(id: string): IndianCity | undefined {
-  return INDIAN_CITIES.find((c) => c.id === id);
 }

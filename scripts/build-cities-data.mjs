@@ -4,7 +4,7 @@
  *
  * Each row: [id, lat, lon, en, hi, mr, kn, te, ta]
  */
-import { writeFileSync } from "fs";
+import { existsSync, readFileSync, writeFileSync } from "fs";
 import { fileURLToPath } from "url";
 import { dirname, join } from "path";
 
@@ -228,3 +228,44 @@ lines.push(``);
 const out = join(__dirname, "..", "src", "lib", "vedic", "indian-cities-data.ts");
 writeFileSync(out, lines.join("\n"), "utf8");
 console.log(`Wrote ${CITIES.length} cities to ${out}`);
+
+// --- Merge GeoNames towns into indian-places.json ---
+const geonamesPath = join(__dirname, "..", "data", "indian-places-geonames.json");
+if (!existsSync(geonamesPath)) {
+  console.warn("Skip indian-places.json — run: node scripts/fetch-geonames-in.mjs");
+  process.exit(0);
+}
+
+const geonames = JSON.parse(readFileSync(geonamesPath, "utf8"));
+const byId = new Map();
+
+for (const row of geonames) {
+  const en = row.name;
+  byId.set(row.id, {
+    id: row.id,
+    latitude: row.latitude,
+    longitude: row.longitude,
+    timezone: row.timezone || "Asia/Kolkata",
+    state: row.state,
+    population: row.population ?? 0,
+    name: { en, hi: en, mr: en, kn: en, te: en, ta: en },
+  });
+}
+
+for (const [id, lat, lon, en, hi, mr, kn, te, ta] of CITIES) {
+  const existing = byId.get(id);
+  byId.set(id, {
+    id,
+    latitude: lat,
+    longitude: lon,
+    timezone: "Asia/Kolkata",
+    state: existing?.state,
+    population: Math.max(existing?.population ?? 0, 500_000),
+    name: { en, hi, mr, kn, te, ta },
+  });
+}
+
+const places = [...byId.values()].sort((a, b) => (b.population ?? 0) - (a.population ?? 0));
+const placesOut = join(__dirname, "..", "src", "lib", "vedic", "indian-places.json");
+writeFileSync(placesOut, JSON.stringify(places), "utf8");
+console.log(`Wrote ${places.length} places to ${placesOut}`);

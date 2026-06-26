@@ -1,11 +1,18 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { AppNav } from "@/components/AppNav";
 import { SiteFooter } from "@/components/legal/SiteFooter";
+import {
+  getReadingOrderAmount,
+  isFullReadingBundle,
+  parseReadingsQuery,
+  serializeReadingFocusList,
+} from "@/lib/payments/reading-order";
 import type { PaymentSku } from "@/lib/payments/config";
+import type { ReadingFocus } from "@/lib/types";
 
 interface PaymentConfig {
   enabled: boolean;
@@ -31,30 +38,45 @@ function formatInr(paise: number): string {
   }).format(paise / 100);
 }
 
-function isValidSku(sku: string | null): sku is PaymentSku {
-  return sku === "single" || sku === "bundle" || sku === "match-report";
-}
-
-const DEFAULT_AMOUNTS: Record<PaymentSku, number> = {
-  single: 10000,
-  bundle: 25000,
-  "match-report": 25000,
-};
+const PENDING_READINGS_KEY = "astro_pending_readings";
 
 interface CheckoutViewProps {
   skuParam: string | null;
+  readingsParam: string | null;
 }
 
-export function CheckoutView({ skuParam }: CheckoutViewProps) {
+export function CheckoutView({ skuParam, readingsParam }: CheckoutViewProps) {
   const t = useTranslations("legal.checkout");
   const tAbout = useTranslations("legal.about");
+  const tReading = useTranslations("reading");
   const [config, setConfig] = useState<PaymentConfig | null>(null);
   const [business, setBusiness] = useState<BusinessPublic | null>(null);
   const [accepted, setAccepted] = useState(false);
   const [paying, setPaying] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const sku = isValidSku(skuParam) ? skuParam : null;
+  const selectedReadings = useMemo(() => {
+    if (skuParam === "bundle") {
+      return parseReadingsQuery(
+        "personality,career,dasha,financial,marriage",
+      );
+    }
+    return parseReadingsQuery(readingsParam);
+  }, [readingsParam, skuParam]);
+
+  const isMatch = skuParam === "match-report";
+  const isReadingsCheckout = selectedReadings.length > 0;
+  const isValid = isMatch || isReadingsCheckout;
+
+  const amountPaise = useMemo(() => {
+    if (isMatch) {
+      return config?.amounts.matchReport ?? 25000;
+    }
+    if (isReadingsCheckout) {
+      return getReadingOrderAmount(selectedReadings);
+    }
+    return 0;
+  }, [config, isMatch, isReadingsCheckout, selectedReadings]);
 
   useEffect(() => {
     Promise.all([
@@ -68,14 +90,14 @@ export function CheckoutView({ skuParam }: CheckoutViewProps) {
       .catch(() => setError("Could not load checkout details."));
   }, []);
 
-  if (!sku) {
+  if (!isValid) {
     return (
       <div className="taara-page min-h-screen">
         <AppNav />
         <main className="taara-legal-main text-center">
           <h1 className="taara-heading">{t("title")}</h1>
           <p className="taara-intro mx-auto max-w-md">{t("invalidSku")}</p>
-          <Link href="/pricing" className="taara-btn-primary mt-6 inline-block">
+          <Link href="/pricing#chart-readings" className="taara-btn-primary mt-6 inline-block">
             {t("backToPricing")}
           </Link>
         </main>
@@ -84,9 +106,11 @@ export function CheckoutView({ skuParam }: CheckoutViewProps) {
     );
   }
 
-  const amountPaise =
-    config?.amounts[sku === "match-report" ? "matchReport" : sku] ?? DEFAULT_AMOUNTS[sku];
-  const isMatch = sku === "match-report";
+  function storePendingReadings() {
+    if (isReadingsCheckout) {
+      sessionStorage.setItem(PENDING_READINGS_KEY, serializeReadingFocusList(selectedReadings));
+    }
+  }
 
   async function handlePay() {
     if (!accepted) return;
@@ -94,15 +118,32 @@ export function CheckoutView({ skuParam }: CheckoutViewProps) {
     setError(null);
 
     try {
+      storePendingReadings();
+
       if (config?.enabled) {
-        window.location.href = isMatch ? `/match?checkout=${sku}` : `/#chart?checkout=${sku}`;
+        const readingsQuery = isReadingsCheckout
+          ? `readings=${serializeReadingFocusList(selectedReadings)}`
+          : "";
+        window.location.href = isMatch
+          ? `/match?checkout=match-report`
+          : `/#chart?${readingsQuery}`;
         return;
       }
+
+      const payuSku: PaymentSku = isMatch
+        ? "match-report"
+        : isFullReadingBundle(selectedReadings)
+          ? "bundle"
+          : "single";
 
       const res = await fetch("/api/payments/payu/initiate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ sku }),
+        body: JSON.stringify({
+          sku: payuSku,
+          focuses: isReadingsCheckout ? selectedReadings : undefined,
+          amountPaise,
+        }),
       });
 
       const data = (await res.json()) as { redirectUrl?: string; error?: string };
@@ -117,7 +158,12 @@ export function CheckoutView({ skuParam }: CheckoutViewProps) {
         return;
       }
 
-      window.location.href = isMatch ? `/match?checkout=${sku}` : `/#chart?checkout=${sku}`;
+      const readingsQuery = isReadingsCheckout
+        ? `readings=${serializeReadingFocusList(selectedReadings)}`
+        : "";
+      window.location.href = isMatch
+        ? `/match?checkout=match-report`
+        : `/#chart?${readingsQuery}`;
     } catch {
       setError("Payment could not be started. Please try again.");
     } finally {
@@ -134,8 +180,31 @@ export function CheckoutView({ skuParam }: CheckoutViewProps) {
         <div className="taara-checkout-grid">
           <section className="taara-legal-card">
             <h2 className="taara-legal-card-title">{t("orderSummary")}</h2>
-            <p className="taara-checkout-product-name">{t(`products.${sku}.name`)}</p>
-            <p className="taara-checkout-product-desc">{t(`products.${sku}.description`)}</p>
+
+            {isMatch ? (
+              <>
+                <p className="taara-checkout-product-name">{t("products.match-report.name")}</p>
+                <p className="taara-checkout-product-desc">{t("products.match-report.description")}</p>
+              </>
+            ) : (
+              <>
+                <p className="taara-checkout-product-name">{t("readingsOrderTitle")}</p>
+                <ul className="taara-checkout-line-items">
+                  {selectedReadings.map((focus: ReadingFocus) => (
+                    <li key={focus}>
+                      <span>{tReading(`focus.${focus}`)}</span>
+                      <span>{formatInr(config?.amounts.single ?? 10000)}</span>
+                    </li>
+                  ))}
+                </ul>
+                {isFullReadingBundle(selectedReadings) ? (
+                  <p className="taara-checkout-product-desc">{t("products.bundle.description")}</p>
+                ) : (
+                  <p className="taara-checkout-product-desc">{t("readingsOrderHint")}</p>
+                )}
+              </>
+            )}
+
             <dl className="taara-checkout-totals">
               <div>
                 <dt>{t("subtotal")}</dt>
@@ -217,7 +286,7 @@ export function CheckoutView({ skuParam }: CheckoutViewProps) {
           <Link href={isMatch ? "/match" : "/#chart"} className="taara-btn-ghost">
             {isMatch ? t("continueToMatch") : t("continueToChart")}
           </Link>
-          <Link href="/pricing" className="taara-btn-ghost">
+          <Link href="/pricing#chart-readings" className="taara-btn-ghost">
             {t("backToPricing")}
           </Link>
         </div>
@@ -226,3 +295,5 @@ export function CheckoutView({ skuParam }: CheckoutViewProps) {
     </div>
   );
 }
+
+export { PENDING_READINGS_KEY };

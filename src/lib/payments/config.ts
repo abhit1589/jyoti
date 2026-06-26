@@ -2,7 +2,13 @@ import type { ReadingFocus } from "@/lib/types";
 
 export type PaymentSku = "single" | "bundle" | "match-report";
 
-export const ALL_READING_FOCUSES: ReadingFocus[] = ["personality", "career", "dasha"];
+export const ALL_READING_FOCUSES: ReadingFocus[] = [
+  "personality",
+  "career",
+  "dasha",
+  "financial",
+  "marriage",
+];
 
 export function isPaymentsEnabled(): boolean {
   if (process.env.PAYMENTS_ENABLED === "false") return false;
@@ -29,7 +35,7 @@ export function getRazorpayKeySecret(): string {
 
 export function getAmountPaise(sku: PaymentSku): number {
   if (sku === "bundle") {
-    return Number(process.env.PAYMENT_AMOUNT_BUNDLE_PAISE ?? "25000");
+    return Number(process.env.PAYMENT_AMOUNT_BUNDLE_PAISE ?? "40000");
   }
   if (sku === "match-report") {
     return Number(process.env.PAYMENT_AMOUNT_MATCH_REPORT_PAISE ?? "25000");
@@ -39,13 +45,19 @@ export function getAmountPaise(sku: PaymentSku): number {
 
 export function getSkuDescription(sku: PaymentSku, focus?: ReadingFocus): string {
   if (sku === "bundle") {
-    return "Complete Jyotish reading (Personality + Career + Dasha)";
+    return "Complete Jyotish reading (all five sections)";
   }
   if (sku === "match-report") {
     return "Kundali matching — detailed compatibility analysis";
   }
-  const label =
-    focus === "career" ? "Career & Dharma" : focus === "dasha" ? "Current Dasha" : "Personality";
+  const labels: Record<ReadingFocus, string> = {
+    personality: "Personality",
+    career: "Career & Dharma",
+    dasha: "Current Dasha",
+    financial: "Financial & Wealth",
+    marriage: "Marriage & Relationships",
+  };
+  const label = focus ? labels[focus] : labels.personality;
   return `Jyotish reading — ${label}`;
 }
 

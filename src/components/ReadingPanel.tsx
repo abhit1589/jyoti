@@ -6,10 +6,14 @@ import { getBirthIdentity } from "@/lib/vedic/birth-identity";
 import { parseJsonResponse } from "@/lib/api/client";
 import { openRazorpayCheckout } from "@/lib/payments/razorpay-checkout";
 import type { FocusAccess } from "@/lib/payments/entitlements";
+import { ALL_READING_FOCUSES } from "@/lib/payments/config";
+import { getReadingOrderAmount, isFullReadingBundle } from "@/lib/payments/reading-order";
 import type { Locale, ReadingFocus, VedicChart } from "@/lib/types";
 
 interface ReadingPanelProps {
   chart: VedicChart;
+  pendingReadings?: ReadingFocus[] | null;
+  onPendingReadingsCleared?: () => void;
 }
 
 type UsageState = {
@@ -40,6 +44,8 @@ const DEFAULT_ENTITLEMENTS: EntitlementState = {
     personality: "locked",
     career: "locked",
     dasha: "locked",
+    financial: "locked",
+    marriage: "locked",
   },
   hasBundle: false,
 };
@@ -151,7 +157,11 @@ async function consumeSse(
   return { truncated };
 }
 
-export function ReadingPanel({ chart }: ReadingPanelProps) {
+export function ReadingPanel({
+  chart,
+  pendingReadings = null,
+  onPendingReadingsCleared,
+}: ReadingPanelProps) {
   const t = useTranslations("reading");
   const locale = useLocale() as Locale;
   const [focus, setFocus] = useState<ReadingFocus>("personality");
@@ -206,6 +216,8 @@ export function ReadingPanel({ chart }: ReadingPanelProps) {
               personality: "available",
               career: "available",
               dasha: "available",
+              financial: "available",
+              marriage: "available",
             },
             hasBundle: false,
           });
@@ -232,23 +244,32 @@ export function ReadingPanel({ chart }: ReadingPanelProps) {
     entitlements.loaded &&
     (usage.paymentsEnabled ? focusAccess === "available" : !limitReached);
 
-  async function handlePay(sku: "single" | "bundle") {
+  async function completePayment(input: {
+    sku: "single" | "bundle";
+    focuses?: ReadingFocus[];
+    focus?: ReadingFocus;
+  }) {
     if (!paymentConfig?.enabled || !paymentConfig.keyId) {
       setError(t("payments.notConfigured"));
       return;
     }
 
-    setPaying(sku);
+    setPaying(input.sku);
     setError(null);
 
     try {
+      const focuses =
+        input.focuses ??
+        (input.sku === "bundle" ? [...ALL_READING_FOCUSES] : input.focus ? [input.focus] : []);
+
       const orderRes = await fetch("/api/payments/create-order", {
         method: "POST",
         credentials: "include",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          sku,
-          focus: sku === "single" ? focus : undefined,
+          sku: input.sku,
+          focus: input.focus,
+          focuses,
           chart,
         }),
       });
@@ -287,6 +308,7 @@ export function ReadingPanel({ chart }: ReadingPanelProps) {
       }
 
       await refreshEntitlements();
+      onPendingReadingsCleared?.();
     } catch (err) {
       if (mountedRef.current) {
         const message = err instanceof Error ? err.message : t("payments.failed");
@@ -297,6 +319,21 @@ export function ReadingPanel({ chart }: ReadingPanelProps) {
     } finally {
       if (mountedRef.current) setPaying(null);
     }
+  }
+
+  async function handlePay(sku: "single" | "bundle") {
+    await completePayment({
+      sku,
+      focus: sku === "single" ? focus : undefined,
+    });
+  }
+
+  async function handlePayPending() {
+    if (!pendingReadings?.length) return;
+    await completePayment({
+      sku: isFullReadingBundle(pendingReadings) ? "bundle" : "single",
+      focuses: pendingReadings,
+    });
   }
 
   async function handleGenerate() {
@@ -428,6 +465,29 @@ export function ReadingPanel({ chart }: ReadingPanelProps) {
         <>
           {usage.paymentsEnabled && paymentConfig ? (
             <div className="mt-5 space-y-4">
+              {pendingReadings && pendingReadings.length > 0 ? (
+                <div className="rounded-xl border border-orange-200 bg-orange-50/70 p-4">
+                  <p className="text-sm font-semibold text-slate-800">
+                    {t("payments.pendingTitle")}
+                  </p>
+                  <ul className="mt-2 space-y-1 text-sm text-slate-700">
+                    {pendingReadings.map((item) => (
+                      <li key={item}>• {t(`focus.${item}`)}</li>
+                    ))}
+                  </ul>
+                  <p className="mt-3 text-lg font-bold text-orange-700">
+                    {formatInr(getReadingOrderAmount(pendingReadings))}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => void handlePayPending()}
+                    disabled={Boolean(paying) || loading}
+                    className="btn-primary mt-4 w-full text-sm"
+                  >
+                    {paying ? t("payments.processing") : t("payments.payPending")}
+                  </button>
+                </div>
+              ) : null}
               <p className="text-sm text-slate-700">{t("payments.intro")}</p>
               <div className="grid gap-3 sm:grid-cols-2">
                 <div className="rounded-xl border border-slate-200 bg-white p-4">
@@ -464,7 +524,8 @@ export function ReadingPanel({ chart }: ReadingPanelProps) {
                   <p className="mt-1 text-xs text-orange-800">
                     {t("payments.bundleSave", {
                       amount: formatInr(
-                        paymentConfig.amounts.single * 3 - paymentConfig.amounts.bundle,
+                        paymentConfig.amounts.single * ALL_READING_FOCUSES.length -
+                          paymentConfig.amounts.bundle,
                       ),
                     })}
                   </p>
@@ -495,7 +556,7 @@ export function ReadingPanel({ chart }: ReadingPanelProps) {
           )}
 
           <div className="mt-4 flex flex-wrap gap-2">
-            {(["personality", "career", "dasha"] as const).map((item) => (
+            {ALL_READING_FOCUSES.map((item) => (
               <button
                 key={item}
                 type="button"

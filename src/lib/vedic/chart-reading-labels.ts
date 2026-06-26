@@ -6,6 +6,10 @@ export interface ChartReadingLabels {
   house: (n: number) => string;
   inSign: string;
   tenthLord: string;
+  secondLord: string;
+  seventhLord: string;
+  eleventhLord: string;
+  planetsIn: (n: number) => string;
   mahadasha: string;
   mahadashaStart: string;
   mahadashaEnd: string;
@@ -23,6 +27,10 @@ const LABELS: Record<Locale, ChartReadingLabels> = {
     house: (n) => `House ${n}`,
     inSign: "in",
     tenthLord: "10th House Lord",
+    secondLord: "2nd House Lord",
+    seventhLord: "7th House Lord",
+    eleventhLord: "11th House Lord",
+    planetsIn: (n) => `Planets in house ${n}`,
     mahadasha: "Current Mahadasha",
     mahadashaStart: "Mahadasha start",
     mahadashaEnd: "Mahadasha end",
@@ -38,6 +46,10 @@ const LABELS: Record<Locale, ChartReadingLabels> = {
     house: (n) => `${n}वां भाव`,
     inSign: "में",
     tenthLord: "दसवें भाव का स्वामी",
+    secondLord: "दूसरे भाव का स्वामी",
+    seventhLord: "सातवें भाव का स्वामी",
+    eleventhLord: "ग्यारहवें भाव का स्वामी",
+    planetsIn: (n) => `${n}वें भाव में ग्रह`,
     mahadasha: "वर्तमान महादशा",
     mahadashaStart: "महादशा आरंभ",
     mahadashaEnd: "महादशा समाप्ति",
@@ -53,6 +65,10 @@ const LABELS: Record<Locale, ChartReadingLabels> = {
     house: (n) => `${n}वा भाव`,
     inSign: "मध्ये",
     tenthLord: "दहाव्या भावाचा स्वामी",
+    secondLord: "दुसऱ्या भावाचा स्वामी",
+    seventhLord: "सातव्या भावाचा स्वामी",
+    eleventhLord: "अकराव्या भावाचा स्वामी",
+    planetsIn: (n) => `${n}व्या भावात ग्रह`,
     mahadasha: "सध्याची महादशा",
     mahadashaStart: "महादशा सुरुवात",
     mahadashaEnd: "महादशा समाप्ती",
@@ -68,6 +84,10 @@ const LABELS: Record<Locale, ChartReadingLabels> = {
     house: (n) => `${n}ನೇ ಭಾವ`,
     inSign: "ದಲ್ಲಿ",
     tenthLord: "ಹತ್ತನೇ ಭಾವದ ಅಧಿಪತಿ",
+    secondLord: "ಎರಡನೇ ಭಾವದ ಅಧಿಪತಿ",
+    seventhLord: "ಏಳನೇ ಭಾವದ ಅಧಿಪತಿ",
+    eleventhLord: "ಹನ್ನೊಂದನೇ ಭಾವದ ಅಧಿಪತಿ",
+    planetsIn: (n) => `${n}ನೇ ಭಾವದಲ್ಲಿ ಗ್ರಹಗಳು`,
     mahadasha: "ಪ್ರಸ್ತುತ ಮಹಾದಶ",
     mahadashaStart: "ಮಹಾದಶ ಆರಂಭ",
     mahadashaEnd: "ಮಹಾದಶ ಅಂತ್ಯ",
@@ -83,6 +103,10 @@ const LABELS: Record<Locale, ChartReadingLabels> = {
     house: (n) => `${n}వ భావం`,
     inSign: "లో",
     tenthLord: "పదవ భావ అధిపతి",
+    secondLord: "రెండవ భావ అధిపతి",
+    seventhLord: "ఏడవ భావ అధిపతి",
+    eleventhLord: "పదకొండవ భావ అధిపతి",
+    planetsIn: (n) => `${n}వ భావంలో గ్రహాలు`,
     mahadasha: "ప్రస్తుత మహాదశ",
     mahadashaStart: "మహాదశ ప్రారంభం",
     mahadashaEnd: "మహాదశ ముగింపు",
@@ -98,6 +122,10 @@ const LABELS: Record<Locale, ChartReadingLabels> = {
     house: (n) => `${n}வது பாவம்`,
     inSign: "இல்",
     tenthLord: "பத்தாவது பாவ அதிபதி",
+    secondLord: "இரண்டாவது பாவ அதிபதி",
+    seventhLord: "ஏழாவது பாவ அதிபதி",
+    eleventhLord: "பதினொன்றாவது பாவ அதிபதி",
+    planetsIn: (n) => `${n}வது பாவத்தில் கிரகங்கள்`,
     mahadasha: "தற்போதைய மகாதசை",
     mahadashaStart: "மகாதசை தொடக்கம்",
     mahadashaEnd: "மகாதசை முடிவு",
