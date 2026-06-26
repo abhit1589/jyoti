@@ -2,7 +2,7 @@
 
 **Last updated:** 2026-06-26  
 **Repo:** [abhit1589/jyoti](https://github.com/abhit1589/jyoti) · branch `master`  
-**Latest commit:** `c79c62b` — Update HANDOVER.md for horoscope page, pricing, and places search.  
+**Repo HEAD:** run `git log -1 --oneline` locally (doc-only commits also advance `master`).  
 **Latest feature commit:** `17bda0d` — Horoscope page, city search, multi-select chart reading checkout.  
 **Local path:** `c:\Users\flyam\OneDrive\Desktop\astro`  
 **Production:** Vercel (auto-deploy from `master`) · domain [jyotishyam.in](https://jyotishyam.in)
@@ -241,6 +241,7 @@ curl -X POST http://localhost:3000/api/dev/reset-limits   # dev only; adjust por
 ## Commit history (recent)
 
 ```
+0581e8d Fix HANDOVER.md latest commit reference to match HEAD.
 c79c62b Update HANDOVER.md for horoscope page, pricing, and places search.
 17bda0d Add horoscope page, city search, and multi-select chart reading checkout.
 a1835f7 Add Panchang and update pricing, checkout, and merchant details.
